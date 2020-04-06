@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>梁康的博客</title>
+    <link>https://kanglcn.github.io/</link>
+    <description>Recent content on 梁康的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 05 Apr 2020 09:46:22 +0800</lastBuildDate>
+    
+        <atom:link href="https://kanglcn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello World!</title>
+      <link>https://kanglcn.github.io/hello-world/</link>
+      <pubDate>Mon, 06 Apr 2020 05:37:51 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/hello-world/</guid>
+      <description>Hello World!</description>
+    </item>
+    
+    <item>
+      <title>捐赠</title>
+      <link>https://kanglcn.github.io/donations/</link>
+      <pubDate>Sun, 05 Apr 2020 09:46:22 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/donations/</guid>
+      <description>please donate ~~</description>
+    </item>
+    
+    <item>
+      <title>链接</title>
+      <link>https://kanglcn.github.io/links/</link>
+      <pubDate>Sun, 05 Apr 2020 06:59:02 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/links/</guid>
+      <description>scientist</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://kanglcn.github.io/about/</link>
+      <pubDate>Sun, 05 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/about/</guid>
+      <description>男，99年生人，未婚。 USTC地球物理本科在读。 写博客的目的 师兄的博客1给了我很大的帮助； 因为我记性差，需要将了解到的东西记录下来，以供以后</description>
+    </item>
+    
+  </channel>
+</rss>
