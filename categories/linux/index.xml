@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>梁康的博客</title>
-    <link>https://kanglcn.github.io/</link>
-    <description>Recent content on 梁康的博客</description>
+    <title>linux on 梁康的博客</title>
+    <link>https://kanglcn.github.io/categories/linux/</link>
+    <description>Recent content in linux on 梁康的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 05 Apr 2020 09:46:22 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2020 08:42:59 +0800</lastBuildDate>
     
-        <atom:link href="https://kanglcn.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kanglcn.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

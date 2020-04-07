@@ -10,6 +10,24 @@
     
     
     <item>
+      <title>安装linux的实践</title>
+      <link>https://kanglcn.github.io/install-linux-practice/</link>
+      <pubDate>Tue, 07 Apr 2020 08:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/install-linux-practice/</guid>
+      <description>注意： 初次接触 linux 系统的读者阅读本文之前请阅读安装linux的理论基础； 本文讨论的内容只适用于桌面端的 linux 普通用户； 本人只是业余爱好者，如果有什</description>
+    </item>
+    
+    <item>
+      <title>安装linux的理论基础</title>
+      <link>https://kanglcn.github.io/install-linux-theory/</link>
+      <pubDate>Mon, 06 Apr 2020 06:09:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/install-linux-theory/</guid>
+      <description>注意： 本文均属个人理解，不能保证准确性，因为我也不专业； 实际的操作系统启动相当复杂，而且更新很快，我所找到资料互相矛盾的很多，所以本文有不对</description>
+    </item>
+    
+    <item>
       <title>Hello World!</title>
       <link>https://kanglcn.github.io/hello-world/</link>
       <pubDate>Mon, 06 Apr 2020 05:37:51 +0800</pubDate>
@@ -24,7 +42,7 @@
       <pubDate>Sun, 05 Apr 2020 09:46:22 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/donations/</guid>
-      <description>please donate ~~</description>
+      <description>如果本博客的内容对您有所帮助，您可以考虑通过向本博客捐赠支持我。 即使您的捐赠并不能用来帮助乌干达的可怜儿童，而是用来改善本人的工作和生活环境</description>
     </item>
     
     <item>
@@ -33,7 +51,7 @@
       <pubDate>Sun, 05 Apr 2020 06:59:02 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/links/</guid>
-      <description>scientist</description>
+      <description>TBA</description>
     </item>
     
     <item>
