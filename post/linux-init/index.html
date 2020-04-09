@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>linux 系统的初步配置 - Kang&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="梁康" /><meta name="description" content="本文谈谈安装完 linux 系统之后，如何打造合适的中文环境。 首先更新软件 1 sudo pacman -Syyu pacman 是 arch 系的包管理软件，关于 pacman 的详细信息可以参考 ArchWiki:pac" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="https://kanglcn.github.io/post/linux-init/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="linux 系统的初步配置" />
+<meta property="og:description" content="本文谈谈安装完 linux 系统之后，如何打造合适的中文环境。 首先更新软件 1 sudo pacman -Syyu pacman 是 arch 系的包管理软件，关于 pacman 的详细信息可以参考 ArchWiki:pac" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanglcn.github.io/post/linux-init/" />
+<meta property="article:published_time" content="2020-04-08T06:42:59+08:00" />
+<meta property="article:modified_time" content="2020-04-08T00:00:00+00:00" />
+<meta itemprop="name" content="linux 系统的初步配置">
+<meta itemprop="description" content="本文谈谈安装完 linux 系统之后，如何打造合适的中文环境。 首先更新软件 1 sudo pacman -Syyu pacman 是 arch 系的包管理软件，关于 pacman 的详细信息可以参考 ArchWiki:pac">
+<meta itemprop="datePublished" content="2020-04-08T06:42:59&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2165">
+
+
+
+<meta itemprop="keywords" content="manjaro,linux," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="linux 系统的初步配置"/>
+<meta name="twitter:description" content="本文谈谈安装完 linux 系统之后，如何打造合适的中文环境。 首先更新软件 1 sudo pacman -Syyu pacman 是 arch 系的包管理软件，关于 pacman 的详细信息可以参考 ArchWiki:pac"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Kang&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/donations/">
+        <li class="mobile-menu-item">捐赠</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Kang&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/donations/">捐赠</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">linux 系统的初步配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-04-08 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 约 2165 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#首先更新软件">首先更新软件</a></li>
+    <li><a href="#aur">AUR</a></li>
+    <li><a href="#安装-vim-编辑器">安装 vim 编辑器</a></li>
+    <li><a href="#配置镜像源">配置镜像源</a></li>
+    <li><a href="#本地化">本地化</a>
+      <ul>
+        <li><a href="#更改时区">更改时区</a></li>
+        <li><a href="#更改语言设置">更改语言设置</a></li>
+        <li><a href="#安装和更改中文字体">安装和更改中文字体</a></li>
+        <li><a href="#输入法">输入法</a></li>
+      </ul>
+    </li>
+    <li><a href="#一些经验之谈">一些经验之谈</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>本文谈谈安装完 linux 系统之后，如何打造合适的中文环境。</p>
+<h2 id="首先更新软件">首先更新软件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -Syyu
+</code></pre></td></tr></table>
+</div>
+</div><p>pacman 是 arch 系的包管理软件，关于 pacman 的详细信息可以参考 <a href="https://wiki.archlinux.org/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:pacman</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
+<h2 id="aur">AUR</h2>
+<p>Arch 除了 pacman 管理的四个官方仓库外，还有第三方管理的仓库 Arch User Repository 即 AUR 。关于 AUR 的相关信息可以参考<a href="https://wiki.archlinux.org/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:Arch User Repository</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
+<p>注意 AUR 中的软件没有官方源中的安全，请谨慎使用。</p>
+<p>AUR 可以通过 yay 这一工具管理。其使用方法和 pacman 相同。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -S yay
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装-vim-编辑器">安装 vim 编辑器</h2>
+<p>需要安装编辑器来完成后续操作，所以先安装 vim。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -S vim
+</code></pre></td></tr></table>
+</div>
+</div><p>vim 使用 <code>Shift</code> + 鼠标选中，<code>shift</code> + 鼠标中键可以实现复制和粘贴的功能。</p>
+<h2 id="配置镜像源">配置镜像源</h2>
+<p>国外的镜像在中国很慢，所以我们要用中国的镜像。推荐使用清华的镜像。</p>
+<p>pacman 的配置文件安装在</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">/etc/pacman.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>建议注释掉 Color，这样可以将不同类型的提示用不同的颜色表示。在这个文件中我们可以发现</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>core<span class="o">]</span>
+<span class="nv">SigLevel</span> <span class="o">=</span> PackageRequired
+<span class="nv">Include</span> <span class="o">=</span> /etc/pacman.d/mirrorlist
+
+<span class="o">[</span>extra<span class="o">]</span>
+<span class="nv">SigLevel</span> <span class="o">=</span> PackageRequired
+<span class="nv">Include</span> <span class="o">=</span> /etc/pacman.d/mirrorlist
+
+<span class="o">[</span>community<span class="o">]</span>
+<span class="nv">SigLevel</span> <span class="o">=</span> PackageRequired
+<span class="nv">Include</span> <span class="o">=</span> /etc/pacman.d/mirrorlist
+
+<span class="c1"># If you want to run 32 bit applications on your x86_64 system,</span>
+<span class="c1"># enable the multilib repositories as required here.</span>
+
+<span class="o">[</span>multilib<span class="o">]</span>
+<span class="nv">SigLevel</span> <span class="o">=</span> PackageRequired
+<span class="nv">Include</span> <span class="o">=</span> /etc/pacman.d/mirrorlist
+</code></pre></td></tr></table>
+</div>
+</div><p>这是 manjaro 的四个官方软件仓库，我们可以添加第三方的仓库，比如包含很多中国软件的 archlinuxcn，通过 pacman 管理。在该文件中加入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>archlinuxcn<span class="o">]</span>
+<span class="nv">SigLevel</span><span class="o">=</span> TrustedOnly
+<span class="nv">Server</span> <span class="o">=</span> https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/<span class="nv">$arch</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里直接使用了清华的镜像源，当然也可以使用其他的。安装完 archlinuxcn 之后一定要安装 archlinuxcn-keyring，导入 GPG-key。我也不知道为啥要装，让装就装吧。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -Syyu
+sudo pacman -S archlinuxcn-keyring
+</code></pre></td></tr></table>
+</div>
+</div><p>注意 archlinuxcn 和 AUR 一样，只保证对 arch 的兼容，不支持 mnajaro，需要谨慎使用。
+不过我已经说过，桌面版稳定性不太重要，而且我用了半年多没出过一次错。</p>
+<p>在上面可以看到</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">Include</span> <span class="o">=</span> /etc/pacman.d/mirrorlist
+</code></pre></td></tr></table>
+</div>
+</div><p>这是 manjaro 三个官方仓库的镜像地址。vim 打开这个文件，可以发现有一系列的镜像地址，把我们希望的搬到文件最顶端</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">## Country : China</span>
+<span class="nv">Server</span> <span class="o">=</span> https://mirrors.tuna.tsinghua.edu.cn/manjaro/stable/<span class="nv">$repo</span>/<span class="nv">$arch</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这样就可以将 core,extra,community 的源设置为清华镜像。这也可以通过命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman-mirrors -i -c China -m rank
+</code></pre></td></tr></table>
+</div>
+</div><p>搞定，但添加 archlinuxcn 还要手动搞。</p>
+<p>如果希望更改为美国镜像，那就通过命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman-mirrors -i -c United_States -m rank
+</code></pre></td></tr></table>
+</div>
+</div><p>添加 archlinuxcn 的配置也要改为美国的镜像</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>archlinuxcn<span class="o">]</span>
+<span class="nv">SigLevel</span><span class="o">=</span> TrustedOnly
+<span class="nv">Server</span><span class="o">=</span> https://cdn.repo.archlinuxcn.org/<span class="nv">$arch</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>修改 AUR 镜像</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">yay --aururl <span class="s2">&#34;https://aur.tuna.tsinghua.edu.cn&#34;</span> --save
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">yay --aururl <span class="s2">&#34;https://aur.archlinux.org/&#34;</span> --save
+</code></pre></td></tr></table>
+</div>
+</div><p>查看 yay 配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">yay -P -g
+</code></pre></td></tr></table>
+</div>
+</div><p>这部分废话这么多主要是因为 manjaro 的 wiki 比较垃圾，又不能照搬 arch 官网的原因。</p>
+<p>虽然不能照搬，但 <a href="https://wiki.archlinux.org/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:Mirrors</a><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> 中的内容还是可以用来参考，毕竟只是二者只是官方仓库不同，逻辑和使用的工具还是一样的。
+<a href="https://wiki.archlinux.org/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:Official repositories</a><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> 同样也可以用来参考。manjaro 的 official repositories 相比于 Arch 的延长了测试期，更安全。</p>
+<p>关于 archlinuxcn 的相关信息可以参考 <a href="https://www.archlinuxcn.org/">Arch Linux中文社区</a><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>。
+关于 archlinuxcn 的 mirrorlist 可以参考 <a href="https://github.com/archlinuxcn/mirrorlist-repo">GitHub:archlinuxcn/mirrorlist-repo</a><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>。</p>
+<h2 id="本地化">本地化</h2>
+<h3 id="更改时区">更改时区</h3>
+<p>一般在安装系统的时候这部分就已经设置好了。如果想更改的话可以用 GUI 的工具，也可以用下面的命令。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">timedatectl set-timezone Asia/Shanghai
+</code></pre></td></tr></table>
+</div>
+</div><p>当然也可以设置成别的。如果中国用户使用 manjaro-Windows 双系统，通常会碰到二者时间相差8小时的问题。这个问题我觉得对我影响不大，就凑合用了。</p>
+<p>关于系统时间以及如何解决时差，可以参考 <a href="https://wiki.archlinux.org/index.php/System_time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:System time</a><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>。</p>
+<h3 id="更改语言设置">更改语言设置</h3>
+<blockquote>
+<p>Locales 被 glibc 和其它需要本地化的应用程序和库用来解析文本(或正确的显示当前区域的某些文字样式,如货币,时间,日期,特殊字符和其他的区域格式)。</p>
+</blockquote>
+<p>具体如何设置请参考 <a href="https://wiki.archlinux.org/index.php/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:Locale</a><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> 以及 <a href="https://wiki.archlinux.org/index.php/Localization/Simplified_Chinese_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29">ArchWiki:Localization/Simplified Chinese</a>[^11]。</p>
+<h3 id="安装和更改中文字体">安装和更改中文字体</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -S wqy-microhei wqy-microhei-lite wqy-bitmapfont wqy-zenhei ttf-arphic-ukai ttf-arphic-uming adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts noto-fonts-cjk
+</code></pre></td></tr></table>
+</div>
+</div><p>以上的字体可以依据需求选择，然后在GUI界面的字体设置中更改喜欢的字体。</p>
+<!-- raw HTML omitted -->
+<p>关于中文字体的设置也可以参考 <a href="https://wiki.archlinux.org/index.php/Localization/Simplified_Chinese_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29">ArchWiki:Localization/Simplified Chinese</a>[^11]。</p>
+<p>另外，manjaro下的字体渲染有很大的问题，<del>更换字体之后会好一些但还是没有Windows舒服，有很多解决办法，但都太折腾了，最简单最高效的办法就是换个高分屏！</del> 实测，用 kde 的GUI 更改字体往往没什么用处，我目前没什么办法。如果有更好的办法可以在评论区留言或者发我邮箱，我将感激不尽。</p>
+<h3 id="输入法">输入法</h3>
+<p>建议使用fcitx。</p>
+<blockquote>
+<p>Fcitx (Flexible Input Method Framework) ──即小企鹅输入法，它是一个以 GPL 方式发布的输入法平台,可以通过安装引擎支持多种输入法，支持简入繁出，是在 Linux 操作系统中常用的中文输入法。它的优点是，短小精悍、跟程序的兼容性比较好。</p>
+</blockquote>
+<p>详细内容请参考 <a href="https://wiki.archlinux.org/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:Fcitx</a><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -S fcitx-im <span class="c1">#包含fcitx以及qt，gtk模块</span>
+sudo pacman -S fcitx-configtool <span class="c1">#配置的GUI程序</span>
+sudo pacman -S fcitx-googlepinyin <span class="c1">#google拼音，不建议用搜狗拼音。</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>运行 <code>fcitx-configtool</code>，添加已经下载好的<code>googlepinyin</code>。</p>
+<p>为注册输入法模块，在<code>/etc/profile</code>(对所有用户有效)中插入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">GTK_MODULE</span><span class="o">=</span>fcitx
+<span class="nb">export</span> <span class="nv">QT_IM_MODULE</span><span class="o">=</span>fcitx
+<span class="nb">export</span> <span class="nv">XMODIFIERS</span><span class="o">=</span><span class="s2">&#34;@im=fcitx&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这几个环境变量有什么用我也不清楚，不出问题的情况下，照做即可。想进一步了解可以参考 <a href="https://wiki.archlinux.org/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:Fcitx</a><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>。这几行对于<code>WPS office</code>中文输入至关重要。</p>
+<p>如果想了解<code>/etc/profile</code>是什么东西，可以参考 <a href="https://wiki.archlinux.org/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:Bash</a><sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>。</p>
+<h2 id="一些经验之谈">一些经验之谈</h2>
+<p>linux，尤其是 arch 系发行版，有一种魔力，可以让你浪费很多时间配置桌面以使他更酷炫。请不要入这个坑。有时间还是要干些别的。</p>
+<p>在workspace behavior中设置双击打开文件更符合习惯。</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>ArchWiki:pacman. <a href="https://wiki.archlinux.org/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>ArchWiki:Arch User Repository. <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>ArchWiki:Mirrors. <a href="https://wiki.archlinux.org/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>ArchWiki:Official repositories. <a href="https://wiki.archlinux.org/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>Arch Linux中文社区。<a href="https://www.archlinuxcn.org/">https://www.archlinuxcn.org/</a> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>GitHub:archlinuxcn/mirrorlist-repo. <a href="https://github.com/archlinuxcn/mirrorlist-repo">https://github.com/archlinuxcn/mirrorlist-repo</a> <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7" role="doc-endnote">
+<p>ArchWiki:System time。<a href="https://wiki.archlinux.org/index.php/System_time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/System_time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8" role="doc-endnote">
+<p>ArchWiki:Locale. <a href="https://wiki.archlinux.org/index.php/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9" role="doc-endnote">
+<p>ArchWiki:Fcitx. <a href="https://wiki.archlinux.org/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10" role="doc-endnote">
+<p>ArchWiki:Bash. <a href="https://wiki.archlinux.org/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">梁康</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-04-08
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank">CC BY-NC-SA 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/donate/wechatpayimg.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/donate/alipayimg.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/manjaro/">manjaro</a>
+          <a href="/tags/linux/">linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/install-linux-practice/">
+            <span class="next-text nav-default">安装linux的实践</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'wYYUrMyih6pOkEIq39OTEcNz-gzGzoHsz',
+        appKey: 'vjpKINB2En1ru9BOP0Nyznfi',
+        notify:  false ,
+        verify:  false ,
+        avatar:'mm',
+        placeholder: '说点什么吧...',
+        visitor:  false 
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:kanglcn@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/kanglcn" class="iconfont icon-github" title="github"></a>
+  <a href="https://kanglcn.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">梁康</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-cn".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script>window.sequenceDiagramsOptions = {theme: 'hand'};</script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

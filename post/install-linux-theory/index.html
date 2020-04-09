@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>安装linux的理论基础 - Kang&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="梁康" /><meta name="description" content="注意： 本文均属个人理解，不能保证准确性，因为我也不专业； 实际的操作系统启动相当复杂，而且更新很快，我所找到资料互相矛盾的很多，所以本文有不对" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="https://kanglcn.github.io/post/install-linux-theory/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="安装linux的理论基础" />
+<meta property="og:description" content="注意： 本文均属个人理解，不能保证准确性，因为我也不专业； 实际的操作系统启动相当复杂，而且更新很快，我所找到资料互相矛盾的很多，所以本文有不对" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanglcn.github.io/post/install-linux-theory/" />
+<meta property="article:published_time" content="2020-04-06T06:09:59+08:00" />
+<meta property="article:modified_time" content="2020-04-06T00:00:00+00:00" />
+<meta itemprop="name" content="安装linux的理论基础">
+<meta itemprop="description" content="注意： 本文均属个人理解，不能保证准确性，因为我也不专业； 实际的操作系统启动相当复杂，而且更新很快，我所找到资料互相矛盾的很多，所以本文有不对">
+<meta itemprop="datePublished" content="2020-04-06T06:09:59&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2992">
+
+
+
+<meta itemprop="keywords" content="manjaro,linux,efi,boot," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="安装linux的理论基础"/>
+<meta name="twitter:description" content="注意： 本文均属个人理解，不能保证准确性，因为我也不专业； 实际的操作系统启动相当复杂，而且更新很快，我所找到资料互相矛盾的很多，所以本文有不对"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Kang&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/donations/">
+        <li class="mobile-menu-item">捐赠</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Kang&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/donations/">捐赠</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">安装linux的理论基础</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-04-06 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 约 2992 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#磁盘分区">磁盘分区</a>
+      <ul>
+        <li><a href="#mbr-方案">MBR 方案</a></li>
+        <li><a href="#gpt-方案">GPT 方案</a></li>
+      </ul>
+    </li>
+    <li><a href="#bootloader">启动引导程序 boot loader</a></li>
+    <li><a href="#文件系统">文件系统</a></li>
+    <li><a href="#计算机开机过程">计算机开机过程</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>注意：</p>
+<ul>
+<li>本文均属个人理解，不能保证准确性，因为我也不专业；</li>
+<li>实际的操作系统启动相当复杂，而且更新很快，我所找到资料互相矛盾的很多，所以本文有不对的地方，很抱歉；</li>
+<li>如果你看完之后没看懂的话很正常，因为我也没搞懂；</li>
+<li>建议做好数据备份再尝试安装系统，如果不成功请多试几次；</li>
+<li>如果不是双系统使用者，请不要阅读本文，直接按照安装提示安装即可；</li>
+<li>如果你稀里糊涂的就安装好的话，那么恭喜你，如果使用得当的话以后就不用折腾了，但我还是建议你看看，万一出问题了呢；</li>
+<li>如果你非要搞清楚这里面的一切细节的话说明你不是本文的受众。</li>
+</ul>
+<h2 id="磁盘分区">磁盘分区</h2>
+<p>磁盘需要分区使用。目前一共由两种分区方案。传统的 MBR 以及新式的 GPT。</p>
+<h3 id="mbr-方案">MBR 方案</h3>
+<p>简单地说，磁盘相当于一块相当大的一维数组，需要分区使用。磁盘由很多个扇区组成，每个扇区是一个基本单元。磁盘的第一个扇区比较重要，主要记录了</p>
+<ul>
+<li>主引导记录 MBR：存储第一阶段的<a href="#bootloader">启动引导程序</a>；</li>
+<li>分区表(partition table)：记录了整块硬盘的分区的状态，由于空间的限制，最多只能分四个分区.</li>
+</ul>
+<p>为了解决这种限制，可以把这四个分区(当然也可以是一个两个或三个)中的一个继续划分。没有继续划分的分区称为主分区(primary partition)，继续划分的分区称为扩展分区(extended partition)。扩展分区继续划分的分区称为逻辑分区(logical partition)。</p>
+<h3 id="gpt-方案">GPT 方案</h3>
+<p>GPT 是一种新式的磁盘分区方案，其作用和 MBR 类似但比 MBR 占用更多的空间，兼容 MBR ，只有主分区，且没有数量限制，建议使用。</p>
+<p>关于磁盘分区的相关内容可以参考<a href="https://wiki.archlinux.org/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:Partitioning</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
+<p>关于MBR的相关内容可以参考<a href="https://zh.wikipedia.org/wiki/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95">Wikipedia:主引导记录</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
+<p>关于GPT的相关内容可以参考<a href="https://zh.wikipedia.org/wiki/GUID%E7%A3%81%E7%A2%9F%E5%88%86%E5%89%B2%E8%A1%A8">Wikipedia:全局唯一标识分区表</a><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>。</p>
+<p>没有兴趣搞懂这些只想让自己电脑能正常工作的知道有这两种方案就行了。</p>
+<h2 id="bootloader">启动引导程序 boot loader</h2>
+<p>boot loader 是用来识别操作系统的<a href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">文件系统</a>并读取系统内核加载到内存的程序。</p>
+<p>常见的 boot loader 有常用于 linux 引导的 GRUB ，Windows 专用的 Windows 启动管理器。</p>
+<p>boot loader 主要有三个功能：</p>
+<ul>
+<li>加载内核文件启动操作系统；</li>
+<li>将启动管理权转交给其他的 boot loader；</li>
+<li>提供不同的选项供选择。
+即 boot loader 启动后，你可以选择加载可以选择的某一个操作系统的内核。这为同一台电脑安装多个系统提供了技术支撑。</li>
+</ul>
+<p>关于 GRUB 的相关内容可以参考<a href="https://wiki.archlinux.org/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#UEFI_%E7%B3%BB%E7%BB%9F">ArchWiki:GRUB</a><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>。</p>
+<h2 id="文件系统">文件系统</h2>
+<p>文件系统是在存储设备上组织文件的方法。存储设备可以看成一个很长的数组，如何在这个数组上组织文件，比如形成树状的目录结构，依赖于文件系统。所以本质上说，文件系统就是一种数据结构。</p>
+<p>目前 Windows 主要使用 NTFS 文件系统，linux 主要使用 Ext4 文件系统。操作系统可以支持各种各样的文件系统，比如linux 几乎支持所有的文件系统。所以能在 Windows 系统下使用的 NTFS 文件系统的U盘，可以直接在 linux 系统的机器上使用。</p>
+<p>每个分区有自己的文件系统，定义了该分区存储空间的组织方式。</p>
+<p>有时候，我们把可被挂载的一个对象称为一个文件系统。</p>
+<p>文件系统都会保留一块启动扇区(boot sector),用来提供操作系统安装 boot loader。而操作系统会其根目录所在的文件系统的启动扇区写入一个boot loader 用来引导该操作系统的启动。这就解释了为什么制作启动 U 盘时必须要格式化整个 U 盘，因为需要通过格式化划定新的启动扇区，并写入 U 盘里的用来安装新系统的小型操作系统的 boot loader。</p>
+<p>关于文件系统的详细描述可以参考<a href="http://linux.vbird.org/linux_basic/0230filesystem.php">鸟哥的linux私房菜:第七章，linux磁碟与档案系统管理</a><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>。</p>
+<h2 id="计算机开机过程">计算机开机过程</h2>
+<p>当按下开机键时，首先启动 BIOS ，它储存在主板的一块闪存上，和硬盘相互独立。新型的 BIOS 称为 UEFI。UEFI主流都支持 MBR 和 GPT 分区方案。</p>
+<p>UEFI + GPT 是目前最先进的方案。</p>
+<p>关于 BIOS 的详细描述可以参考<a href="https://zh.wikipedia.org/wiki/BIOS">Wikipedia:BIOS</a><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>中的相关内容。</p>
+<p>关于 UEFI 的详细描述可以参考<a href="https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:UEFI</a><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>中的相关内容。</p>
+<p>下面以一个 Windows-linux 双系统的例子说明整个过程。</p>
+<p>你可以在 Windows 下的磁盘管理中找到一块 EFI 分区，文件系统为 FAT32，里面存储了操作系统的引导程序。</p>
+<p>开机后，UEFI会主动寻找 EFI 分区，然后按照某一顺序读取 EFI 分区中的 boot loader。linux 下的 EFI 分区挂载在 <code>/boot/efi</code> 中，以我的计算机为例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>kanglcn-pc efi<span class="o">]</span><span class="c1"># ls</span>
+EFI
+<span class="o">[</span>kanglcn-pc efi<span class="o">]</span><span class="c1"># cd EFI/</span>
+<span class="o">[</span>kanglcn-pc EFI<span class="o">]</span><span class="c1"># ls</span>
+Boot  Manjaro  Microsoft
+<span class="o">[</span>kanglcn-pc EFI<span class="o">]</span><span class="c1"># cd Manjaro/</span>
+<span class="o">[</span>kanglcn-pc Manjaro<span class="o">]</span><span class="c1"># ls</span>
+grubx64.efi
+</code></pre></td></tr></table>
+</div>
+</div><p>这里的<code>grubx64.efi</code>就是 grub 程序。</p>
+<p>当只安装 Windows 系统时，EFI 分区中只有 Windows 的启动分区。当再安装一个 linux 系统时，会向 EFI 分区中写入 grub 程序，安装时能够修改 UEFI 的默认设置，首先启动 grub。而且安装时 grub 会识别 Windows 的 boot loader，并加入到自己的选项当中。</p>
+<p>所以当开机后，UEFI 会运行 grub 程序，grub 程序会提供进入 linux 还是 Windows 的选项，选择希望的选项，就会加载相应的系统内核到内存中，计算机就启动完毕了。</p>
+<p>grub 实际上是跨平台的 boot loader。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>关于 EFI 分区可以参考<a href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:EFI system partition</a><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>。
+关于 linux 系统的启动过程可以参考<a href="https://wiki.archlinux.org/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#UEFI">ArchWiki:Arch boot process</a><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>。
+关于 Windows 和 linux 双系统的安装可以参考<a href="https://wiki.archlinux.org/index.php/Dual_boot_with_Windows_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:Dual boot with Windows</a><sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>。</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Arch Wiki 中关于磁盘分区的相关内容。<a href="https://wiki.archlinux.org/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Wikipendia 中关于MBR的相关内容。 <a href="https://zh.wikipedia.org/wiki/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95">https://zh.wikipedia.org/wiki/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Wikipendia 中关于GPT的相关内容。<a href="https://zh.wikipedia.org/wiki/GUID%E7%A3%81%E7%A2%9F%E5%88%86%E5%89%B2%E8%A1%A8">https://zh.wikipedia.org/wiki/GUID%E7%A3%81%E7%A2%9F%E5%88%86%E5%89%B2%E8%A1%A8</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Arch Wiki 中关于磁盘分区的相关内容。<a href="https://wiki.archlinux.org/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#UEFI_%E7%B3%BB%E7%BB%9F">https://wiki.archlinux.org/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#UEFI_%E7%B3%BB%E7%BB%9F</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>鸟哥的linux私房菜中关于文件系统的内容。<a href="http://linux.vbird.org/linux_basic/0230filesystem.php">http://linux.vbird.org/linux_basic/0230filesystem.php</a> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>Wikipedia中关于BIOS的内容。<a href="https://zh.wikipedia.org/wiki/BIOS">https://zh.wikipedia.org/wiki/BIOS</a> <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7" role="doc-endnote">
+<p>Arch Wiki 中关于UEFI的相关内容。<a href="https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8" role="doc-endnote">
+<p>Arch Wiki 中关于EFI分区的相关内容。<a href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9" role="doc-endnote">
+<p>Arch Wiki 中关于UEFI的相关内容。<a href="https://wiki.archlinux.org/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#UEFI">https://wiki.archlinux.org/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#UEFI</a> <a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10" role="doc-endnote">
+<p>Arch Wiki 中关于双系统引导的相关内容。<a href="https://wiki.archlinux.org/index.php/Dual_boot_with_Windows_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">https://wiki.archlinux.org/index.php/Dual_boot_with_Windows_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a> <a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">梁康</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-04-06
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank">CC BY-NC-SA 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/donate/wechatpayimg.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/donate/alipayimg.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/manjaro/">manjaro</a>
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/efi/">efi</a>
+          <a href="/tags/boot/">boot</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/install-linux-practice/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">安装linux的实践</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/hi/">
+            <span class="next-text nav-default">Hello World!</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'wYYUrMyih6pOkEIq39OTEcNz-gzGzoHsz',
+        appKey: 'vjpKINB2En1ru9BOP0Nyznfi',
+        notify:  false ,
+        verify:  false ,
+        avatar:'mm',
+        placeholder: '说点什么吧...',
+        visitor:  false 
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:kanglcn@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/kanglcn" class="iconfont icon-github" title="github"></a>
+  <a href="https://kanglcn.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">梁康</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-cn".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script>window.sequenceDiagramsOptions = {theme: 'hand'};</script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
