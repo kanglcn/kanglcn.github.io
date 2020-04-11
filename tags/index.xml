@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 08 Apr 2020 06:42:59 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2020 07:42:59 +0800</lastBuildDate>
     
 	<atom:link href="https://kanglcn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>linux</title>
       <link>https://kanglcn.github.io/tags/linux/</link>
-      <pubDate>Wed, 08 Apr 2020 06:42:59 +0800</pubDate>
+      <pubDate>Sat, 11 Apr 2020 07:42:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>https://kanglcn.github.io/tags/software/</link>
+      <pubDate>Sat, 11 Apr 2020 07:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/software/</guid>
       <description></description>
     </item>
     

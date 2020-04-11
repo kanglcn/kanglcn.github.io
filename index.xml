@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>liux 下安装常用软件</title>
+      <link>https://kanglcn.github.io/post/general-software/</link>
+      <pubDate>Sat, 11 Apr 2020 07:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/general-software/</guid>
+      <description>Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo pacman -S netease-cloud-music #网易云音乐 WPS Office 1 2 3 sudo</description>
+    </item>
+    
+    <item>
       <title>linux 系统的初步配置</title>
       <link>https://kanglcn.github.io/post/linux-init/</link>
       <pubDate>Wed, 08 Apr 2020 06:42:59 +0800</pubDate>
