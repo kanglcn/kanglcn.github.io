@@ -48,7 +48,7 @@
 <meta itemprop="description" content="Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo pacman -S netease-cloud-music #网易云音乐 WPS Office 1 2 3 sudo">
 <meta itemprop="datePublished" content="2020-04-11T07:42:59&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-11T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1074">
+<meta itemprop="wordCount" content="1008">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 1074 字 </span>
+          <span class="more-meta"> 约 1008 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -156,7 +156,7 @@
       </ul>
     </li>
     <li><a href="#linux-下的-qq-和微信">linux 下的 QQ 和微信</a></li>
-    <li><a href="#关于rm">关于rm</a></li>
+    <li><a href="#关于-rm">关于 rm</a></li>
   </ul>
 </nav>
   </div>
@@ -214,8 +214,7 @@ sudo pacman -S texlive-langchinese  <span class="c1">#texlive的中文支持</sp
 sudo pacman -S texstudio
 </code></pre></td></tr></table>
 </div>
-</div><p>$$a^2+2=1$$
-texstudio 是一款专业的 $LaTeX$ 编辑器，提供语法高亮。</p>
+</div><p>texstudio 是一款专业的 $LaTeX$ 编辑器，提供语法高亮。</p>
 <p>设置texstudio的 <code>default compiler</code> 为 <code>xelatex</code>，这是目前最好用的 $TeX$ 发行版。</p>
 <h4 id="texmacs">texmacs</h4>
 <div class="highlight"><div class="chroma">
@@ -228,7 +227,8 @@ texstudio 是一款专业的 $LaTeX$ 编辑器，提供语法高亮。</p>
 </div>
 </div><p>Texmacs 是一款跨平台的所见即所的的编辑器，吸取了 tex 的优点，但和 tex 不是一个东西，可以显著提高数学公式的输入体验和速度。</p>
 <h2 id="linux-下的-qq-和微信">linux 下的 QQ 和微信</h2>
-<p>linux下是没有好用的腾讯系通讯软件，<code>QQ for linux</code>是官方出的唯一一款运行在linux下的通讯软件。但是，它经常崩溃而且脱胎于上古时期的qq，功能极少，不建议使用。</p>
+<p><del>linux下是没有好用的腾讯系通讯软件，<code>QQ for linux</code>是官方出的唯一一款运行在linux下的通讯软件。但是，它经常崩溃而且脱胎于上古时期的qq，功能极少，不建议使用。</del></p>
+<p>2020-04-11 update: 目前 <code>QQ for linux</code> 已经不再闪退，可以安装使用。</p>
 <p>另一个选择是基于wine的软件，wine是运行于linux下的windows环境模拟工具，本质上是套娃。目前兼容性的问题很大，所以除了已有的很成熟的软件之外，别的都不推荐。关于wine可以参考<a href="https://www.winehq.org/">Wine homepage</a>。</p>
 <p>基于wine的目前最稳定的qq和微信可以在AUR中找到</p>
 <div class="highlight"><div class="chroma">
@@ -241,10 +241,10 @@ texstudio 是一款专业的 $LaTeX$ 编辑器，提供语法高亮。</p>
 yay -S deepin-wine-wechat <span class="c1">#微信</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>wine会使默认的浏览器更改，这时要删掉<code>～/.local/share/applications/wine*.desktop</code>
-然后<code>update-mime-database ~/.local/share/mime</code></p>
-<h2 id="关于rm">关于rm</h2>
-<p>rm是一个很危险的命令。我的建议是除非需要在别的计算机上运行，否则一律改用<code>trash-cli</code>，<code>trash-cli</code>的语法和<code>rm</code>不一致。或者使用<code>rmtrash</code>，<code>rmtrash</code>是<code>trash-cli</code>的封装版，和<code>rm</code>语法兼容。这两个工具提供垃圾回收机制，确保安全。我建议即使要在别的计算机上运行，也要在测试稳定之后再把<code>rmtrash</code>换成<code>rm</code>。</p>
+</div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="关于-rm">关于 rm</h2>
+<p>rm 是一个很危险的命令。我的建议是除非需要在别的计算机上运行，否则一律改用<code>trash-cli</code>，<code>trash-cli</code>的语法和<code>rm</code>不一致。或者使用<code>rmtrash</code>，<code>rmtrash</code>是<code>trash-cli</code>的封装版，和<code>rm</code>语法兼容。这两个工具提供垃圾回收机制，确保安全。我建议即使要在别的计算机上运行，也要在测试稳定之后再把<code>rmtrash</code>换成<code>rm</code>。</p>
 <p><code>rmtrash</code>使用 <code>trash-list</code>列出文件，<code>trash-restore</code> restore文件，使用 <code>trash-empty</code> empty trashcan。进一步了解<code>rmtrash</code>可以参考<a href="https://github.com/PhrozenByte/rmtrash">Github:rmtrash</a>。</p>
 <p>下载</p>
 <div class="highlight"><div class="chroma">
