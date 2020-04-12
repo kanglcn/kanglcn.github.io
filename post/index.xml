@@ -6,10 +6,55 @@
     <description>Recent content in Posts on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Apr 2020 07:42:59 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 06:42:59 +0800</lastBuildDate>
     
 	<atom:link href="https://kanglcn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git 使用笔记</title>
+      <link>https://kanglcn.github.io/post/git/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/git/</guid>
+      <description>注意： 本文不打算详细地叙述 git 的使用，而是我自己的一些笔记，方便快速查询； 所以请先阅读廖雪峰的官方网站：Git教程1； 如果遇到问题，还是要先阅</description>
+    </item>
+    
+    <item>
+      <title>python配置</title>
+      <link>https://kanglcn.github.io/post/python-config/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/python-config/</guid>
+      <description>sudo pacman -S fish # 一个用户友好的shell，注意不兼容bash 更换python国内源 1 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 安装常用python包 1 pip install numpy matplotlib jupyter notebook ... 注意这些包是安</description>
+    </item>
+    
+    <item>
+      <title>shell 以及环境变量</title>
+      <link>https://kanglcn.github.io/post/shell-environment-variables/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/shell-environment-variables/</guid>
+      <description>注意: 本文以 bash 为例，但其他种 shell 类似。 四种不同的shell interactive 和 noninteractive，login 和 nonlogin 共形成了四种 shell 的打开方式。 我们在 GUI 界</description>
+    </item>
+    
+    <item>
+      <title>VScode 配置与使用</title>
+      <link>https://kanglcn.github.io/post/vscode/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/vscode/</guid>
+      <description>本文介绍 VS code 的安装使用以及常用插件使用。 安装 1 sudo pacman -S visual-studio-code-bin 注意这里下载的是 VS code 的闭源版本。 插件 Setting Sync 使用本插件需要使用 github，可以参考git</description>
+    </item>
+    
+    <item>
+      <title>一次开机引导的bug</title>
+      <link>https://kanglcn.github.io/post/efi-bug/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/efi-bug/</guid>
+      <description>UEFIboot 是个非常深的坑，其内容相当地复杂，在使用双系统时常容易出错。这里记录一个我出错的问题。 一次我在 BIOS 界面里把启动方式由 UFEI 改为 legancy，开</description>
+    </item>
     
     <item>
       <title>liux 下安装常用软件</title>
@@ -17,7 +62,16 @@
       <pubDate>Sat, 11 Apr 2020 07:42:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/post/general-software/</guid>
-      <description>Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo pacman -S netease-cloud-music #网易云音乐 WPS Office 1 2 3 sudo</description>
+      <description>本文介绍 linux 下的常用软件的安装。 Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo</description>
+    </item>
+    
+    <item>
+      <title>下载安装 MATLAB 以及 stamps</title>
+      <link>https://kanglcn.github.io/post/install-matlab-stamps/</link>
+      <pubDate>Sat, 11 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/install-matlab-stamps/</guid>
+      <description>安装 matlab 登录 mathworks1 帐号，下载在线安装包并解压，不是 .iso 文件，那是离线的。 切换到 root 用户 1 sudo su 运行 install 1 bash install matlab 默认安装在 /usr/local/MATLAB/R2019b 中，并在 /usr/bin 中定义一个 link 链接到 ma</description>
     </item>
     
     <item>
@@ -26,11 +80,11 @@
       <pubDate>Wed, 08 Apr 2020 06:42:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/post/linux-init/</guid>
-      <description>本文谈谈安装完 linux 系统之后，如何打造合适的中文环境。 首先更新软件 1 sudo pacman -Syyu pacman 是 arch 系的包管理软件，关于 pacman 的详细信息可以参考 ArchWiki:pac</description>
+      <description>本文谈谈安装完 linux 系统之后，如何打造合适的中文使用环境。 初次接触 linux 的读者请先阅读安装 linux 的理论基础以及安装 linux 的实践。 首先更新软件 1 sudo pacman -Syyu pacman 是 arch 系</description>
     </item>
     
     <item>
-      <title>安装linux的实践</title>
+      <title>安装 linux 的实践</title>
       <link>https://kanglcn.github.io/post/install-linux-practice/</link>
       <pubDate>Tue, 07 Apr 2020 08:42:59 +0800</pubDate>
       
@@ -39,21 +93,12 @@
     </item>
     
     <item>
-      <title>安装linux的理论基础</title>
+      <title>安装 linux 的理论基础</title>
       <link>https://kanglcn.github.io/post/install-linux-theory/</link>
       <pubDate>Mon, 06 Apr 2020 06:09:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/post/install-linux-theory/</guid>
       <description>注意： 本文均属个人理解，不能保证准确性，因为我也不专业； 实际的操作系统启动相当复杂，而且更新很快，我所找到资料互相矛盾的很多，所以本文有不对</description>
-    </item>
-    
-    <item>
-      <title>Hello World!</title>
-      <link>https://kanglcn.github.io/post/hi/</link>
-      <pubDate>Mon, 06 Apr 2020 05:37:51 +0800</pubDate>
-      
-      <guid>https://kanglcn.github.io/post/hi/</guid>
-      <description>Hello World!</description>
     </item>
     
   </channel>

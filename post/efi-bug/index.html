@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>一次开机引导的bug - Kang&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="梁康" /><meta name="description" content="UEFIboot 是个非常深的坑，其内容相当地复杂，在使用双系统时常容易出错。这里记录一个我出错的问题。 一次我在 BIOS 界面里把启动方式由 UFEI 改为 legancy，开" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="https://kanglcn.github.io/post/efi-bug/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="一次开机引导的bug" />
+<meta property="og:description" content="UEFIboot 是个非常深的坑，其内容相当地复杂，在使用双系统时常容易出错。这里记录一个我出错的问题。 一次我在 BIOS 界面里把启动方式由 UFEI 改为 legancy，开" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanglcn.github.io/post/efi-bug/" />
+<meta property="article:published_time" content="2020-04-12T06:42:59+08:00" />
+<meta property="article:modified_time" content="2020-04-12T00:00:00+00:00" />
+<meta itemprop="name" content="一次开机引导的bug">
+<meta itemprop="description" content="UEFIboot 是个非常深的坑，其内容相当地复杂，在使用双系统时常容易出错。这里记录一个我出错的问题。 一次我在 BIOS 界面里把启动方式由 UFEI 改为 legancy，开">
+<meta itemprop="datePublished" content="2020-04-12T06:42:59&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="662">
+
+
+
+<meta itemprop="keywords" content="linux,BIOS,UEFI,EFI," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="一次开机引导的bug"/>
+<meta name="twitter:description" content="UEFIboot 是个非常深的坑，其内容相当地复杂，在使用双系统时常容易出错。这里记录一个我出错的问题。 一次我在 BIOS 界面里把启动方式由 UFEI 改为 legancy，开"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Kang&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/donations/">
+        <li class="mobile-menu-item">捐赠</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Kang&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/donations/">捐赠</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">一次开机引导的bug</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-04-12 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 约 662 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>UEFIboot 是个非常深的坑，其内容相当地复杂，在使用双系统时常容易出错。这里记录一个我出错的问题。</p>
+<p>一次我在 BIOS 界面里把启动方式由 UFEI 改为 legancy，开机直接进入 windows，没有进入 grub 选项，后来我改为 UEFI 之后，同样没有进入 grub 选项，但实际上我的 efi 分区完好。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>kanglcn-pc EFI<span class="o">]</span><span class="c1"># ls</span>
+Boot  Manjaro  Microsoft
+<span class="o">[</span>kanglcn-pc EFI<span class="o">]</span><span class="c1"># pwd</span>
+/boot/efi/EFI
+<span class="o">[</span>kanglcn-pc EFI<span class="o">]</span>#
+<span class="o">[</span>kanglcn-pc EFI<span class="o">]</span><span class="c1"># cd Manjaro/</span>
+<span class="o">[</span>kanglcn-pc Manjaro<span class="o">]</span><span class="c1"># ls</span>
+grubx64.efi
+<span class="o">[</span>kanglcn-pc Manjaro<span class="o">]</span><span class="c1"># cd ../Microsoft/</span>
+<span class="o">[</span>kanglcn-pc Microsoft<span class="o">]</span><span class="c1"># ls</span>
+Boot  Recovery
+</code></pre></td></tr></table>
+</div>
+</div><p>我在参考网上一片文章<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>之后找到了原因。</p>
+<p>实际上，EFI 分区里有各种各样的启动引导程序，那么该选那一个开始引导呢，这个定义在电脑的固件上。在 linux 的 root 用户下可以使用 <code>efibootmgr</code> 更改</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>kanglcn@kanglcn-pc ~<span class="o">]</span>$ efibootmgr -v
+BootCurrent: <span class="m">0006</span>
+Timeout: <span class="m">0</span> seconds
+BootOrder: 0003,2003,2001,2002
+Boot0000* EFI Network <span class="m">0</span> <span class="k">for</span> IPv4 <span class="o">(</span>50-7B-9D-B9-8F-8C<span class="o">)</span>    PciRoot<span class="o">(</span>0x0<span class="o">)</span>/Pci<span class="o">(</span>0x1c,0x3<span class="o">)</span>/Pci<span class="o">(</span>0x0,0x0<span class="o">)</span>/MAC<span class="o">(</span>507b9db98f8c,0<span class="o">)</span>/IPv4<span class="o">(</span>0.0.0.00.0.0.0,0,0<span class="o">)</span>RC
+Boot0001* EFI Network <span class="m">0</span> <span class="k">for</span> IPv6 <span class="o">(</span>50-7B-9D-B9-8F-8C<span class="o">)</span>    PciRoot<span class="o">(</span>0x0<span class="o">)</span>/Pci<span class="o">(</span>0x1c,0x3<span class="o">)</span>/Pci<span class="o">(</span>0x0,0x0<span class="o">)</span>/MAC<span class="o">(</span>507b9db98f8c,0<span class="o">)</span>/IPv6<span class="o">([</span>::<span class="o">]</span>:&lt;-&gt;<span class="o">[</span>::<span class="o">]</span>:,0,0<span class="o">)</span>RC
+Boot0003* Windows Boot Manager  HD<span class="o">(</span>2,GPT,c4008fc7-30d7-40f3-bf5a-fbbabf6bd589,0xfa000,0x31800<span class="o">)</span>/File<span class="o">(</span><span class="se">\E</span>FI<span class="se">\M</span>icrosoft<span class="se">\B</span>oot<span class="se">\b</span>ootmgfw.efi<span class="o">)</span>RC
+Boot0005* ubuntu        HD<span class="o">(</span>2,GPT,c4008fc7-30d7-40f3-bf5a-fbbabf6bd589,0xfa000,0x31800<span class="o">)</span>/File<span class="o">(</span><span class="se">\E</span>FI<span class="se">\u</span>buntu<span class="se">\s</span>himx64.efi<span class="o">)</span>RC
+Boot0006* Windows Boot Manager  HD<span class="o">(</span>2,GPT,c4008fc7-30d7-40f3-bf5a-fbbabf6bd589,0xfa000,0x31800<span class="o">)</span>/File<span class="o">(</span><span class="se">\E</span>FI<span class="se">\m</span>anjaro<span class="se">\g</span>rubx64.efi<span class="o">)</span>WINDOWS.........x...B.C.D.O.B.J.E.C.T.<span class="o">=</span>.<span class="o">{</span>.9.d.e.a.8.6.2.c.-.5.c.d.d.-.4.e.7.0.-.a.c.c.1.-.f.3.2.b.3.4.4.d.4.7.9.5.<span class="o">}</span>...M................
+Boot2001* EFI USB Device        RC
+Boot2002* EFI DVD/CDROM RC
+Boot2003* EFI Network   RC
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看到我的电脑的启动配置相当混乱，有我以前用过的 <code>ubuntu</code> 的残留</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">Boot0005* ubuntu        HD<span class="o">(</span>2,GPT,c4008fc7-30d7-40f3-bf5a-fbbabf6bd589,0xfa000,0x31800<span class="o">)</span>/File<span class="o">(</span><span class="se">\E</span>FI<span class="se">\u</span>buntu<span class="se">\s</span>himx64.efi<span class="o">)</span>RC
+</code></pre></td></tr></table>
+</div>
+</div><p>而且注意到</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">Boot0006* Windows Boot Manager  HD<span class="o">(</span>2,GPT,c4008fc7-30d7-40f3-bf5a-fbbabf6bd589,0xfa000,0x31800<span class="o">)</span>/File<span class="o">(</span><span class="se">\E</span>FI<span class="se">\m</span>anjaro<span class="se">\g</span>rubx64.efi<span class="o">)</span>WINDOWS.........x...B.C.D.O.B.J.E.C.T.<span class="o">=</span>.<span class="o">{</span>.9.d.e.a.8.6.2.c.-.5.c.d.d.-.4.e.7.0.-.a.c.c.1.-.f.3.2.b.3.4.4.d.4.7.9.5.<span class="o">}</span>...M................
+</code></pre></td></tr></table>
+</div>
+</div><p>这表明此选项使用的是 <code>\EFI\manjaro\grubx64.efi</code> 引导程序启动，但名字却改成了 <code>Windows Boot Manager</code>。而且 boot 的顺序为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">BootOrder: 0003,2003,2001,2002
+</code></pre></td></tr></table>
+</div>
+</div><p>怪不得每次开机进入不了 manjaro。</p>
+<p>使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>kanglcn-pc kanglcn<span class="o">]</span><span class="c1"># efibootmgr -o 6</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>将 <code>Boot0006</code> 提升到顺序的第一位。然后重启电脑，问题解决。
+但是名字还是 <code>Windows Boot Manager</code>，凑合用吧。</p>
+<p>这个问题告诉我们，windows 每次大的升级都有可能更改电脑固件的配置信息，很有可能你的 linux 系统就打不开了，所以双系统并不是稳定的选择，如果你不想折腾的话。</p>
+<p>有人可能会疑问，为什么你的 <code>manjaro</code> 引导出问题你还能进入 <code>manjaro</code> 系统，我使用的是装在 U 盘里的 liveCD，就是我们安装系统的启动 U 盘，它除了安装系统外，还有识别 EFI 分区引导程序并提供选择的功能。</p>
+<p>关于 <code>efibootmgr</code> 如何使用请参考其 man page。</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>UEFI boot: how does that actually work, then? <a href="https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/">https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">梁康</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-04-12
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank">CC BY-NC-SA 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/donate/wechatpayimg.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/donate/alipayimg.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/bios/">BIOS</a>
+          <a href="/tags/uefi/">UEFI</a>
+          <a href="/tags/efi/">EFI</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/vscode/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">VScode 配置与使用</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/general-software/">
+            <span class="next-text nav-default">liux 下安装常用软件</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'wYYUrMyih6pOkEIq39OTEcNz-gzGzoHsz',
+        appKey: 'vjpKINB2En1ru9BOP0Nyznfi',
+        notify:  false ,
+        verify:  false ,
+        avatar:'mm',
+        placeholder: '说点什么吧...',
+        visitor:  false 
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:kanglcn@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/kanglcn" class="iconfont icon-github" title="github"></a>
+  <a href="https://kanglcn.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">梁康</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-cn".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script>window.sequenceDiagramsOptions = {theme: 'simple'};</script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

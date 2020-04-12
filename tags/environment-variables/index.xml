@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>environment variables on Kang&#39;s blog</title>
+    <link>https://kanglcn.github.io/tags/environment-variables/</link>
+    <description>Recent content in environment variables on Kang&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 12 Apr 2020 06:42:59 +0800</lastBuildDate>
+    
+	<atom:link href="https://kanglcn.github.io/tags/environment-variables/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>shell 以及环境变量</title>
+      <link>https://kanglcn.github.io/post/shell-environment-variables/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/shell-environment-variables/</guid>
+      <description>注意: 本文以 bash 为例，但其他种 shell 类似。 四种不同的shell interactive 和 noninteractive，login 和 nonlogin 共形成了四种 shell 的打开方式。 我们在 GUI 界</description>
+    </item>
+    
+  </channel>
+</rss>

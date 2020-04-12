@@ -6,17 +6,116 @@
     <description>Recent content in Tags on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Apr 2020 07:42:59 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 Apr 2020 06:42:59 +0800</lastBuildDate>
     
 	<atom:link href="https://kanglcn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>bash</title>
+      <link>https://kanglcn.github.io/tags/bash/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BIOS</title>
+      <link>https://kanglcn.github.io/tags/bios/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/bios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>config</title>
+      <link>https://kanglcn.github.io/tags/config/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/config/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>efi</title>
+      <link>https://kanglcn.github.io/tags/efi/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/efi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>environment variables</title>
+      <link>https://kanglcn.github.io/tags/environment-variables/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/environment-variables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://kanglcn.github.io/tags/git/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>linux</title>
       <link>https://kanglcn.github.io/tags/linux/</link>
-      <pubDate>Sat, 11 Apr 2020 07:42:59 +0800</pubDate>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://kanglcn.github.io/tags/python/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://kanglcn.github.io/tags/shell/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sync</title>
+      <link>https://kanglcn.github.io/tags/sync/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/sync/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UEFI</title>
+      <link>https://kanglcn.github.io/tags/uefi/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/uefi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://kanglcn.github.io/tags/vscode/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/vscode/</guid>
       <description></description>
     </item>
     
@@ -26,6 +125,24 @@
       <pubDate>Sat, 11 Apr 2020 07:42:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matlab</title>
+      <link>https://kanglcn.github.io/tags/matlab/</link>
+      <pubDate>Sat, 11 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/matlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stamps</title>
+      <link>https://kanglcn.github.io/tags/stamps/</link>
+      <pubDate>Sat, 11 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/stamps/</guid>
       <description></description>
     </item>
     
@@ -44,15 +161,6 @@
       <pubDate>Mon, 06 Apr 2020 06:09:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/tags/boot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>efi</title>
-      <link>https://kanglcn.github.io/tags/efi/</link>
-      <pubDate>Mon, 06 Apr 2020 06:09:59 +0800</pubDate>
-      
-      <guid>https://kanglcn.github.io/tags/efi/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Kang&#39;s blog</title>
+    <link>https://kanglcn.github.io/tags/git/</link>
+    <description>Recent content in git on Kang&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 12 Apr 2020 06:42:59 +0800</lastBuildDate>
+    
+	<atom:link href="https://kanglcn.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>git 使用笔记</title>
+      <link>https://kanglcn.github.io/post/git/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/git/</guid>
+      <description>注意： 本文不打算详细地叙述 git 的使用，而是我自己的一些笔记，方便快速查询； 所以请先阅读廖雪峰的官方网站：Git教程1； 如果遇到问题，还是要先阅</description>
+    </item>
+    
+  </channel>
+</rss>

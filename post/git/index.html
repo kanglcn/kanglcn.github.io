@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>git 使用笔记 - Kang&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="梁康" /><meta name="description" content="注意： 本文不打算详细地叙述 git 的使用，而是我自己的一些笔记，方便快速查询； 所以请先阅读廖雪峰的官方网站：Git教程1； 如果遇到问题，还是要先阅" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="https://kanglcn.github.io/post/git/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="git 使用笔记" />
+<meta property="og:description" content="注意： 本文不打算详细地叙述 git 的使用，而是我自己的一些笔记，方便快速查询； 所以请先阅读廖雪峰的官方网站：Git教程1； 如果遇到问题，还是要先阅" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanglcn.github.io/post/git/" />
+<meta property="article:published_time" content="2020-04-12T06:42:59+08:00" />
+<meta property="article:modified_time" content="2020-04-12T00:00:00+00:00" />
+<meta itemprop="name" content="git 使用笔记">
+<meta itemprop="description" content="注意： 本文不打算详细地叙述 git 的使用，而是我自己的一些笔记，方便快速查询； 所以请先阅读廖雪峰的官方网站：Git教程1； 如果遇到问题，还是要先阅">
+<meta itemprop="datePublished" content="2020-04-12T06:42:59&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1716">
+
+
+
+<meta itemprop="keywords" content="git," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git 使用笔记"/>
+<meta name="twitter:description" content="注意： 本文不打算详细地叙述 git 的使用，而是我自己的一些笔记，方便快速查询； 所以请先阅读廖雪峰的官方网站：Git教程1； 如果遇到问题，还是要先阅"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Kang&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="/donations/">
+        <li class="mobile-menu-item">捐赠</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Kang&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/donations/">捐赠</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">git 使用笔记</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-04-12 </span>
+        <div class="post-category">
+            <a href="/categories/software/"> software </a>
+            </div>
+          <span class="more-meta"> 约 1716 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#git-安装">git 安装</a></li>
+    <li><a href="#git文件管理">git文件管理</a></li>
+    <li><a href="#git-远程仓库与-github">git 远程仓库与 github</a></li>
+    <li><a href="#git-分支管理">git 分支管理</a></li>
+    <li><a href="#有远端参与的分支管理">有远端参与的分支管理</a></li>
+    <li><a href="#git-submodule-子模块">git submodule 子模块</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>注意：</p>
+<ul>
+<li>本文不打算详细地叙述 git 的使用，而是我自己的一些笔记，方便快速查询；</li>
+<li>所以请先阅读<a href="https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html">廖雪峰的官方网站：Git教程</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>；</li>
+<li>如果遇到问题，还是要先阅读相关的教程。</li>
+</ul>
+<h2 id="git-安装">git 安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -S git
+sudo pacman -S lazygit <span class="c1">#git 辅助工具，不建议新手使用</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="git文件管理">git文件管理</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git init <span class="c1">#初始化</span>
+git add <span class="o">[</span>file<span class="o">]</span> <span class="c1">#把工作区的修改提交到暂存区</span>
+git commit -m <span class="s2">&#34;...&#34;</span> <span class="c1">#把暂存区的内容提交到master分支并做评论</span>
+git diff <span class="o">[</span>file<span class="o">]</span> <span class="c1">#查看区别</span>
+git log <span class="c1">#commit的日志</span>
+git reset --hard HEAD^ <span class="c1">#返回当前版本的上一个版本，也可以直接用commit id，</span>
+<span class="c1">#git reset 之后会把工作区和暂存区中的所有改变清空，返回上一个版本，返回后暂存区是空的。</span>
+git reflog <span class="c1">#记录命令的日志</span>
+git diff HEAD -- readme.txt <span class="c1">#命令可以查看工作区和版本库里面最新版本的区别 和上面的相同</span>
+git checkout -- <span class="o">[</span>file<span class="o">]</span> <span class="c1">#回到最近一次git commit 或者 git add 时的状态，适用于撤销没有add的修改</span>
+git reset HEAD <span class="o">[</span>file<span class="o">]</span> <span class="c1">#丢弃暂存区相对于master版本库的修改，适用于add之后的修改，回到了上一个问题</span>
+git rm <span class="o">[</span>file<span class="o">]</span> <span class="c1">#删除文件，只add，没有commit的文件不能删除</span>
+<span class="c1">#git rm 之后要 commit</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>注意，git 不会管理文件夹，但会管理当前目录子目录中的文件。</p>
+<p><a href="https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html">廖雪峰的官方网站：Git教程</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>的远程仓库部分提到了SSH，关于SSH的问题，可以参考<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html">阮一峰的网络日志：SSH原理与应用</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。如果想进一步了解双钥加密，数字签名，数字证书，也可以在阮一峰的网络日志中找到答案。</p>
+<h2 id="git-远程仓库与-github">git 远程仓库与 github</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git remote add origin git@github.com:kanglcn/blog.git <span class="c1">#关联远程仓库</span>
+git remote -v <span class="c1">#查看远程仓库的信息</span>
+git push -u origin master <span class="c1">#关联后第一次推送master分支的所有内容</span>
+git push origin master <span class="c1">#推送master分支</span>
+<span class="c1"># 以上三条适用于将本地内容推送到远程空仓库中，如果不是空仓库，使用下一条命令</span>
+git clone git@github.com:kanglcn/blog.git <span class="c1">#克隆远程仓库并自动关联，推送不用加 -u</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="git-分支管理">git 分支管理</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git branch kanglcn <span class="c1">#增加分支</span>
+git checkout kanglcn <span class="c1">#切换分支</span>
+git switch kanglcn <span class="c1">#切换分支 用switch更人性化一点</span>
+git checkout -b kanglcn <span class="c1">#增加并切换分支</span>
+git switch -c kanglcn <span class="c1">#增加并切换分支</span>
+git branch <span class="c1">#查看分支</span>
+git branch -r <span class="c1">#查看远端分支</span>
+git branch -a <span class="c1">#查看所有分支</span>
+git branch -d kanglcn <span class="c1">#删除kanglcn分支</span>
+git merge kanglcn <span class="c1">#使master和kanglcn分支合并，可能会起冲突</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>注意当 merge 有冲突的时候，git 会在该文件中有冲突的那一行的位置保留两个版本这一行的内容，手动更改该文件，然后 <code>add</code> <code>commit</code> 即可。注意有冲突的时候不会使用 <code>fast forward</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git merge --no-ff -m <span class="s2">&#34;...&#34;</span> kanglcn <span class="c1">#禁用fast forward，将kanglcn分支merge到master上。</span>
+<span class="c1"># 使用fast forward模式看不到历史上的merge，不用则可以看到。而且创建一个新的commit</span>
+git log --graph <span class="c1">#可以看到分支合并图</span>
+git rebase <span class="c1">#把分叉历史整理成直线</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="有远端参与的分支管理">有远端参与的分支管理</h2>
+<p>如果想 clone 别的分支</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git clone git@github.com:kanglcn/blog.git <span class="c1"># 先克隆master分支</span>
+git checkout -b kanglcn origin/kanglcn <span class="c1"># 再创建本地分支</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git push origin kanglcn <span class="c1">#向远端推送kanglcn分支，如果没有，建一个新的</span>
+git push origin :kanglcn <span class="c1">#删除远端的kanglcn分支</span>
+
+git branch --set-upstream-to<span class="o">=</span>origin/kanglcn kanglcn <span class="c1">#建立当前分支与远端分支的联系</span>
+git pull <span class="c1"># 把远端相应的branch抓下来在本地merge，所以要先建立两个分支的联系</span>
+<span class="c1"># 如果合并有冲突要手动更改，和本地merge有冲突时相同</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="git-submodule-子模块">git submodule 子模块</h2>
+<p>git 允许使用子模块子模块的日常使用请参考<a href="https://www.jianshu.com/p/9000cd49822c">Maonx的简书：Git submodule 子模块的管理和使用</a><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>。</p>
+<p>如果在本地建立含有 submodule 的 repo，直接推送该 repo 会使 github 上的 repo 没有关联到 submodule，因为 submodule 没有推送到 github 上。</p>
+<p>如果先推送 submodule 到 github，再推送该 repo，这样的话 github 上的 repo 并不知道 submodule 的网址，这可以在 <code>.gitmodule</code> 文件中看到，该文件只会记录本地的 submodule 地址，不会记录远程的 submodule 网址，也达不到想要的效果。</p>
+<p>最简单的办法是首先建立子模块并推送到 github 上。然后：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git submodule add git@github.com:kanglcn/blog.content.git ./content
+</code></pre></td></tr></table>
+</div>
+</div><p>然后再 push，这样就使 github 上的相应的 repo 成为另外一个的 submodule。</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>廖雪峰的官方网站：Git教程。<a href="https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html">https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>阮一峰的网络日志：SSH原理与应用。<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html">http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Maonx的简书：Git submodule 子模块的管理和使用。<a href="https://www.jianshu.com/p/9000cd49822c">https://www.jianshu.com/p/9000cd49822c</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">梁康</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-04-12
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank">CC BY-NC-SA 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/donate/wechatpayimg.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/donate/alipayimg.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/git/">git</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/python-config/">
+            <span class="next-text nav-default">python配置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'wYYUrMyih6pOkEIq39OTEcNz-gzGzoHsz',
+        appKey: 'vjpKINB2En1ru9BOP0Nyznfi',
+        notify:  false ,
+        verify:  false ,
+        avatar:'mm',
+        placeholder: '说点什么吧...',
+        visitor:  false 
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:kanglcn@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/kanglcn" class="iconfont icon-github" title="github"></a>
+  <a href="https://kanglcn.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">梁康</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-cn".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script>window.sequenceDiagramsOptions = {theme: 'simple'};</script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

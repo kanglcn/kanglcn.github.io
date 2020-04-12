@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="梁康" /><meta name="description" content="Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo pacman -S netease-cloud-music #网易云音乐 WPS Office 1 2 3 sudo" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+<meta name="author" content="梁康" /><meta name="description" content="本文介绍 linux 下的常用软件的安装。 Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
 
 
 
@@ -39,22 +39,22 @@
 
 
 <meta property="og:title" content="liux 下安装常用软件" />
-<meta property="og:description" content="Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo pacman -S netease-cloud-music #网易云音乐 WPS Office 1 2 3 sudo" />
+<meta property="og:description" content="本文介绍 linux 下的常用软件的安装。 Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanglcn.github.io/post/general-software/" />
 <meta property="article:published_time" content="2020-04-11T07:42:59+08:00" />
 <meta property="article:modified_time" content="2020-04-11T00:00:00+00:00" />
 <meta itemprop="name" content="liux 下安装常用软件">
-<meta itemprop="description" content="Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo pacman -S netease-cloud-music #网易云音乐 WPS Office 1 2 3 sudo">
+<meta itemprop="description" content="本文介绍 linux 下的常用软件的安装。 Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo">
 <meta itemprop="datePublished" content="2020-04-11T07:42:59&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-11T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1008">
+<meta itemprop="wordCount" content="1014">
 
 
 
 <meta itemprop="keywords" content="linux,software," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="liux 下安装常用软件"/>
-<meta name="twitter:description" content="Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo pacman -S netease-cloud-music #网易云音乐 WPS Office 1 2 3 sudo"/>
+<meta name="twitter:description" content="本文介绍 linux 下的常用软件的安装。 Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -134,9 +134,9 @@
       <div class="post-meta">
         <span class="post-time"> 2020-04-11 </span>
         <div class="post-category">
-            <a href="/categories/linux/"> linux </a>
+            <a href="/categories/software/"> software </a>
             </div>
-          <span class="more-meta"> 约 1008 字 </span>
+          <span class="more-meta"> 约 1014 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -155,6 +155,7 @@
         <li><a href="#latex">$\LaTeX$</a></li>
       </ul>
     </li>
+    <li><a href="#filezilla">FileZilla</a></li>
     <li><a href="#linux-下的-qq-和微信">linux 下的 QQ 和微信</a></li>
     <li><a href="#关于-rm">关于 rm</a></li>
   </ul>
@@ -162,7 +163,8 @@
   </div>
 </div>
     <div class="post-content">
-      <p>Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。</p>
+      <p>本文介绍 linux 下的常用软件的安装。
+Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。</p>
 <h2 id="常用软件">常用软件</h2>
 <h3 id="chrome">chrome</h3>
 <div class="highlight"><div class="chroma">
@@ -226,26 +228,35 @@ sudo pacman -S texstudio
 </code></pre></td></tr></table>
 </div>
 </div><p>Texmacs 是一款跨平台的所见即所的的编辑器，吸取了 tex 的优点，但和 tex 不是一个东西，可以显著提高数学公式的输入体验和速度。</p>
-<h2 id="linux-下的-qq-和微信">linux 下的 QQ 和微信</h2>
-<p><del>linux下是没有好用的腾讯系通讯软件，<code>QQ for linux</code>是官方出的唯一一款运行在linux下的通讯软件。但是，它经常崩溃而且脱胎于上古时期的qq，功能极少，不建议使用。</del></p>
-<p>2020-04-11 update: 目前 <code>QQ for linux</code> 已经不再闪退，可以安装使用。</p>
-<p>另一个选择是基于wine的软件，wine是运行于linux下的windows环境模拟工具，本质上是套娃。目前兼容性的问题很大，所以除了已有的很成熟的软件之外，别的都不推荐。关于wine可以参考<a href="https://www.winehq.org/">Wine homepage</a>。</p>
-<p>基于wine的目前最稳定的qq和微信可以在AUR中找到</p>
+<h2 id="filezilla">FileZilla</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -S filezilla <span class="c1">#常用的 FTP 客户端</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="linux-下的-qq-和微信">linux 下的 QQ 和微信</h2>
+<p><del>linux下是没有好用的腾讯系通讯软件，<code>QQ for linux</code>是官方出的唯一一款运行在 linux 下的通讯软件。但是，它经常崩溃而且脱胎于上古时期的qq，功能极少，不建议使用。</del></p>
+<p>2020-04-12 update: 目前 <code>QQ for linux</code> 已经不再闪退，可以安装使用。</p>
+<p>另一个选择是基于 wine 的软件，wine 是运行于 linux 下的 windows 环境模拟工具，本质上是套娃。目前兼容性的问题很大，所以除了已有的很成熟的软件之外，别的都不推荐。关于 wine 可以参考<a href="https://www.winehq.org/">Wine homepage</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
+<p>基于 wine 的目前最稳定的 qq 和微信可以在 AUR 中找到</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">yay -S deepin-wine-tim <span class="c1">#唯一能用的qq，再不行就只能装虚拟机了</span>
-yay -S deepin-wine-wechat <span class="c1">#微信</span>
+<pre class="chroma"><code class="language-bash" data-lang="bash">yay -S deepin-wine-tim
+yay -S deepin-wine-wechat
 </code></pre></td></tr></table>
 </div>
 </div><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h2 id="关于-rm">关于 rm</h2>
 <p>rm 是一个很危险的命令。我的建议是除非需要在别的计算机上运行，否则一律改用<code>trash-cli</code>，<code>trash-cli</code>的语法和<code>rm</code>不一致。或者使用<code>rmtrash</code>，<code>rmtrash</code>是<code>trash-cli</code>的封装版，和<code>rm</code>语法兼容。这两个工具提供垃圾回收机制，确保安全。我建议即使要在别的计算机上运行，也要在测试稳定之后再把<code>rmtrash</code>换成<code>rm</code>。</p>
-<p><code>rmtrash</code>使用 <code>trash-list</code>列出文件，<code>trash-restore</code> restore文件，使用 <code>trash-empty</code> empty trashcan。进一步了解<code>rmtrash</code>可以参考<a href="https://github.com/PhrozenByte/rmtrash">Github:rmtrash</a>。</p>
+<p><code>rmtrash</code>使用 <code>trash-list</code>列出文件，<code>trash-restore</code> restore文件，使用 <code>trash-empty</code> empty trashcan。进一步了解<code>rmtrash</code>可以参考<a href="https://github.com/PhrozenByte/rmtrash">Github:rmtrash</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
 <p>下载</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -270,7 +281,20 @@ yay -S deepin-wine-wechat <span class="c1">#微信</span>
 <span class="nb">alias</span> <span class="nv">sudo</span><span class="o">=</span><span class="s1">&#39;sudo &#39;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>但不要将上述别名放在<code>/etc/profile</code>中，可能是因为会被之后的配置文件覆盖掉。可以放在<code>~/.bashrc</code>中。</p>
+</div><p>但不要将上述别名放在<code>/etc/profile</code>中，这样没有任何效果，可能是因为会被之后的配置文件覆盖掉。可以放在<code>~/.bashrc</code>中。</p>
+<hr>
+<p>本文待更新。。。</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Wine homepage. <a href="https://www.winehq.org/">https://www.winehq.org/</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Github:rmtrash. <a href="https://github.com/PhrozenByte/rmtrash">https://github.com/PhrozenByte/rmtrash</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
     </div>
 
@@ -312,9 +336,13 @@ yay -S deepin-wine-wechat <span class="c1">#微信</span>
           <a href="/tags/software/">software</a>
           </div>
       <nav class="post-nav">
-        
-        <a class="next" href="/post/linux-init/">
-            <span class="next-text nav-default">linux 系统的初步配置</span>
+        <a class="prev" href="/post/efi-bug/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">一次开机引导的bug</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/install-matlab-stamps/">
+            <span class="next-text nav-default">下载安装 MATLAB 以及 stamps</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -394,7 +422,7 @@ yay -S deepin-wine-wechat <span class="c1">#微信</span>
     var languageCode = "zh-cn".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
-  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script>window.sequenceDiagramsOptions = {theme: 'hand'};</script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script>window.sequenceDiagramsOptions = {theme: 'simple'};</script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
 <script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
   <script type="text/javascript">
@@ -405,7 +433,7 @@ yay -S deepin-wine-wechat <span class="c1">#微信</span>
       messageStyle: 'none'
     };
   </script>
-  <script type="text/javascript" async src="/lib/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 
 
 

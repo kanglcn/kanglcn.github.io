@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sync on Kang&#39;s blog</title>
+    <link>https://kanglcn.github.io/tags/sync/</link>
+    <description>Recent content in sync on Kang&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 12 Apr 2020 06:42:59 +0800</lastBuildDate>
+    
+	<atom:link href="https://kanglcn.github.io/tags/sync/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VScode 配置与使用</title>
+      <link>https://kanglcn.github.io/post/vscode/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/vscode/</guid>
+      <description>本文介绍 VS code 的安装使用以及常用插件使用。 安装 1 sudo pacman -S visual-studio-code-bin 注意这里下载的是 VS code 的闭源版本。 插件 Setting Sync 使用本插件需要使用 github，可以参考git</description>
+    </item>
+    
+  </channel>
+</rss>
