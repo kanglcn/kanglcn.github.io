@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shell on Kang&#39;s blog</title>
-    <link>https://kanglcn.github.io/tags/shell/</link>
-    <description>Recent content in shell on Kang&#39;s blog</description>
+    <title>fish on Kang&#39;s blog</title>
+    <link>https://kanglcn.github.io/tags/fish/</link>
+    <description>Recent content in fish on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 13 Apr 2020 08:12:26 +0800</lastBuildDate>
     
-	<atom:link href="https://kanglcn.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kanglcn.github.io/tags/fish/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://kanglcn.github.io/post/efficient-software/</guid>
       <description>和linux 下的常用软件不同，本文讲述 linux 下的那些可以不用，但使用后让我们工作效率更高的软件。 注意：这些东西只是工具，不要在这些花里胡哨的东西</description>
-    </item>
-    
-    <item>
-      <title>shell 以及环境变量</title>
-      <link>https://kanglcn.github.io/post/shell-environment-variables/</link>
-      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
-      
-      <guid>https://kanglcn.github.io/post/shell-environment-variables/</guid>
-      <description>注意: 本文以 bash 为例，但其他种 shell 类似。 四种不同的shell interactive 和 noninteractive，login 和 nonlogin 共形成了四种 shell 的打开方式。 我们在 GUI 界</description>
     </item>
     
   </channel>

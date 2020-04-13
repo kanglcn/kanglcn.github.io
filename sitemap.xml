@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kanglcn.github.io/post/efficient-software/</loc>
+    <lastmod>2020-04-13T08:12:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/categories/</loc>
+    <lastmod>2020-04-13T08:12:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/tags/fish/</loc>
+    <lastmod>2020-04-13T08:12:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/tags/linux/</loc>
+    <lastmod>2020-04-13T08:12:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/post/</loc>
+    <lastmod>2020-04-13T08:12:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/tags/shell/</loc>
+    <lastmod>2020-04-13T08:12:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/tags/software/</loc>
+    <lastmod>2020-04-13T08:12:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/categories/software/</loc>
+    <lastmod>2020-04-13T08:12:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/tags/</loc>
+    <lastmod>2020-04-13T08:12:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://kanglcn.github.io/tags/bash/</loc>
     <lastmod>2020-04-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -10,13 +73,6 @@
   
   <url>
     <loc>https://kanglcn.github.io/tags/bios/</loc>
-    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kanglcn.github.io/categories/</loc>
     <lastmod>2020-04-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -58,21 +114,7 @@
   </url>
   
   <url>
-    <loc>https://kanglcn.github.io/tags/linux/</loc>
-    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://kanglcn.github.io/categories/linux/</loc>
-    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kanglcn.github.io/post/</loc>
     <lastmod>2020-04-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -93,13 +135,6 @@
   </url>
   
   <url>
-    <loc>https://kanglcn.github.io/tags/shell/</loc>
-    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://kanglcn.github.io/categories/shell/</loc>
     <lastmod>2020-04-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -114,21 +149,7 @@
   </url>
   
   <url>
-    <loc>https://kanglcn.github.io/categories/software/</loc>
-    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://kanglcn.github.io/tags/sync/</loc>
-    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kanglcn.github.io/tags/</loc>
     <lastmod>2020-04-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -164,13 +185,6 @@
   
   <url>
     <loc>https://kanglcn.github.io/post/general-software/</loc>
-    <lastmod>2020-04-11T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kanglcn.github.io/tags/software/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
