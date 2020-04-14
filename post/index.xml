@@ -89,7 +89,7 @@
       <pubDate>Wed, 08 Apr 2020 06:42:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/post/linux-init/</guid>
-      <description>本文谈谈安装完 linux 系统之后，如何打造合适的中文使用环境。 初次接触 linux 的读者请先阅读安装 linux 的理论基础以及安装 linux 的实践。 首先更新软件 1 sudo pacman -Syyu pacman 是 arch 系</description>
+      <description>本文谈谈安装完 linux 系统之后，如何打造合适的中文使用环境。 初次接触 linux 的读者请先阅读安装 linux 的理论基础以及安装 linux 的实践。 首先更新软件 如果是在 Manjaro 官网上</description>
     </item>
     
     <item>
