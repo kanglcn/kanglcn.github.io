@@ -48,7 +48,7 @@
 <meta itemprop="description" content="注意： 初次接触 linux 系统的读者阅读本文之前请阅读安装linux的理论基础； 本文讨论的内容只适用于桌面端的 linux 普通用户； 本人只是业余爱好者，如果有什">
 <meta itemprop="datePublished" content="2020-04-07T08:42:59&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2448">
+<meta itemprop="wordCount" content="2466">
 
 
 
@@ -136,7 +136,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 2448 字 </span>
+          <span class="more-meta"> 约 2466 字 </span>
           <span class="more-meta"> 预计阅读 5 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -219,7 +219,11 @@ manjaro 的安装和一般的发行版相同，开机就自带桌面等一系列
 <p>2.制作启动 U 盘</p>
 <p>然后使用 rufus 软件将 iso 文件 burn 到 U 盘中，注意 U 盘会被格式化，请做好数据备份。
 如果可以的话不用使用太大的 U 盘，因为在 burn 时要检查整个 U 盘有没有坏块，容量大的检查比较慢。</p>
-<p>如果你希望在一块 U 盘上 burn 多个系统的安装镜像，并且长期保存这些镜像以备日后修复或者重装系统[^10]，而且希望剩余的空间能够存储别的内容。可以将 U 盘多分出一个8g左右的分区，用来安装两个系统的安装镜像（亲测 8g 刚好够 Windows10 和 manjaro，有更多系统的需求可以适当增大），然后使用 <a href="https://www.pendrivelinux.com/yumi-multiboot-usb-creator/">yumi</a><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> 制作多系统引导。剩下的一个分区用来储存自己的文件。</p>
+<p><del>如果你希望在一块 U 盘上 burn 多个系统的安装镜像，并且长期保存这些镜像以备日后修复或者重装系统[^10]，而且希望剩余的空间能够存储别的内容。可以将 U 盘多分出一个8g左右的分区，用来安装两个系统的安装镜像（亲测 8g 刚好够 Windows10 和 manjaro，有更多系统的需求可以适当增大），然后使用 <a href="https://www.pendrivelinux.com/yumi-multiboot-usb-creator/">yumi</a><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> 制作多系统引导。剩下的一个分区用来储存自己的文件。</del></p>
+<p>2020-04-14 update:</p>
+<ul>
+<li>实测 yumi 会出问题，目前不建议使用。</li>
+</ul>
 <p>一次使用 liveCD 解决计算机启动的<a href="/efi-bug/">例子</a>。</p>
 <p>之后的步骤可以参考 <a href="https://blog.seisman.info/trash/linux-environment-for-seismology-research/">Seisman的博客：用 CentOS 7 打造合适的科研环境</a><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>中的安装步骤，我就不重复多说了。</p>
 <p>注意如果是双系统安装，要把<code>/boot/efi</code>挂载到你 Windows 下的 EFI 分区。除此之外，不要对 Windows 系统所在的分区做任何的改动。</p>
