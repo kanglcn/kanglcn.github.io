@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kanglcn.github.io/post/</loc>
+    <lastmod>2020-04-17T20:48:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/post/vim/</loc>
+    <lastmod>2020-04-17T20:48:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://kanglcn.github.io/tags/backup/</loc>
     <lastmod>2020-04-17T06:28:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,13 +52,6 @@
   
   <url>
     <loc>https://kanglcn.github.io/post/linux-organization-structure/</loc>
-    <lastmod>2020-04-17T06:28:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kanglcn.github.io/post/</loc>
     <lastmod>2020-04-17T06:28:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

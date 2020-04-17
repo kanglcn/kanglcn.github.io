@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>linux 目录组织结构及备份的经验 - Kang&#39;s blog</title>
+  <title>Vim - Kang&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="梁康" /><meta name="description" content="本文介绍我在 linux 系统文件目录组织结构以及备份方面的经验。 FHS(Filesystem Hierarchy Standard) linux 根目录下各个目录的意义属于烂大街的知识，请自行搜索。 有意思的是： 根目录下目录比" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+<meta name="author" content="梁康" /><meta name="description" content="vim 使用 Shift&#43; 鼠标选中，Shift&#43; 鼠标中键可以实现复制和粘贴的功能。" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.68.3 with theme even" />
 
 
-<link rel="canonical" href="https://kanglcn.github.io/post/linux-organization-structure/" />
+<link rel="canonical" href="https://kanglcn.github.io/post/vim/" />
 <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
@@ -39,23 +39,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="linux 目录组织结构及备份的经验" />
-<meta property="og:description" content="本文介绍我在 linux 系统文件目录组织结构以及备份方面的经验。 FHS(Filesystem Hierarchy Standard) linux 根目录下各个目录的意义属于烂大街的知识，请自行搜索。 有意思的是： 根目录下目录比" />
+<meta property="og:title" content="Vim" />
+<meta property="og:description" content="vim 使用 Shift&#43; 鼠标选中，Shift&#43; 鼠标中键可以实现复制和粘贴的功能。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kanglcn.github.io/post/linux-organization-structure/" />
-<meta property="article:published_time" content="2020-04-17T06:28:59+08:00" />
-<meta property="article:modified_time" content="2020-04-17T06:28:59+08:00" />
-<meta itemprop="name" content="linux 目录组织结构及备份的经验">
-<meta itemprop="description" content="本文介绍我在 linux 系统文件目录组织结构以及备份方面的经验。 FHS(Filesystem Hierarchy Standard) linux 根目录下各个目录的意义属于烂大街的知识，请自行搜索。 有意思的是： 根目录下目录比">
-<meta itemprop="datePublished" content="2020-04-17T06:28:59&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-17T06:28:59&#43;08:00" />
-<meta itemprop="wordCount" content="1041">
+<meta property="og:url" content="https://kanglcn.github.io/post/vim/" />
+<meta property="article:published_time" content="2020-04-17T20:48:27+08:00" />
+<meta property="article:modified_time" content="2020-04-17T20:48:27+08:00" />
+<meta itemprop="name" content="Vim">
+<meta itemprop="description" content="vim 使用 Shift&#43; 鼠标选中，Shift&#43; 鼠标中键可以实现复制和粘贴的功能。">
+<meta itemprop="datePublished" content="2020-04-17T20:48:27&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-17T20:48:27&#43;08:00" />
+<meta itemprop="wordCount" content="32">
 
 
 
-<meta itemprop="keywords" content="linux,file-structure,timeshift,backup," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="linux 目录组织结构及备份的经验"/>
-<meta name="twitter:description" content="本文介绍我在 linux 系统文件目录组织结构以及备份方面的经验。 FHS(Filesystem Hierarchy Standard) linux 根目录下各个目录的意义属于烂大街的知识，请自行搜索。 有意思的是： 根目录下目录比"/>
+<meta itemprop="keywords" content="," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vim"/>
+<meta name="twitter:description" content="vim 使用 Shift&#43; 鼠标选中，Shift&#43; 鼠标中键可以实现复制和粘贴的功能。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -130,15 +130,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">linux 目录组织结构及备份的经验</h1>
+      <h1 class="post-title">Vim</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-04-17 </span>
         <div class="post-category">
-            <a href="../../categories/linux/"> linux </a>
+            <a href="../../categories//">  </a>
             </div>
-          <span class="more-meta"> 约 1041 字 </span>
-          <span class="more-meta"> 预计阅读 3 分钟 </span>
+          <span class="more-meta"> 约 32 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -146,65 +146,11 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#fhsfilesystem-hierarchy-standard">FHS(Filesystem Hierarchy Standard)</a></li>
-    <li><a href="#分区方式">分区方式</a></li>
-    <li><a href="#最佳使用方式">最佳使用方式</a></li>
-    <li><a href="#备份">备份</a>
-      <ul>
-        <li><a href="#系统备份">系统备份</a></li>
-      </ul>
-    </li>
-    <li><a href="#文件管理">文件管理</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
     <div class="post-content">
-      <p>本文介绍我在 linux 系统文件目录组织结构以及备份方面的经验。</p>
-<h2 id="fhsfilesystem-hierarchy-standard">FHS(Filesystem Hierarchy Standard)</h2>
-<p>linux 根目录下各个目录的意义属于烂大街的知识，请自行搜索。
-有意思的是：</p>
-<ul>
-<li>根目录下目录比较多，各有各的功能，咋一看很复杂，实际上很多都只是链接，比如 <code>/bin</code> 实际上是 <code>/usr/bin</code> 的 link，<code>/lib</code> 实际上是 <code>/usr/lib</code> 的 link 等等；</li>
-<li><code>/usr/bin</code>，<code>/usr/local/bin</code>，<code>/usr/local/sbin</code> 中的可执行程序会自动加入到 <code>path</code> 中；</li>
-<li><code>/usr/local</code> 和 <code>/opt</code> 的意义差不多。</li>
-</ul>
-<h2 id="分区方式">分区方式</h2>
-<p>我建议在安装 linux 的时候分为一下几个分区：</p>
-<ul>
-<li><code>/</code>，根目录；</li>
-<li><code>/opt</code> 可选择软件；</li>
-<li>swap 交换分区；</li>
-</ul>
-<p>三个分区即可。这样分区和目录的使用方式有关，是为了更好地使用和备份。</p>
-<h2 id="最佳使用方式">最佳使用方式</h2>
-<p>通过 pacman 和 yay 安装的软件安装在 <code>/usr</code> 中，这个目录下的文件一般不需要改动。</p>
-<p><code>/usr/local</code> 和 <code>/opt</code> 都可以用来安装自己编译的软件，建议使用 <code>/opt</code> 因为 <code>/opt</code> 可以单独分区，这样重装系统时可以保留，避免了重新编译的麻烦。<code>/usr/local</code> 中我目前只安装了 matlab，因为默认如此，不做任何更改最好。实际上，有些软件安装时会向 <code>/usr/bin</code> 中加入 link，如果这样的软件安装在 <code>/opt</code> 中，重装系统之后可能会不能用，因为 <code>/usr</code> 被重装了，所以 <code>/opt</code> 只适合安装自己很了解的软件，比如需要自己手动编译的软件；</p>
-<p>注意一些闭源的商业软件也会安装在 <code>/opt</code> 中，比如 VS code，google chrome，qq等。</p>
-<p>有人喜欢把 <code>/home</code> 也作为独立的分区，在系统重装时保存。但实际上 <code>/home</code> 中的隐藏配置文件很多，保存可能会有冲突。</p>
-<h2 id="备份">备份</h2>
-<h3 id="系统备份">系统备份</h3>
-<p>我这里的系统指的是除 <code>/home</code> 目录中非隐藏目录之外的所有目录。</p>
-<p>每次更改系统之后，比如 <code>sudo pacman -Syu</code> 升级软件之后，运行 timeshift 备份系统。<code>timeshift</code> 我在<a href="../install-linux-practice">安装 linux 的实践</a>中提到过。一次我更换显卡驱动之后电脑黑屏，这时我进入 tty 使用 timeshift 成功恢复了系统。</p>
-<p>排除非系统目录的原因在于非系统目录文件变化比较快，每次都同步系统太麻烦，更重要的是恢复后数据会丢失，使用别的方法单独保存，可以参考<a href="https://blog.seisman.info/file-organization/">Seisman 的博客：文件管理与备份</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>中的相关内容。</p>
-<h2 id="文件管理">文件管理</h2>
-<p>关于 <code>/home</code> 目录下文件管理部分可以参考<a href="https://blog.seisman.info/file-organization/">Seisman 的博客：文件管理与备份</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
-<h2 id="acknowledgements">Acknowledgements</h2>
-<p>本文受<a href="https://blog.seisman.info/file-organization/">Seisman 的博客：文件管理与备份</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，<a href="https://blog.seisman.info/how-to-install-softwares-under-centos-7/">Seisman 的博客：CentOS 7 下的软件安装方法及策略</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>的启发，并参考了相关内容，特此声明。</p>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>Seisman 的博客：文件管理与备份。<a href="https://blog.seisman.info/file-organization/">https://blog.seisman.info/file-organization/</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>CentOS 7 下的软件安装方法及策略。<a href="https://blog.seisman.info/how-to-install-softwares-under-centos-7/">https://blog.seisman.info/how-to-install-softwares-under-centos-7/</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
+      <p>vim 使用 <!-- raw HTML omitted -->Shift<!-- raw HTML omitted --> + 鼠标选中，<!-- raw HTML omitted -->Shift<!-- raw HTML omitted --> + 鼠标中键可以实现复制和粘贴的功能。</p>
 
     </div>
 
@@ -242,19 +188,12 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="../../tags/linux/">linux</a>
-          <a href="../../tags/file-structure/">file-structure</a>
-          <a href="../../tags/timeshift/">timeshift</a>
-          <a href="../../tags/backup/">backup</a>
+          <a href="../../tags//"></a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="../../post/vim/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Vim</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="../../post/efficient-software/">
-            <span class="next-text nav-default"> linux 下的高效软件</span>
+        
+        <a class="next" href="../../post/linux-organization-structure/">
+            <span class="next-text nav-default">linux 目录组织结构及备份的经验</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
