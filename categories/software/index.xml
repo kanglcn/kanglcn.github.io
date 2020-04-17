@@ -62,7 +62,7 @@
       <pubDate>Sat, 11 Apr 2020 06:42:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/post/install-matlab-stamps/</guid>
-      <description>安装 matlab 登录 mathworks1 帐号，下载在线安装包并解压，不是 .iso 文件，那是离线的。 切换到 root 用户 1 sudo su 运行 install 1 bash install matlab 默认安装在 /usr/local/MATLAB/R2019b 中，并在 /usr/bin 中定义一个 link 链接到 ma</description>
+      <description>安装 matlab 登录 mathworks1 帐号，下载在线安装包并解压，不是 .iso 文件，那是离线的。 切换到 root 用户 1 sudo su 运行 install 1 bash install matlab 默认安装在 /usr/local/MATLAB/R2019b 中，并在 /usr/local/bin 中定义两个 link 链接到 matlab 和</description>
     </item>
     
   </channel>

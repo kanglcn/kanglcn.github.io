@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Apr 2020 08:12:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2020 06:28:59 +0800</lastBuildDate>
     
 	<atom:link href="https://kanglcn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>backup</title>
+      <link>https://kanglcn.github.io/tags/backup/</link>
+      <pubDate>Fri, 17 Apr 2020 06:28:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>file-structure</title>
+      <link>https://kanglcn.github.io/tags/file-structure/</link>
+      <pubDate>Fri, 17 Apr 2020 06:28:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/file-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://kanglcn.github.io/tags/linux/</link>
+      <pubDate>Fri, 17 Apr 2020 06:28:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>timeshift</title>
+      <link>https://kanglcn.github.io/tags/timeshift/</link>
+      <pubDate>Fri, 17 Apr 2020 06:28:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/timeshift/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>fish</title>
@@ -17,15 +53,6 @@
       <pubDate>Mon, 13 Apr 2020 08:12:26 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/tags/fish/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://kanglcn.github.io/tags/linux/</link>
-      <pubDate>Mon, 13 Apr 2020 08:12:26 +0800</pubDate>
-      
-      <guid>https://kanglcn.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
