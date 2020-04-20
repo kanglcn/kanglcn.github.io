@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanglcn.github.io/post/install-linux-practice/" />
 <meta property="article:published_time" content="2020-04-07T08:42:59+08:00" />
-<meta property="article:modified_time" content="2020-04-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-20T00:00:00+00:00" />
 <meta itemprop="name" content="安装 linux 的实践">
 <meta itemprop="description" content="注意： 初次接触 linux 系统的读者阅读本文之前请阅读安装linux的理论基础； 本文讨论的内容只适用于桌面端的 linux 普通用户； 本人只是业余爱好者，如果有什">
 <meta itemprop="datePublished" content="2020-04-07T08:42:59&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2635">
+<meta itemprop="dateModified" content="2020-04-20T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2769">
 
 
 
@@ -137,7 +137,7 @@
         <div class="post-category">
             <a href="../../categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 2635 字 </span>
+          <span class="more-meta"> 约 2769 字 </span>
           <span class="more-meta"> 预计阅读 6 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -242,12 +242,17 @@ manjaro 的安装和一般的发行版相同，开机就自带桌面等一系列
 <li>能否正常睡眠和唤醒；</li>
 <li>亮度能否调节等。</li>
 </ul>
-<p>其中最难搞的就是显卡驱动，双显卡用户一定要测试两块显卡能否正常工作。</p>
+<p>其中最难搞的就是显卡驱动，双显卡用户一定要测试两块显卡能否正常工作。
+Manjaro 默认使用开源的 <code>video-linux</code> 驱动，但是此驱动显然没有原厂驱动好用。
+安装时可以选择安装闭源驱动，但我没找到在哪设置。
+不过安装过后可以在 <code>System Settings</code> <code>-&gt;</code> <code>Hardware Configuration</code>中更换。
+记住，一定要选择 <code>Auto Install Proprietary Driver</code>，而不是自己随便挑一个。</p>
 <h2 id="update">Update</h2>
 <ol>
 <li>2020-04-07：初稿；</li>
 <li>2020-04-12：实测 yumi 会出问题，目前不建议使用；</li>
 <li>2020-04-16：添加安装后的测试；</li>
+<li>2020-04-20：添加更换闭源驱动的内容。</li>
 </ol>
 <section class="footnotes" role="doc-endnotes">
 <hr>
@@ -292,7 +297,7 @@ manjaro 的安装和一般的发行版相同，开机就自带桌面等一系列
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-04-14
+        2020-04-20
         
     </span>
   </p>

@@ -2,8 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kanglcn.github.io/categories/</loc>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/tags/latex/</loc>
+    <lastmod>2020-04-20T01:27:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/categories/latex/</loc>
+    <lastmod>2020-04-20T01:27:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/post/latex2/</loc>
+    <lastmod>2020-04-20T01:27:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://kanglcn.github.io/post/</loc>
-    <lastmod>2020-04-17T20:48:27+08:00</lastmod>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/tags/</loc>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/post/latex1/</loc>
+    <lastmod>2020-04-19T23:08:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,13 +65,6 @@
   </url>
   
   <url>
-    <loc>https://kanglcn.github.io/categories/</loc>
-    <lastmod>2020-04-17T06:28:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://kanglcn.github.io/tags/file-structure/</loc>
     <lastmod>2020-04-17T06:28:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,27 +73,20 @@
   
   <url>
     <loc>https://kanglcn.github.io/tags/linux/</loc>
-    <lastmod>2020-04-17T06:28:59+08:00</lastmod>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://kanglcn.github.io/categories/linux/</loc>
-    <lastmod>2020-04-17T06:28:59+08:00</lastmod>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://kanglcn.github.io/post/linux-organization-structure/</loc>
-    <lastmod>2020-04-17T06:28:59+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kanglcn.github.io/tags/</loc>
     <lastmod>2020-04-17T06:28:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -101,7 +129,7 @@
   
   <url>
     <loc>https://kanglcn.github.io/categories/software/</loc>
-    <lastmod>2020-04-16T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -143,14 +171,14 @@
   
   <url>
     <loc>https://kanglcn.github.io/tags/git/</loc>
-    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://kanglcn.github.io/post/git/</loc>
-    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -255,14 +283,14 @@
   
   <url>
     <loc>https://kanglcn.github.io/tags/manjaro/</loc>
-    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://kanglcn.github.io/post/install-linux-practice/</loc>
-    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

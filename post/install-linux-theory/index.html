@@ -239,8 +239,21 @@ grubx64.efi
 <p>当只安装 Windows 系统时，EFI 分区中只有 Windows 的启动分区。当再安装一个 linux 系统时，会向 EFI 分区中写入 grub 程序，安装时能够修改 UEFI 的默认设置，首先启动 grub。而且安装时 grub 会识别 Windows 的 boot loader，并加入到自己的选项当中。</p>
 <p>所以当开机后，UEFI 会运行 grub 程序，grub 程序会提供进入 linux 还是 Windows 的选项，选择希望的选项，就会加载相应的系统内核到内存中，计算机就启动完毕了。</p>
 <p>grub 实际上是跨平台的 boot loader。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+BIOS 启动后会读取硬盘第一个扇区的 MBR 分区，然后运行里面的 boot loader。当有多个硬盘时，BIOS 会默认读取某一个磁盘的 MBR 分区，这个可以在 BIOS 里更改，比如当我们安装新系统时，我们希望读取 U 盘里的 MBR 分区。
+
+当boot loader运行后，会加载 boot loader 指向的系统内核到内存从而启动计算机。
+
+一块硬盘上一共有两个分区，一个分区上装有Windows系统，另一个分区上装有 linux 系统。每个分区的 boot sector 分别装有各自系统的 boot loader。
+
+在硬盘的 MBR 上同样装有 boot sector。当 BIOS 运行，并启动该 boot loader 后，它提供选项选择将启动权交给 Windows boot sector 还是 linux boot sector。从而达到双系统的目的。
+
+注意 Windows 的 boot loader 不提供启动权移交的功能，所以我们一般先安装Windows系统，因为 Windows 安装后会把 Windows boot loader 写入MBR和 所在分区的 boot sector。之后我们安装的 linux 系统会把 linux boot loader(一般是GRUB) 写入 boot sector 和 MBR，而 GRUB 具有移交启动权的功能，所以可以实现双系统。如果先安装 linux 系统，则需要在安装完 Windows 之后重新向 MBR 写入 GRUB。
+
+UEFI 不会执行 MBR 里的程序，而是 寻找一个 EFI 分区，如果你安装过 Windows 的话，这个分区应该已经创建好了。这个分区包含了系统启动所必须的一些东西，可以在 *磁盘管理* 里找到这个分区。在linux下EFI分区挂载在/boot/efi下。
+
+每个操作系统都可以维护自己 EFI 分区中的文件而不相互干扰，所以实际上系统启动并非上述的链式启动方式。
+-->
 <p>关于 EFI 分区可以参考<a href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:EFI system partition</a><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>。
 关于 linux 系统的启动过程可以参考<a href="https://wiki.archlinux.org/index.php/Arch_boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#UEFI">ArchWiki:Arch boot process</a><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>。
 关于 Windows 和 linux 双系统的安装可以参考<a href="https://wiki.archlinux.org/index.php/Dual_boot_with_Windows_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:Dual boot with Windows</a><sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>。</p>
