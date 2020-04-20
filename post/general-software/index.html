@@ -202,13 +202,8 @@ sudo pacman -S wps-office-mui-zh-cn <span class="c1">#WPS的中文语言包</spa
 </div><p>WPS 是目前 linux 系统下可用的，兼容 MS Office 最好的，但还是无法做到完全兼容。使用时要对可能存在的风险做好充分准备。</p>
 <p>如果希望兼容的话，还是建议使用 Office 365 网页版。</p>
 <p>什么？你说 linux 下的 WPS Office 会缺失 Windows 下的字体，这些字体就在你电脑上为什么就用不了呢？赶紧好好想想，该怎么办！</p>
-<!-- 把windows下的ttf文件拷贝过来，放在 `/Desktop/fonts`中作为备份。
-```bash
-mkdir /usr/share/fonts/windowfonts
-cp ~/Desktop/fonts/* /usr/share/fonts/windowsfonts/
-fc-cache -f
-```
--->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h3 id="latex">$\LaTeX$</h3>
 <h4 id="texlive">texlive</h4>
 <div class="highlight"><div class="chroma">
@@ -272,10 +267,8 @@ yay -S deepin-wine-wechat
 <li>基于 wine 的软件没一个稳定的，从此往后，本博客不再推荐任何基于 wine 的软件；腾讯官方的 linux 通讯软件，除非腾讯真的用心做，否则不建议使用；</li>
 <li>在腾讯拿出诚意之前，本部分不再更新。</li>
 </ul>
-<!--
-wine会使默认的浏览器更改，这时要删掉`～/.local/share/applications/wine*.desktop`
-然后`update-mime-database ~/.local/share/mime`
--->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="rmtrash">rmtrash</h2>
 <p>rm 是一个很危险的命令。我的建议是除非需要在别的计算机上运行，否则一律改用<code>trash-cli</code>，<code>trash-cli</code>的语法和<code>rm</code>不一致。或者使用<code>rmtrash</code>，<code>rmtrash</code>是<code>trash-cli</code>的封装版，和<code>rm</code>语法兼容。这两个工具提供垃圾回收机制，确保安全。我建议即使要在别的计算机上运行，也要在测试稳定之后再把<code>rmtrash</code>换成<code>rm</code>。</p>
 <p><code>rmtrash</code>使用 <code>trash-list</code>列出文件，<code>trash-restore</code> restore文件，使用 <code>trash-empty</code> empty trashcan。进一步了解<code>rmtrash</code>可以参考<a href="https://github.com/PhrozenByte/rmtrash">Github:rmtrash</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
