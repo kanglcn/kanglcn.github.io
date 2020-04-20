@@ -6,10 +6,19 @@
     <description>Recent content in latex on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 Apr 2020 01:27:43 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2020 06:05:32 +0800</lastBuildDate>
     
 	<atom:link href="https://kanglcn.github.io/categories/latex/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Latex 使用笔记(3)</title>
+      <link>https://kanglcn.github.io/post/latex3/</link>
+      <pubDate>Mon, 20 Apr 2020 06:05:32 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/latex3/</guid>
+      <description>本文承接Latex 使用笔记(2)。 文档元素 章节和目录 章节标题 三个标准文档类提供了 1 2 3 4 5 6 \chapter{⟨title⟩} \sectio</description>
+    </item>
     
     <item>
       <title>Latex 使用笔记(2)</title>

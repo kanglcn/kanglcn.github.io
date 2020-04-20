@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Latex 使用笔记(3) - Kang&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="梁康" /><meta name="description" content="本文承接Latex 使用笔记(2)。 文档元素 章节和目录 章节标题 三个标准文档类提供了 1 2 3 4 5 6 \chapter{⟨title⟩} \sectio" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
+
+
+<link rel="canonical" href="https://kanglcn.github.io/post/latex3/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="https://kanglcn.github.io/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Latex 使用笔记(3)" />
+<meta property="og:description" content="本文承接Latex 使用笔记(2)。 文档元素 章节和目录 章节标题 三个标准文档类提供了 1 2 3 4 5 6 \chapter{⟨title⟩} \sectio" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanglcn.github.io/post/latex3/" />
+<meta property="article:published_time" content="2020-04-20T06:05:32+08:00" />
+<meta property="article:modified_time" content="2020-04-20T06:05:32+08:00" />
+<meta itemprop="name" content="Latex 使用笔记(3)">
+<meta itemprop="description" content="本文承接Latex 使用笔记(2)。 文档元素 章节和目录 章节标题 三个标准文档类提供了 1 2 3 4 5 6 \chapter{⟨title⟩} \sectio">
+<meta itemprop="datePublished" content="2020-04-20T06:05:32&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-20T06:05:32&#43;08:00" />
+<meta itemprop="wordCount" content="3010">
+
+
+
+<meta itemprop="keywords" content="latex," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Latex 使用笔记(3)"/>
+<meta name="twitter:description" content="本文承接Latex 使用笔记(2)。 文档元素 章节和目录 章节标题 三个标准文档类提供了 1 2 3 4 5 6 \chapter{⟨title⟩} \sectio"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="../../" class="logo">Kang&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="../../">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="../../post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="../../tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="../../categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="../../links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="../../donations/">
+        <li class="mobile-menu-item">捐赠</li>
+      </a><a href="../../about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="../../" class="logo">Kang&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="../../">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../donations/">捐赠</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Latex 使用笔记(3)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-04-20 </span>
+        <div class="post-category">
+            <a href="../../categories/latex/"> latex </a>
+            </div>
+          <span class="more-meta"> 约 3010 字 </span>
+          <span class="more-meta"> 预计阅读 7 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文档元素">文档元素</a>
+      <ul>
+        <li><a href="#章节和目录">章节和目录</a></li>
+        <li><a href="#交叉引用">交叉引用</a></li>
+        <li><a href="#脚注和旁注">脚注和旁注</a></li>
+        <li><a href="#特殊环境">特殊环境</a></li>
+        <li><a href="#盒子">盒子</a></li>
+        <li><a href="#浮动体">浮动体</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>本文承接<a href="../latex2">Latex 使用笔记(2)</a>。</p>
+<h2 id="文档元素">文档元素</h2>
+<h3 id="章节和目录">章节和目录</h3>
+<h4 id="章节标题">章节标题</h4>
+<p>三个标准文档类提供了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\chapter</span><span class="nb">{</span>⟨title⟩<span class="nb">}</span>
+<span class="k">\section</span><span class="nb">{</span>⟨title⟩<span class="nb">}</span>
+<span class="k">\subsection</span><span class="nb">{</span>⟨title⟩<span class="nb">}</span>
+<span class="k">\subsubsection</span><span class="nb">{</span>⟨title⟩<span class="nb">}</span>
+<span class="k">\paragraph</span><span class="nb">{</span>⟨title⟩<span class="nb">}</span>
+<span class="k">\subparagraph</span><span class="nb">{</span>⟨title⟩<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>其中 <code>\chapter</code> 只在 <code>book</code> 和 <code>report</code> 中提供。在其他文档类中可能提供或者部分提供。</p>
+<p>上述命令除了生成带编号的标题之外,还向目录中添加条目,并影响页眉页脚的内容。</p>
+<ul>
+<li>article 文档类带编号的层级为 \section / \subsection / \subsubsection 三级；</li>
+<li>report/book 文档类带编号的层级为 \chapter / \section / \subsection 三级。</li>
+</ul>
+<p>若使用带星号的变体</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\section*</span><span class="nb">{</span>⟨title⟩<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>则标题不带编号,也不生成目录项和页眉页脚。</p>
+<h4 id="目录">目录</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\tableofcontents</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这个命令会生成单独的一章(book / report)或一节(article),标题默认为 “Contents”。</p>
+<h4 id="文档结构划分">文档结构划分</h4>
+<p>所有标准文档类都提供了一个 <code>\appendix</code> 命令将正文和附录分开2 ,使用 <code>\appendix</code> 后,最高一级章节改为使用拉丁字母编号,从 A 开始。</p>
+<p>book 文档类还提供了前言、正文、后记结构的划分命令:</p>
+<ul>
+<li><code>\frontmatter</code> 前言部分,页码为小写罗马字母格式;其后的 <code>\chapter</code> 不编号。</li>
+<li><code>\mainmatter</code> 正文部分,页码为阿拉伯数字格式,从 1 开始计数;其后的章节编号正常。</li>
+<li><code>\backmatter</code> 后记部分,页码格式不变,继续正常计数;其后的 \chapter 不编号。</li>
+</ul>
+<p>book 文档结构示例</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\documentclass</span><span class="na">[...]</span><span class="nb">{</span>book<span class="nb">}</span>
+<span class="c">% 导言区,加载宏包和各项设置,包括参考文献、索引等
+</span><span class="c"></span><span class="k">\usepackage</span><span class="nb">{</span>...<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>makeidx<span class="nb">}</span>
+<span class="k">\makeindex</span>
+<span class="k">\bibliographystyle</span><span class="nb">{</span>...<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\frontmatter</span>
+<span class="k">\maketitle</span> <span class="c">% 标题页
+</span><span class="c"></span><span class="k">\include</span><span class="nb">{</span>preface<span class="nb">}</span> <span class="c">% 前言章节 preface.tex
+</span><span class="c"></span><span class="k">\tableofcontents</span>
+<span class="k">\mainmatter</span>
+<span class="k">\include</span><span class="nb">{</span>chapter1<span class="nb">}</span> <span class="c">% 第一章 chapter1.tex
+</span><span class="c"></span><span class="k">\include</span><span class="nb">{</span>chapter2<span class="nb">}</span> <span class="c">% 第二章 chapter2.tex
+</span><span class="c"></span>...
+<span class="k">\appendix</span>
+<span class="k">\include</span><span class="nb">{</span>appendixA<span class="nb">}</span> <span class="c">% 附录 A appendixA.tex
+</span><span class="c"></span>...
+<span class="k">\backmatter</span>
+<span class="k">\include</span><span class="nb">{</span>prologue<span class="nb">}</span> <span class="c">% 后记 prologue.tex
+</span><span class="c"></span><span class="k">\bibliography</span><span class="nb">{</span>...<span class="nb">}</span> <span class="c">% 利用 BibTeX 工具生成参考文献
+</span><span class="c"></span><span class="k">\printindex</span>
+ <span class="c">% 利用 makeindex 工具生成索引
+</span><span class="c"></span><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="标题页">标题页</h4>
+<p>在导言区使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\title</span><span class="nb">{</span>Test title<span class="nb">}</span> <span class="c">%必填
+</span><span class="c"></span><span class="k">\author</span><span class="nb">{</span> Mary<span class="k">\thanks</span><span class="nb">{</span>E-mail:*****@***.com<span class="nb">}</span> <span class="c">%必填
+</span><span class="c"></span><span class="k">\and</span> Ted<span class="k">\thanks</span><span class="nb">{</span>Corresponding author<span class="nb">}</span>
+<span class="k">\and</span> Louis<span class="nb">}</span>
+<span class="k">\date</span><span class="nb">{</span><span class="k">\today</span><span class="nb">}</span> <span class="c">%可选，默认为\today
+</span></code></pre></td></tr></table>
+</div>
+</div><p>给定信息。信息给定后，在合适的位置使用 <code>\maketitle</code> 生成标题页。</p>
+<p>article 文档类的标题默认不单独成页,而 report 和 book 默认单独成页。可在 \documentclass 命令调用文档类时指定 titlepage / notitlepage 选项以修改默认的行为。</p>
+<p>注意这是三类基本文档类的默认使用方法。但我们一般用到的都是自定义的标题。有的模板用 <code>tilepage</code> 环境自定义标题。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\renewcommand</span><span class="nb">{</span><span class="k">\maketitle</span><span class="nb">}{</span><span class="k">\begin</span><span class="nb">{</span>titlepage<span class="nb">}</span>
+... <span class="c">% 用户自定义命令
+</span><span class="c"></span><span class="k">\end</span><span class="nb">{</span>titlepage<span class="nb">}}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>也有的模板直接撇开这一套，使用各种排版元素自己搞了一套制作标题的方法。所以在使用这些模板的时候，一定要仔细阅读文档。</p>
+<h3 id="交叉引用">交叉引用</h3>
+<p>使用 <code>\label{⟨label-name⟩}</code> 做标记，使用 <code>\ref{⟨label-name⟩}</code> 和 <code>\pageref{⟨label-name⟩}</code> 引用。如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex">A reference to this subsection <span class="k">\label</span><span class="nb">{</span>sec:this<span class="nb">}</span> looks like:
+``see section~<span class="k">\ref</span><span class="nb">{</span>sec:this<span class="nb">}</span> on page~<span class="k">\pageref</span><span class="nb">{</span>sec:this<span class="nb">}</span>.&#39;&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>得到 <code>A reference to this subsection looks like: “see section 3.3 on page 20.”</code></p>
+<p><code>\label</code> 可以用在各种不同的环境中，使用位置为：</p>
+<ul>
+<li><strong>章节标题</strong> 在章节标题命令 \section 等之后紧接着使用。</li>
+<li><strong>行间公式</strong> 单行公式在公式内任意位置使用;多行公式在每一行公式的任意位置使用。</li>
+<li><strong>有序列表</strong> 在 enumerate 环境的每个 \item 命令之后、下一个 \item 命令之前任意位置使用。</li>
+<li><strong>图表标题</strong> 在图表标题命令 \caption 之后紧接着使用。</li>
+<li><strong>定理环境</strong> 在定理环境内部任意位置使用。</li>
+</ul>
+<h3 id="脚注和旁注">脚注和旁注</h3>
+<p>正文中使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\footnote</span><span class="nb">{</span>⟨footnote⟩<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>生成脚注。在某些环境中，先使用 <code>\footnotemark</code> 为脚注计数,再在合适的位置用 <code>\footnotetext{}</code> 生成
+脚注。</p>
+<p>边注使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\marginpar</span><span class="nb">{</span><span class="k">\footnotesize</span> 边注较窄,不要写过多文字,最好设置较小的字号。<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="特殊环境">特殊环境</h3>
+<p>这一部分比较琐碎，这里只做列举。由于 markdown 表达能力有限，结果还要参考原文。</p>
+<h4 id="列表">列表</h4>
+<p>有序列表 <code>\enumerate</code> 和无序列表 <code>\itemize</code>。允许嵌套。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+  <span class="k">\item</span> An item.
+  <span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+    <span class="k">\item</span> A nested item.<span class="k">\label</span><span class="nb">{</span>itref<span class="nb">}</span>
+    <span class="k">\item</span><span class="na">[*]</span> A starred item.
+  <span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+  <span class="k">\item</span> Reference(<span class="k">\ref</span><span class="nb">{</span>itref<span class="nb">}</span>).
+<span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+  <span class="k">\item</span> An item.
+  <span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+    <span class="k">\item</span> A nested item.
+    <span class="k">\item</span><span class="na">[+]</span> A `plus&#39; item.
+    <span class="k">\item</span> Another item.
+  <span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+  <span class="k">\item</span> Go back to upper level.
+<span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>还有 <code>description</code> 环境，与上述用法类似，不过 <code>\item</code> 后的可选参数用来写关键字,以粗体显示,一般是必填的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>description<span class="nb">}</span>
+  <span class="k">\item</span><span class="na">[⟨item title⟩]</span> ...
+<span class="k">\end</span><span class="nb">{</span>description<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="对齐">对齐</h4>
+<p>三种对齐的文本环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span> <span class="c">%%居中
+</span><span class="c"></span>Centered text using a <span class="k">\verb</span>|center| environment.
+<span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>flushleft<span class="nb">}</span> <span class="c">%%左对齐
+</span><span class="c"></span>Left-aligned text using a <span class="k">\verb</span>|flushleft| environment.
+<span class="k">\end</span><span class="nb">{</span>flushleft<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>flushright<span class="nb">}</span> <span class="c">%%右对齐
+</span><span class="c"></span>Right-aligned text using a <span class="k">\verb</span>|flushright| environment.
+<span class="k">\end</span><span class="nb">{</span>flushright<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>直接使用命令对齐</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\centering</span>
+Centered text paragraph.
+<span class="k">\raggedright</span>
+Left-aligned text paragraph.
+<span class="k">\raggedleft</span>
+Right-aligned text paragraph.
+</code></pre></td></tr></table>
+</div>
+</div><p><code>center</code> 等环境会在上下文产生一个额外间距，而 <code>\centering</code> 等命令不产生，只是改变对齐方式。比如在浮动体环境 <code>table</code> 或 <code>figure</code> 内实现居中对齐，用 <code>\centering</code> 命令即可，没必要再用 <code>center</code> 环境。</p>
+<h4 id="引用">引用</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>quote<span class="nb">}</span> <span class="c">%用于引用较短的文字,首行不缩进
+</span><span class="c"></span>Knowledge is power.
+<span class="k">\end</span><span class="nb">{</span>quote<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>quotation<span class="nb">}</span> <span class="c">%用于引用若干段文字,首行缩进
+</span><span class="c"></span>万里赴戎机,关山度若飞。
+朔气传金柝,寒光照铁衣。
+将军百战死,壮士十年归。
+归来见天子,天子坐明堂。
+策勋十二转,赏赐百千强。......
+<span class="k">\end</span><span class="nb">{</span>quotation<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>verse<span class="nb">}</span> <span class="c">%用于排版诗歌，首行悬挂缩进
+</span><span class="c"></span>Beauty is truth&#39;s smile
+when she beholds her own face in
+a perfect mirror.
+<span class="k">\end</span><span class="nb">{</span>verse<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="摘要">摘要</h4>
+<p>摘要环境 <code>abstract</code> 默认只在标准文档类中的 <code>article</code> 和 <code>report</code> 文档类可用,一般用于紧跟 <code>\maketitle</code> 命令之后介绍文档的摘要。</p>
+<h4 id="代码">代码</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>verbatim<span class="nb">}</span>
+#include &lt;iostream&gt;
+int main()
+<span class="nb">{</span>
+std::cout &lt;&lt; &#34;Hello, world!&#34;
+&lt;&lt; std::endl;
+return 0;
+<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>verbatim<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>简单的代码环境用 <code>\verb|⟨code⟩|</code>。</p>
+<h3 id="盒子">盒子</h3>
+<p>不太能用到，不说了。</p>
+<h3 id="浮动体">浮动体</h3>
+<p>$\LaTeX$ 预定义两种浮动体，<code>figure</code> 和 <code>table</code>。前者用来添加图片，后者用来添加表格，用法相同。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[htbq!]
+...
+<span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可选参数提供了一些符号用来表示浮动体允许排版的位置。</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">h</td>
+<td>当前位置(代码所处的上下文)</td>
+</tr>
+<tr>
+<td align="center">t</td>
+<td>顶部</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td>底部</td>
+</tr>
+<tr>
+<td align="center">p</td>
+<td>单独成页</td>
+</tr>
+<tr>
+<td align="center">!</td>
+<td>在决定位置时忽视限制</td>
+</tr>
+</tbody>
+</table>
+<p>排版位置的选取与可选参数里符号的顺序无关,以 <code>h-t-b-p</code> 的优先级顺序决定浮动体位置。</p>
+<p>限制包括浮动体个数(除单独成页外,默认每页不超过 3 个浮动体,其中顶部不超过 2 个,底部不超过 1 个)以及浮动体空间占页面的百分比(默认顶部不超过 70%,底部不超过 30%)。</p>
+<p>浮动体的位置选取受到先后顺序的限制。如果某个浮动体由于参数限制、空间限制等原因在当前页无法放置,就要推迟到之后处理,并使得之后的同类浮动体一并推迟。<code>\clearpage</code> 命令会在另起一页之前,先将所有推迟处理的浮动体排版成页,此时 htbp 等位置限制被完全忽略。</p>
+<p>双栏排版环境下，使用 <code>table*</code> 和 <code>figure*</code> 环境用来排版跨栏的浮动体。它们的用法与 <code>table</code> 和 <code>figure</code> 一样,不同之处为双栏的可选参数只能用 tp 两个位置。</p>
+<h4 id="图片">图片</h4>
+<p>插入图片需要</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+<span class="k">\graphicspath</span><span class="nb">{{</span>figs/<span class="nb">}{</span>logos/<span class="nb">}}</span> <span class="c">%相对路径
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[ht]
+<span class="k">\centering</span> <span class="c">%图片居中
+</span><span class="c"></span><span class="k">\includegraphics</span><span class="na">[scale=0.6]</span><span class="nb">{</span>figure.png<span class="nb">}</span> <span class="c">%插入图片
+</span><span class="c"></span><span class="k">\caption</span><span class="nb">{</span>this is a figure<span class="nb">}</span> <span class="k">\footnotemark</span> <span class="c">%图片标题
+</span><span class="c"></span><span class="k">\label</span><span class="nb">{</span>fig:label<span class="nb">}</span> <span class="c">%用于交叉引用
+</span><span class="c"></span><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+
+<span class="k">\footnotetext</span><span class="nb">{}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>\includegraphics</code>可选参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width=⟨width⟩</td>
+<td>将图片缩放到宽度为 ⟨width⟩</td>
+</tr>
+<tr>
+<td>height=⟨height⟩</td>
+<td>将图片缩放到高度为 ⟨height⟩</td>
+</tr>
+<tr>
+<td>scale=⟨scale⟩</td>
+<td>将图片相对于原尺寸缩放 ⟨scale⟩ 倍</td>
+</tr>
+<tr>
+<td>angle=⟨angle⟩</td>
+<td>令图片逆时针旋转 ⟨angle⟩ 度</td>
+</tr>
+</tbody>
+</table>
+<p><code>\caption</code> 的用法非常类似于 <code>\section</code> 等命令，可以用带星号的命令 <code>\caption*</code> 生成不带编号的标题。
+<code>\caption</code> 命令之后还可以紧跟 <code>\label</code> 命令标记交叉引用。
+\caption 生成的标题形如 “Figure 1: &hellip;”(figure 环境)或 “Table 1: &hellip;”(table 环境)。</p>
+<p><code>table</code> 和 figure 两种浮动体分别生成表目录和图目录的命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\listoftables</span>
+<span class="k">\listoffigures</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>类似于 <code>\tableofcontents</code>，生成单独的章节。</p>
+<p>以上部分示例来自于<a href="https://blog.csdn.net/chichoxian/article/details/52588833">君的名字的CSDN：Latex中插图总结（一）</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
+<h4 id="表格">表格</h4>
+<p>$\LaTeX$ 并不擅长排版表格，要做出精致的表格并非易事。</p>
+<p>简单的表格可以在 <a href="http://www.tablesgenerator.com/latex_tables">tablesgenerator</a> 中制作。</p>
+<p>还可以通过 <a href="https://ctan.org/tex-archive/support/excel2latex?lang=en">excel2latex</a> 软件把 Excel 转成 Latex。</p>
+<h4 id="并排和子图标">并排和子图标</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htbp]
+  <span class="k">\centering</span>
+  <span class="k">\includegraphics</span><span class="na">[width=...]</span><span class="nb">{</span>...<span class="nb">}</span>
+  <span class="k">\qquad</span>
+  <span class="k">\includegraphics</span><span class="na">[width=...]</span><span class="nb">{</span>...<span class="nb">}</span> <span class="k">\\</span><span class="na">[..pt]</span>
+  <span class="k">\includegraphics</span><span class="na">[width=...]</span><span class="nb">{</span>...<span class="nb">}</span>
+  <span class="k">\caption</span><span class="nb">{</span>...<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>实现多行多列，但只能有一个caption。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htbp]
+  <span class="k">\centering</span>
+  <span class="k">\begin</span><span class="nb">{</span>minipage<span class="nb">}{</span>...<span class="nb">}</span>
+    <span class="k">\centering</span>
+    <span class="k">\includegraphics</span><span class="na">[width=...]</span><span class="nb">{</span>...<span class="nb">}</span>
+    <span class="k">\caption</span><span class="nb">{</span>...<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>minipage<span class="nb">}</span>
+  <span class="k">\qquad</span>
+  <span class="k">\begin</span><span class="nb">{</span>minipage<span class="nb">}{</span>...<span class="nb">}</span>
+    <span class="k">\centering</span>
+    <span class="k">\includegraphics</span><span class="na">[width=...]</span><span class="nb">{</span>...<span class="nb">}</span>
+    <span class="k">\caption</span><span class="nb">{</span>...<span class="nb">}</span>
+  <span class="k">\end</span><span class="nb">{</span>minipage<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>实现两幅图并排。每幅图都有caption。</p>
+<p>若</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+<span class="k">\graphicspath</span><span class="nb">{{</span>figs/<span class="nb">}{</span>logos/<span class="nb">}}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>subfig<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>则可以生成子图。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-latex" data-lang="latex"><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htbp]
+<span class="k">\centering</span>
+<span class="k">\subfloat</span><span class="na">[...]</span><span class="nb">{</span><span class="k">\label</span><span class="nb">{</span>sub-fig-1<span class="nb">}</span><span class="c">% 为子图加交叉引用
+</span><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>minipage<span class="nb">}{</span>...<span class="nb">}</span>
+<span class="k">\centering</span>
+<span class="k">\includegraphics</span><span class="na">[width=...]</span><span class="nb">{</span>...<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>minipage<span class="nb">}</span>
+<span class="nb">}</span>
+<span class="k">\qquad</span>
+<span class="k">\subfloat</span><span class="na">[...]</span><span class="nb">{</span><span class="c">%
+</span><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>minipage<span class="nb">}{</span>...<span class="nb">}</span>
+<span class="k">\centering</span>
+<span class="k">\includegraphics</span><span class="na">[width=...]</span><span class="nb">{</span>...<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>minipage<span class="nb">}</span>
+<span class="nb">}</span>
+<span class="k">\caption</span><span class="nb">{</span>...<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>君的名字的CSDN：Latex中插图总结（一）。<a href="https://blog.csdn.net/chichoxian/article/details/52588833">https://blog.csdn.net/chichoxian/article/details/52588833</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">梁康</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-04-20
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank">CC BY-NC-SA 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../../donate/wechatpayimg.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../../donate/alipayimg.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="../../tags/latex/">latex</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="../../post/latex2/">
+            <span class="next-text nav-default">Latex 使用笔记(2)</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'wYYUrMyih6pOkEIq39OTEcNz-gzGzoHsz',
+        appKey: 'vjpKINB2En1ru9BOP0Nyznfi',
+        notify:  false ,
+        verify:  false ,
+        avatar:'mm',
+        placeholder: '说点什么吧...',
+        visitor:  false 
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:kanglcn@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/kanglcn" class="iconfont icon-github" title="github"></a>
+  <a href="https://kanglcn.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">梁康</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-cn".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script>window.sequenceDiagramsOptions = {theme: 'simple'};</script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+
+
+
+<script type="text/javascript" src="https://kanglcn.github.io/js/main.4d21c1cefdf1cd0b77ef59bab2d1bbe3112fc9d6cc04710bb1f0b1fd7b891f11.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

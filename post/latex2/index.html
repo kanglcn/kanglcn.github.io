@@ -49,7 +49,7 @@
 <meta itemprop="description" content="本文承接Latex 使用笔记(1)。 用 $\LaTeX$ 排版文字 排版中文 源码统一使用 utf8 编码，用 xelatex 命令编译。源码中使用 ctex 宏包或者文档类。 1 2 3 4 5 \documentclass{article} \usepackage[UTF8]{ctex} \begin{document} 你好，这">
 <meta itemprop="datePublished" content="2020-04-20T01:27:43&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-20T01:27:43&#43;08:00" />
-<meta itemprop="wordCount" content="694">
+<meta itemprop="wordCount" content="746">
 
 
 
@@ -137,7 +137,7 @@
         <div class="post-category">
             <a href="../../categories/latex/"> latex </a>
             </div>
-          <span class="more-meta"> 约 694 字 </span>
+          <span class="more-meta"> 约 746 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -282,7 +282,7 @@ An example of <span class="k">\uline</span><span class="nb">{</span>some long an
 <h3 id="断行和断页">断行和断页</h3>
 <p>断行会尽量取在两个单词之间。用 <code>~</code> 插入不会断行的空格。通常用在英文人名，图表名称等场景。如 <code>Fig.~2a</code>。</p>
 <p>手动断行用 <code>\\[⟨length⟩]</code>, 既适用于文本，也适用于表格和公式。参数为垂直间距。</p>
-<p>断页 <code>\newpage</code>。</p>
+<p>断页 <code>\newpage</code> 和 <code>\clearpage</code>。二者的区别在于 <code>\clearpage</code> 会在另起一页之前,先将所有推迟处理的浮动体排版成页,此时 htbp 等位置限制被完全忽略。</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -331,7 +331,11 @@ An example of <span class="k">\uline</span><span class="nb">{</span>some long an
           <a href="../../tags/latex/">latex</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="../../post/latex3/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Latex 使用笔记(3)</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="../../post/latex1/">
             <span class="next-text nav-default">Latex 使用笔记(1)</span>
             <span class="next-text nav-mobile">下一篇</span>
