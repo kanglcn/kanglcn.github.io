@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lshort on Kang&#39;s blog</title>
+    <link>https://kanglcn.github.io/tags/lshort/</link>
+    <description>Recent content in lshort on Kang&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 20 Apr 2020 06:05:32 +0800</lastBuildDate>
+    
+	<atom:link href="https://kanglcn.github.io/tags/lshort/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Latex 使用笔记(3)</title>
+      <link>https://kanglcn.github.io/post/latex3/</link>
+      <pubDate>Mon, 20 Apr 2020 06:05:32 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/latex3/</guid>
+      <description>本文承接Latex 使用笔记(2)。 文档元素 章节和目录 章节标题 三个标准文档类提供了 1 2 3 4 5 6 \chapter{⟨title⟩} \sectio</description>
+    </item>
+    
+    <item>
+      <title>Latex 使用笔记(2)</title>
+      <link>https://kanglcn.github.io/post/latex2/</link>
+      <pubDate>Mon, 20 Apr 2020 01:27:43 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/latex2/</guid>
+      <description>本文承接Latex 使用笔记(1)。 用 $\LaTeX$ 排版文字 排版中文 源码统一使用 utf8 编码，用 xelatex 命令编译。源码中使用 ctex 宏包或者文档类。 1 2 3 4 5 \documentclass{article} \usepackage[UTF8]{ctex} \begin{document} 你好，这</description>
+    </item>
+    
+    <item>
+      <title>Latex 使用笔记(1)</title>
+      <link>https://kanglcn.github.io/post/latex1/</link>
+      <pubDate>Sun, 19 Apr 2020 23:08:11 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/latex1/</guid>
+      <description>注意： 本系列不打算详细地叙述 $\LaTeX$ 的使用，而是我阅读一份不太简短的$\LaTeX$介绍1的一些笔记，以及实际使用时的一些经验积累，方便快速查询；</description>
+    </item>
+    
+  </channel>
+</rss>

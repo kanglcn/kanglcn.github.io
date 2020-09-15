@@ -49,7 +49,7 @@
 <meta itemprop="description" content="本文介绍我在 linux 系统文件目录组织结构以及备份方面的经验。 FHS(Filesystem Hierarchy Standard) linux 根目录下各个目录的意义属于烂大街的知识，请自行搜索。 有意思的是： 根目录下目录比">
 <meta itemprop="datePublished" content="2020-04-17T06:28:59&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-17T06:28:59&#43;08:00" />
-<meta itemprop="wordCount" content="1041">
+<meta itemprop="wordCount" content="1044">
 
 
 
@@ -94,6 +94,8 @@
         <li class="mobile-menu-item">捐赠</li>
       </a><a href="../../about/">
         <li class="mobile-menu-item">关于</li>
+      </a><a href="../../diary/">
+        <li class="mobile-menu-item">当然我在胡说八道</li>
       </a>
   </ul>
 </nav>
@@ -119,6 +121,8 @@
         <a class="menu-item-link" href="../../donations/">捐赠</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="../../about/">关于</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../diary/">当然我在胡说八道</a>
       </li>
   </ul>
 </nav>
@@ -137,7 +141,7 @@
         <div class="post-category">
             <a href="../../categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 1041 字 </span>
+          <span class="more-meta"> 约 1044 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -150,18 +154,19 @@
   <ul>
     <li><a href="#fhsfilesystem-hierarchy-standard">FHS(Filesystem Hierarchy Standard)</a></li>
     <li><a href="#分区方式">分区方式</a></li>
-    <li><a href="#最佳使用方式">最佳使用方式</a></li>
-    <li><a href="#备份">备份</a>
-      <ul>
-        <li><a href="#系统备份">系统备份</a></li>
-      </ul>
-    </li>
+    <li><a href="#软件安装路径选择">软件安装路径选择</a></li>
+    <li><a href="#系统备份">系统备份</a></li>
     <li><a href="#文件管理">文件管理</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ul>
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-04-17T06:28:59" title="April 17, 2020">April 17, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <p>本文介绍我在 linux 系统文件目录组织结构以及备份方面的经验。</p>
 <h2 id="fhsfilesystem-hierarchy-standard">FHS(Filesystem Hierarchy Standard)</h2>
@@ -180,16 +185,18 @@
 <li>swap 交换分区；</li>
 </ul>
 <p>三个分区即可。这样分区和目录的使用方式有关，是为了更好地使用和备份。</p>
-<h2 id="最佳使用方式">最佳使用方式</h2>
+<h2 id="软件安装路径选择">软件安装路径选择</h2>
 <p>通过 pacman 和 yay 安装的软件安装在 <code>/usr</code> 中，这个目录下的文件一般不需要改动。</p>
-<p><code>/usr/local</code> 和 <code>/opt</code> 都可以用来安装自己编译的软件，建议使用 <code>/opt</code> 因为 <code>/opt</code> 可以单独分区，这样重装系统时可以保留，避免了重新编译的麻烦。<code>/usr/local</code> 中我目前只安装了 matlab，因为默认如此，不做任何更改最好。实际上，有些软件安装时会向 <code>/usr/bin</code> 中加入 link，如果这样的软件安装在 <code>/opt</code> 中，重装系统之后可能会不能用，因为 <code>/usr</code> 被重装了，所以 <code>/opt</code> 只适合安装自己很了解的软件，比如需要自己手动编译的软件；</p>
+<p><code>/usr/local</code> 和 <code>/opt</code> 都可以用来安装自己编译的软件。</p>
+<p>建议使用 <code>/opt</code> 安装自己编译的软件，因为 <code>/opt</code> 可以单独分区，这样重装系统时可以保留，避免了重新编译的麻烦。</p>
+<p><code>/usr/local</code> 中我目前只安装了 matlab，商业软件经常会有一些验证方式来避免被盗用，而我们对这种闭源的软件的一些东西又不太了解，默认安装在这里就安装在这里，不做任何更改最好。</p>
+<p><code>/opt</code> 只适合安装自己很了解的软件，比如需要自己手动编译的软件。</p>
 <p>注意一些闭源的商业软件也会安装在 <code>/opt</code> 中，比如 VS code，google chrome，qq等。</p>
 <p>有人喜欢把 <code>/home</code> 也作为独立的分区，在系统重装时保存。但实际上 <code>/home</code> 中的隐藏配置文件很多，保存可能会有冲突。</p>
-<h2 id="备份">备份</h2>
-<h3 id="系统备份">系统备份</h3>
+<h2 id="系统备份">系统备份</h2>
 <p>我这里的系统指的是除 <code>/home</code> 目录中非隐藏目录之外的所有目录。</p>
-<p>每次更改系统之后，比如 <code>sudo pacman -Syu</code> 升级软件之后，运行 timeshift 备份系统。<code>timeshift</code> 我在<a href="../install-linux-practice">安装 linux 的实践</a>中提到过。一次我更换显卡驱动之后电脑黑屏，这时我进入 tty 使用 timeshift 成功恢复了系统。</p>
-<p>排除非系统目录的原因在于非系统目录文件变化比较快，每次都同步系统太麻烦，更重要的是恢复后数据会丢失，使用别的方法单独保存，可以参考<a href="https://blog.seisman.info/file-organization/">Seisman 的博客：文件管理与备份</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>中的相关内容。</p>
+<p>建议定期运行 timeshift 备份系统，每次更改系统之前也要备份。<code>timeshift</code> 我在<a href="../install-linux-practice">安装 linux 的实践</a>中提到过。一次我更换显卡驱动之后电脑黑屏，这时我进入 tty 使用 timeshift 成功恢复了系统。</p>
+<p>排除非系统目录的原因在于非系统目录文件变化比较快，每次更改都备份太麻烦，而且备份频率不高的话恢复后丢失在此期间的数据，所以我建议使用别的方法单独保存，可以参考<a href="https://blog.seisman.info/file-organization/">Seisman 的博客：文件管理与备份</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>中的相关内容。</p>
 <h2 id="文件管理">文件管理</h2>
 <p>关于 <code>/home</code> 目录下文件管理部分可以参考<a href="https://blog.seisman.info/file-organization/">Seisman 的博客：文件管理与备份</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
 <h2 id="acknowledgements">Acknowledgements</h2>

@@ -44,12 +44,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanglcn.github.io/post/general-software/" />
 <meta property="article:published_time" content="2020-04-11T07:42:59+08:00" />
-<meta property="article:modified_time" content="2020-04-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-21T00:00:00+00:00" />
 <meta itemprop="name" content="linux 下安装常用软件">
 <meta itemprop="description" content="本文介绍 linux 下的常用软件的安装。 Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo">
 <meta itemprop="datePublished" content="2020-04-11T07:42:59&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1210">
+<meta itemprop="dateModified" content="2020-04-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1223">
 
 
 
@@ -94,6 +94,8 @@
         <li class="mobile-menu-item">捐赠</li>
       </a><a href="../../about/">
         <li class="mobile-menu-item">关于</li>
+      </a><a href="../../diary/">
+        <li class="mobile-menu-item">当然我在胡说八道</li>
       </a>
   </ul>
 </nav>
@@ -119,6 +121,8 @@
         <a class="menu-item-link" href="../../donations/">捐赠</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="../../about/">关于</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../diary/">当然我在胡说八道</a>
       </li>
   </ul>
 </nav>
@@ -137,7 +141,7 @@
         <div class="post-category">
             <a href="../../categories/software/"> software </a>
             </div>
-          <span class="more-meta"> 约 1210 字 </span>
+          <span class="more-meta"> 约 1223 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -164,6 +168,11 @@
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-04-21T00:00:00" title="April 21, 2020">April 21, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <p>本文介绍 linux 下的常用软件的安装。
 Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。</p>
@@ -216,9 +225,11 @@ fc-cache -f
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -S texlive-most
+sudo pacman -S biber
 sudo pacman -S texlive-langchinese  <span class="c1">#texlive的中文支持</span>
 sudo pacman -S texstudio
 </code></pre></td></tr></table>
@@ -305,10 +316,10 @@ wine会使默认的浏览器更改，这时要删掉`～/.local/share/applicatio
 </div>
 </div><p>但不要将上述别名放在<code>/etc/profile</code>中，这样没有任何效果，可能是因为会被之后的配置文件覆盖掉。可以放在<code>~/.bashrc</code>中。</p>
 <h2 id="update">Update</h2>
-<p>2020-04-11：初稿；
-2020-04-12：增加 linux qq；
-2020-04-15：删除 wine；
-2020-04-17：删除 linux qq 并添加声明；</p>
+<p>1.2020-04-11：初稿；
+2.2020-04-12：增加 linux qq；
+3.2020-04-15：删除 wine；
+4.2020-04-17：删除 linux qq 并添加声明；</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -331,7 +342,7 @@ wine会使默认的浏览器更改，这时要删掉`～/.local/share/applicatio
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-04-15
+        2020-04-21
         
     </span>
   </p>
