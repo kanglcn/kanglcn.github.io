@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 Apr 2020 06:05:32 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2020 23:02:02 +0800</lastBuildDate>
     
 	<atom:link href="https://kanglcn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Digital Fourier Transformation</title>
+      <link>https://kanglcn.github.io/post/digital-fourier-transformation/</link>
+      <pubDate>Tue, 15 Sep 2020 23:02:02 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/digital-fourier-transformation/</guid>
+      <description>信号的分类 连续时间信号 $x(t)$。 离散时间信号 $x_n$。 能量信号 即能量有限的信号； 能量有限的信号一定是非周期的信号，因为能量有限信号只能</description>
+    </item>
     
     <item>
       <title>Latex 使用笔记(3)</title>

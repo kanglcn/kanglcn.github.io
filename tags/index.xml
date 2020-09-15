@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 Apr 2020 06:05:32 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2020 23:02:02 +0800</lastBuildDate>
     
 	<atom:link href="https://kanglcn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DFT</title>
+      <link>https://kanglcn.github.io/tags/dft/</link>
+      <pubDate>Tue, 15 Sep 2020 23:02:02 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/dft/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>latex</title>

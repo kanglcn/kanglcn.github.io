@@ -3,7 +3,42 @@
   
   <url>
     <loc>https://kanglcn.github.io/categories/</loc>
-    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-15T23:02:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/tags/dft/</loc>
+    <lastmod>2020-09-15T23:02:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/categories/dft/</loc>
+    <lastmod>2020-09-15T23:02:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/post/digital-fourier-transformation/</loc>
+    <lastmod>2020-09-15T23:02:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/post/</loc>
+    <lastmod>2020-09-15T23:02:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://kanglcn.github.io/tags/</loc>
+    <lastmod>2020-09-15T23:02:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -39,20 +74,6 @@
   <url>
     <loc>https://kanglcn.github.io/tags/note/</loc>
     <lastmod>2020-04-20T06:05:32+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kanglcn.github.io/post/</loc>
-    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://kanglcn.github.io/tags/</loc>
-    <lastmod>2020-09-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
