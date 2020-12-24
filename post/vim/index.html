@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="梁康" /><meta name="description" content="vim 使用 Shift &#43; 鼠标选中，Shift &#43; 鼠标中键可以实现复制和粘贴的功能。 待更新。。。" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+<meta name="author" content="梁康" /><meta name="description" content="tips vim-table-mode key bindings using vim-markdown-toc bullets.vim rnvimr vim-surround vim-expand-region vim-visual-multi vim-rooter any-jump.vim vista.vim fzf.vim undotree vim-gitgutter agit.vim vim-autoformat Note that some of the key bindings is remaped through my own habit. tips vim 插件提供的快捷键一般映射到以开头的快捷键上。 Text object is also applicable for visual mode. viw will select the word. command" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.68.3 with theme even" />
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
 
 
 <link rel="canonical" href="https://kanglcn.github.io/post/vim/" />
@@ -35,27 +35,28 @@
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<link href="https://kanglcn.github.io/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link href="../../sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="Vim" />
-<meta property="og:description" content="vim 使用 Shift &#43; 鼠标选中，Shift &#43; 鼠标中键可以实现复制和粘贴的功能。 待更新。。。" />
+<meta property="og:description" content="tips vim-table-mode key bindings using vim-markdown-toc bullets.vim rnvimr vim-surround vim-expand-region vim-visual-multi vim-rooter any-jump.vim vista.vim fzf.vim undotree vim-gitgutter agit.vim vim-autoformat Note that some of the key bindings is remaped through my own habit. tips vim 插件提供的快捷键一般映射到以开头的快捷键上。 Text object is also applicable for visual mode. viw will select the word. command" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanglcn.github.io/post/vim/" />
 <meta property="article:published_time" content="2020-04-17T20:48:27+08:00" />
-<meta property="article:modified_time" content="2020-04-17T20:48:27+08:00" />
+<meta property="article:modified_time" content="2020-12-22T00:00:00+00:00" />
 <meta itemprop="name" content="Vim">
-<meta itemprop="description" content="vim 使用 Shift &#43; 鼠标选中，Shift &#43; 鼠标中键可以实现复制和粘贴的功能。 待更新。。。">
-<meta itemprop="datePublished" content="2020-04-17T20:48:27&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-17T20:48:27&#43;08:00" />
-<meta itemprop="wordCount" content="39">
+<meta itemprop="description" content="tips vim-table-mode key bindings using vim-markdown-toc bullets.vim rnvimr vim-surround vim-expand-region vim-visual-multi vim-rooter any-jump.vim vista.vim fzf.vim undotree vim-gitgutter agit.vim vim-autoformat Note that some of the key bindings is remaped through my own habit. tips vim 插件提供的快捷键一般映射到以开头的快捷键上。 Text object is also applicable for visual mode. viw will select the word. command">
+<meta itemprop="datePublished" content="2020-04-17T20:48:27+08:00" />
+<meta itemprop="dateModified" content="2020-12-22T00:00:00+00:00" />
+<meta itemprop="wordCount" content="682">
 
 
 
-<meta itemprop="keywords" content="," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="vim,plug," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vim"/>
-<meta name="twitter:description" content="vim 使用 Shift &#43; 鼠标选中，Shift &#43; 鼠标中键可以实现复制和粘贴的功能。 待更新。。。"/>
+<meta name="twitter:description" content="tips vim-table-mode key bindings using vim-markdown-toc bullets.vim rnvimr vim-surround vim-expand-region vim-visual-multi vim-rooter any-jump.vim vista.vim fzf.vim undotree vim-gitgutter agit.vim vim-autoformat Note that some of the key bindings is remaped through my own habit. tips vim 插件提供的快捷键一般映射到以开头的快捷键上。 Text object is also applicable for visual mode. viw will select the word. command"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -135,10 +136,10 @@
       <div class="post-meta">
         <span class="post-time"> 2020-04-17 </span>
         <div class="post-category">
-            <a href="../../categories//">  </a>
+            <a href="../../categories/vim/"> vim </a>
             </div>
-          <span class="more-meta"> 约 39 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 682 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -146,17 +147,483 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#tips">tips</a></li>
+    <li><a href="#vim-table-mode">vim-table-mode</a>
+      <ul>
+        <li><a href="#key-bindings">key bindings</a></li>
+        <li><a href="#using">using</a></li>
+      </ul>
+    </li>
+    <li><a href="#vim-markdown-toc">vim-markdown-toc</a></li>
+    <li><a href="#bulletsvim">bullets.vim</a></li>
+    <li><a href="#rnvimr">rnvimr</a></li>
+    <li><a href="#vim-surround">vim-surround</a></li>
+    <li><a href="#vim-expand-region">vim-expand-region</a></li>
+    <li><a href="#vim-visual-multi">vim-visual-multi</a></li>
+    <li><a href="#vim-rooter">vim-rooter</a></li>
+    <li><a href="#any-jumpvim">any-jump.vim</a></li>
+    <li><a href="#vistavim">vista.vim</a></li>
+    <li><a href="#fzfvim">fzf.vim</a></li>
+    <li><a href="#undotree">undotree</a></li>
+    <li><a href="#vim-gitgutter">vim-gitgutter</a></li>
+    <li><a href="#agitvim">agit.vim</a></li>
+    <li><a href="#vim-autoformat">vim-autoformat</a></li>
+  </ul>
+</nav>
   </div>
 </div>
-  <div class="post-outdated">
-    <div class="hint">
-      <p>【注意】最后更新于 <span class="timeago" datetime="2020-04-17T20:48:27" title="April 17, 2020">April 17, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
-    </div>
-  </div>
     <div class="post-content">
-      <p>vim 使用 <kbd>Shift</kbd> + 鼠标选中，<kbd>Shift</kbd> + 鼠标中键可以实现复制和粘贴的功能。</p>
-<p>待更新。。。</p>
+      <!-- vim-markdown-toc GFM -->
+<ul>
+<li><a href="#tips">tips</a></li>
+<li><a href="#vim-table-mode">vim-table-mode</a>
+<ul>
+<li><a href="#key-bindings">key bindings</a></li>
+<li><a href="#using">using</a></li>
+</ul>
+</li>
+<li><a href="#vim-markdown-toc">vim-markdown-toc</a></li>
+<li><a href="#bulletsvim">bullets.vim</a></li>
+<li><a href="#rnvimr">rnvimr</a></li>
+<li><a href="#vim-surround">vim-surround</a></li>
+<li><a href="#vim-expand-region">vim-expand-region</a></li>
+<li><a href="#vim-visual-multi">vim-visual-multi</a></li>
+<li><a href="#vim-rooter">vim-rooter</a></li>
+<li><a href="#any-jumpvim">any-jump.vim</a></li>
+<li><a href="#vistavim">vista.vim</a></li>
+<li><a href="#fzfvim">fzf.vim</a></li>
+<li><a href="#undotree">undotree</a></li>
+<li><a href="#vim-gitgutter">vim-gitgutter</a></li>
+<li><a href="#agitvim">agit.vim</a></li>
+<li><a href="#vim-autoformat">vim-autoformat</a></li>
+</ul>
+<!-- vim-markdown-toc -->
+<p>Note that some of the key bindings is remaped through my own habit.</p>
+<h2 id="tips">tips</h2>
+<p>vim 插件提供的快捷键一般映射到以<LEADER>开头的快捷键上。</p>
+<p>Text object is also applicable for visual mode.</p>
+<p><code>viw</code> will select the word.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gx</td>
+<td>goto url</td>
+</tr>
+<tr>
+<td>gf</td>
+<td>goto file</td>
+</tr>
+</tbody>
+</table>
+<p>vim 使用 <kbd>Shift</kbd> + 鼠标选中，<kbd>Shift</kbd> + 鼠标中键可以实现复制和粘贴的功能。</p>
+<p>在查看help时，<kbd>Ctrl</kbd>+]跳转到光标所在的主题上，<kbd>Ctrl</kbd>+o返回跳转前的主题。</p>
+<p>Here are some key bindings of pllugs I use.</p>
+<h2 id="vim-table-mode">vim-table-mode</h2>
+<p><a href="https://github.com/dhruvasagar/vim-table-mode">vim-table-mode</a> helps writing table in markdown file.</p>
+<h3 id="key-bindings">key bindings</h3>
+<table>
+<thead>
+<tr>
+<th>key bindings</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>LEADER</kbd>+<code>tm</code></td>
+<td>toggle vim table mode</td>
+</tr>
+<tr>
+<td><kbd>LEADER</kbd>+<code>tdd</code></td>
+<td>delete the current row</td>
+</tr>
+<tr>
+<td><kbd>LEADER</kbd>+<code>tdc</code></td>
+<td>delete the current column</td>
+</tr>
+<tr>
+<td><kbd>LEADER</kbd>+<code>tic</code></td>
+<td>insert the current column</td>
+</tr>
+<tr>
+<td><code>i                      | </code></td>
+<td>text object</td>
+</tr>
+<tr>
+<td><code>a                      | </code></td>
+<td>text object</td>
+</tr>
+</tbody>
+</table>
+<h3 id="using">using</h3>
+<ul>
+<li>
+<p>Enter the first line, delimiting columns by the | symbol. The plugin reacts by inserting spaces between the text.</p>
+</li>
+<li>
+<p>In the second line (without leaving Insert mode), enter | twice. The plugin will write a properly formatted horizontal line.</p>
+</li>
+<li>
+<p>When you enter the subsequent lines, the plugin will automatically adjust the formatting to match the text you’re entering every time you press.</p>
+</li>
+</ul>
+<h2 id="vim-markdown-toc">vim-markdown-toc</h2>
+<p><a href="https://github.com/mzlogin/vim-markdown-toc">vim-markdown-toc</a></p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:GenTocGFM</td>
+<td>generate toc in GFM style</td>
+</tr>
+<tr>
+<td>:UpdateToc</td>
+<td>update toc</td>
+</tr>
+<tr>
+<td>:RemoveToc</td>
+<td>remove toc</td>
+</tr>
+</tbody>
+</table>
+<p>Note that toc will be automatically updated so generally you don&rsquo;t need UpdateToc.</p>
+<h2 id="bulletsvim">bullets.vim</h2>
+<p><a href="https://github.com/dkarter/bullets.vim">bullets.vim</a></p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>Ctrl</kbd>+t</td>
+<td>deeper layer</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>+d</td>
+<td>shallower layer</td>
+</tr>
+<tr>
+<td>:RenumberSelection</td>
+<td>rt</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rnvimr">rnvimr</h2>
+<p><a href="https://github.com/kevinhwang91/rnvimr">Rnvimr</a> allows you to use Ranger in a floating window.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>LEADER</kbd>r</td>
+<td>RnvimrToggle</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>+t</td>
+<td>NvimEdit tabedit</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>+x</td>
+<td>NvimEdit split</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>+v</td>
+<td>NvimEdit vsplit</td>
+</tr>
+<tr>
+<td>gw</td>
+<td>JumpNvimCwd</td>
+</tr>
+<tr>
+<td>yw</td>
+<td>EmitRangerCwd</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vim-surround">vim-surround</h2>
+<p><a href="https://github.com/theniceboy/nvim/blob/master/init.vim">vim-surround</a> allows manipulate surroundings.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cs&quot;&lt;q&gt;</td>
+<td>&ldquo;hello&rdquo; -&gt; &lt;q&gt;hello&lt;/q&gt;</td>
+</tr>
+<tr>
+<td>cst&quot;</td>
+<td>&lt;q&gt;hello&lt;/q&gt; -&gt; &ldquo;hello&rdquo;</td>
+</tr>
+<tr>
+<td>ysiw&lt;q&gt;</td>
+<td>hello -&gt; &lt;q&gt;hello&lt;/q&gt;</td>
+</tr>
+<tr>
+<td>dst</td>
+<td>&lt;q&gt;hello&lt;/q&gt; -&gt; hello</td>
+</tr>
+<tr>
+<td>ysiw]</td>
+<td>hello -&gt; [hello]</td>
+</tr>
+<tr>
+<td>ysiw[</td>
+<td>hello -&gt; [ hello ]</td>
+</tr>
+<tr>
+<td>yss)</td>
+<td>add () to the entire line</td>
+</tr>
+</tbody>
+</table>
+<p>In visual mode, S+surrounding will surround the selected area.</p>
+<h2 id="vim-expand-region">vim-expand-region</h2>
+<p><a href="https://github.com/terryma/vim-expand-region">vim-expand-region</a> allows you quickly select the closest text object among a group of candidates.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v/+</td>
+<td>expand the visual selection(in visual mode)</td>
+</tr>
+<tr>
+<td>_</td>
+<td>shrink the visual selection(in visual mode)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vim-visual-multi">vim-visual-multi</h2>
+<p><a href="https://github.com/mg979/vim-visual-multi">vim-visual-multi</a> allows you to edit file using multi-cusor.</p>
+<p><kbd>Ctrl</kbd>n adds cusors at places of the selected snippets in visual mode or word when not using visual mode.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>Ctrl</kbd>n</td>
+<td>add cusor at place of same words</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>j/k</td>
+<td>add cusor vertically</td>
+</tr>
+<tr>
+<td>n/N</td>
+<td>get next/previous occurrence</td>
+</tr>
+<tr>
+<td>[/]</td>
+<td>select next/previous occurrence</td>
+</tr>
+<tr>
+<td>q</td>
+<td>skip current and get next occurrence</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>remove current cursor/selection</td>
+</tr>
+</tbody>
+</table>
+<p>You can modify you file (such i,a,I,A) when you select several words in their place.</p>
+<p>This plugin brings awesome convenience when coorperated with <code>f</code>.</p>
+<h2 id="vim-rooter">vim-rooter</h2>
+<p><a href="https://github.com/airblade/vim-rooter">vim-rooter</a> changes the working directory to the project root when you open a file or directory.</p>
+<h2 id="any-jumpvim">any-jump.vim</h2>
+<p><a href="https://github.com/pechorin/any-jump.vim">any-jump.vim</a> allows jumping to the defination of variables or functions&hellip;</p>
+<p>The doc of this plugin needs to be read next time.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>LEADER</kbd>j</td>
+<td>:AnyJump<CR></td>
+</tr>
+<tr>
+<td><kbd>LEADER</kbd>ab</td>
+<td>:AnyJumpBack<CR></td>
+</tr>
+<tr>
+<td><kbd>LEADER</kbd>al</td>
+<td>:AnyJumpLastResults<CR></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vistavim">vista.vim</h2>
+<p>Tags is a tool that generate a file containing the positions of variable and functions definations.</p>
+<p><a href="https://github.com/liuchengxu/vista.vim">vista.vim</a> provides an easy way to browse the tags of the current file and get view of its structure.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>LEADER</kbd>v</td>
+<td>:Vista</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>t</td>
+<td>:Vista find coc(using fzf)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fzfvim">fzf.vim</h2>
+<p><a href="https://github.com/junegunn/fzf.vim">fzf.vim</a> allows using fzf in vim.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;LEADER&gt;ff</td>
+<td>:Files<CR></td>
+</tr>
+<tr>
+<td>&lt;LEADER&gt;fhh</td>
+<td>:History<CR></td>
+</tr>
+<tr>
+<td>&lt;LEADER&gt;fh:</td>
+<td>:History:<CR></td>
+</tr>
+<tr>
+<td>&lt;LEADER&gt;fh/</td>
+<td>:History/<CR></td>
+</tr>
+<tr>
+<td>&lt;LEADER&gt;fc</td>
+<td>:Colors<CR></td>
+</tr>
+<tr>
+<td>&lt;LEADER&gt;fb</td>
+<td>:Buffers<CR></td>
+</tr>
+<tr>
+<td>&lt;LEADER&gt;fl</td>
+<td>:Lines<CR></td>
+</tr>
+</tbody>
+</table>
+<h2 id="undotree">undotree</h2>
+<p><a href="">undotree</a> allows switching between historical branches.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;LEADER&gt;u</td>
+<td>:UndotreeToggle<CR></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vim-gitgutter">vim-gitgutter</h2>
+<p><a href="https://github.com/airblade/vim-gitgutter">vim-gitgutter</a> is a Vim plugin which shows a git diff in the sign column. It shows which lines have been added, modified, or removed.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;LEADER&gt;gf</td>
+<td>:GitGutterFold<CR></td>
+</tr>
+<tr>
+<td>&lt;LEADER&gt;gh</td>
+<td>:GitGutterPreviewHunk<C></td>
+</tr>
+<tr>
+<td>&lt;LEADER&gt;gk</td>
+<td>:GitGutterPrevHunk<R></td>
+</tr>
+<tr>
+<td>&lt;LEADER&gt;gj</td>
+<td>:GitGutterNextHunk<CR></td>
+</tr>
+</tbody>
+</table>
+<h2 id="agitvim">agit.vim</h2>
+<p><a href="https://github.com/cohama/agit.vim">agit.vim</a> shows git log.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><LEADER>gl</td>
+<td>:Agit<CR></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vim-autoformat">vim-autoformat</h2>
+<p><a href="https://github.com/google/vim-codefmt">vim-codefmt</a> allows formatting code.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><F3></td>
+<td>:autoformat<CR></td>
+</tr>
+</tbody>
+</table>
 
     </div>
 
@@ -168,7 +635,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-04-17
+        2020-12-22
         
     </span>
   </p>
@@ -194,7 +661,8 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="../../tags//"></a>
+          <a href="../../tags/vim/">vim</a>
+          <a href="../../tags/plug/">plug</a>
           </div>
       <nav class="post-nav">
         <a class="prev" href="../../post/latex1/">
@@ -260,13 +728,10 @@
 
   <span class="copyright-year">
     &copy; 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">梁康</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>梁康</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -288,16 +753,16 @@
 
 
 
-<script type="text/javascript" src="https://kanglcn.github.io/js/main.4d21c1cefdf1cd0b77ef59bab2d1bbe3112fc9d6cc04710bb1f0b1fd7b891f11.js"></script>
+<script type="text/javascript" src="../../js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
   <script type="text/javascript">
     window.MathJax = {
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      TeX: {equationNumbers: {autoNumber: "AMS"}},
-      showProcessingMessages: false,
-      messageStyle: 'none'
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
     };
   </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
 
 
 

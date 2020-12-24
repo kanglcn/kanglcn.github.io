@@ -6,10 +6,24 @@
     <description>Recent content on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 07 Apr 2020 00:21:42 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Dec 2020 14:59:29 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ssh连接服务器图形界面</title>
+      <link>https://kanglcn.github.io/post/ssh-x/</link>
+      <pubDate>Thu, 24 Dec 2020 14:59:29 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/ssh-x/</guid>
+      <description>You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 sudo nvim /etc/ssh/ssh_config Find and edit 1 2 3 ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost + username@servername Finally, you can login the server with GUI: 1 ssh -X username@servername</description>
+    </item>
     
-	<atom:link href="https://kanglcn.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Latex using vim</title>
+      <link>https://kanglcn.github.io/post/vim-latex/</link>
+      <pubDate>Wed, 23 Dec 2020 14:21:43 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/vim-latex/</guid>
+      <description>Vim is a wonderful editor for latex. latexmk latexmk allows only one command to compile latex files. 1 2 latexmk # compile latexmk -c # clean An example of latexmk config file is provided here: latexmkrc. Vimtex vimtex is a plugin for latex files. I use coc.nvim as my completion plugin so I also need a coc-vimtex. command functions mode run n v toc n li (vimtex-info) n lI (vimtex-info-full)</description>
+    </item>
     
     <item>
       <title>Digital Fourier Transformation</title>
@@ -53,7 +67,7 @@
       <pubDate>Fri, 17 Apr 2020 20:48:27 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/post/vim/</guid>
-      <description>vim 使用 Shift + 鼠标选中，Shift + 鼠标中键可以实现复制和粘贴的功能。 待更新。。。</description>
+      <description>tips vim-table-mode key bindings using vim-markdown-toc bullets.vim rnvimr vim-surround vim-expand-region vim-visual-multi vim-rooter any-jump.vim vista.vim fzf.vim undotree vim-gitgutter agit.vim vim-autoformat Note that some of the key bindings is remaped through my own habit. tips vim 插件提供的快捷键一般映射到以开头的快捷键上。 Text object is also applicable for visual mode. viw will select the word. command</description>
     </item>
     
     <item>
@@ -63,6 +77,15 @@
       
       <guid>https://kanglcn.github.io/post/linux-organization-structure/</guid>
       <description>本文介绍我在 linux 系统文件目录组织结构以及备份方面的经验。 FHS(Filesystem Hierarchy Standard) linux 根目录下各个目录的意义属于烂大街的知识，请自行搜索。 有意思的是： 根目录下目录比</description>
+    </item>
+    
+    <item>
+      <title>GBIS 从入门到能用</title>
+      <link>https://kanglcn.github.io/post/introduction-gbis/</link>
+      <pubDate>Thu, 16 Apr 2020 00:46:32 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/introduction-gbis/</guid>
+      <description>GBIS[^1] 是一款建模软件，全称为 Geodetic Bayesian Inversion Software。 本文介绍其初步的使用方式。 注意： 本文只做简要概述，详情还请参考其 Manual。 安装 安装很简单</description>
     </item>
     
     <item>

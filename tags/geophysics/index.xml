@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>geophysics on Kang&#39;s blog</title>
+    <link>https://kanglcn.github.io/tags/geophysics/</link>
+    <description>Recent content in geophysics on Kang&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 16 Apr 2020 00:46:32 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/tags/geophysics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GBIS 从入门到能用</title>
+      <link>https://kanglcn.github.io/post/introduction-gbis/</link>
+      <pubDate>Thu, 16 Apr 2020 00:46:32 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/introduction-gbis/</guid>
+      <description>GBIS[^1] 是一款建模软件，全称为 Geodetic Bayesian Inversion Software。 本文介绍其初步的使用方式。 注意： 本文只做简要概述，详情还请参考其 Manual。 安装 安装很简单</description>
+    </item>
+    
+  </channel>
+</rss>

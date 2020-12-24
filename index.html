@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.68.3 with theme even" />
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
 
 
 <link rel="canonical" href="https://kanglcn.github.io/" />
@@ -37,7 +37,7 @@
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<link href="https://kanglcn.github.io/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link href="./sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -45,9 +45,10 @@
 <meta property="og:description" content="InSAR 学术博客" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kanglcn.github.io/" />
-<meta property="og:updated_time" content="2020-04-07T00:21:42+08:00" />
+<meta property="og:updated_time" content="2020-12-24T14:59:29+08:00" />
 <meta itemprop="name" content="Kang&#39;s blog">
-<meta itemprop="description" content="InSAR 学术博客"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="InSAR 学术博客">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kang&#39;s blog"/>
 <meta name="twitter:description" content="InSAR 学术博客"/>
 
@@ -124,6 +125,52 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="./post/ssh-x/">ssh连接服务器图形界面</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-12-24 </span>
+      <div class="post-category">
+          <a href="./categories/linux/"> linux </a>
+          </div>
+        <span class="more-meta"> 约 61 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 sudo nvim /etc/ssh/ssh_config Find and edit 1 2 3 ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost + username@servername Finally, you can login the server with GUI: 1 ssh -X username@servername
+    </div>
+    <div class="read-more">
+      <a href="./post/ssh-x/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="./post/vim-latex/">Latex using vim</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-12-23 </span>
+      <div class="post-category">
+          <a href="./categories/vim/"> vim </a>
+          </div>
+        <span class="more-meta"> 约 226 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Vim is a wonderful editor for latex. latexmk latexmk allows only one command to compile latex files. 1 2 latexmk # compile latexmk -c # clean An example of latexmk config file is provided here: latexmkrc. Vimtex vimtex is a plugin for latex files. I use coc.nvim as my completion plugin so I also need a coc-vimtex. command functions mode run n v toc n li (vimtex-info) n lI (vimtex-info-full)
+    </div>
+    <div class="read-more">
+      <a href="./post/vim-latex/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="./post/digital-fourier-transformation/">Digital Fourier Transformation</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2020-09-15 </span>
@@ -191,52 +238,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="./post/latex1/">Latex 使用笔记(1)</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2020-04-19 </span>
-      <div class="post-category">
-          <a href="./categories/latex/"> latex </a>
-          </div>
-        <span class="more-meta"> 约 854 字 </span>
-        <span class="more-meta"> 预计阅读 2 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      注意： 本系列不打算详细地叙述 $\LaTeX$ 的使用，而是我阅读一份不太简短的$\LaTeX$介绍1的一些笔记，以及实际使用时的一些经验积累，方便快速查询；
-    </div>
-    <div class="read-more">
-      <a href="./post/latex1/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="./post/vim/">Vim</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2020-04-17 </span>
-      <div class="post-category">
-          <a href="./categories//">  </a>
-          </div>
-        <span class="more-meta"> 约 39 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      vim 使用 Shift + 鼠标选中，Shift + 鼠标中键可以实现复制和粘贴的功能。 待更新。。。
-    </div>
-    <div class="read-more">
-      <a href="./post/vim/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -277,13 +278,10 @@
 
   <span class="copyright-year">
     &copy; 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">梁康</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>梁康</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -305,16 +303,16 @@
 
 
 
-<script type="text/javascript" src="https://kanglcn.github.io/js/main.4d21c1cefdf1cd0b77ef59bab2d1bbe3112fc9d6cc04710bb1f0b1fd7b891f11.js"></script>
+<script type="text/javascript" src="./js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
   <script type="text/javascript">
     window.MathJax = {
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      TeX: {equationNumbers: {autoNumber: "AMS"}},
-      showProcessingMessages: false,
-      messageStyle: 'none'
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
     };
   </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
 
 
 

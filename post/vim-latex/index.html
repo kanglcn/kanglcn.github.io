@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Latex using vim - Kang&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="梁康" /><meta name="description" content="Vim is a wonderful editor for latex. latexmk latexmk allows only one command to compile latex files. 1 2 latexmk # compile latexmk -c # clean An example of latexmk config file is provided here: latexmkrc. Vimtex vimtex is a plugin for latex files. I use coc.nvim as my completion plugin so I also need a coc-vimtex. command functions mode run n v toc n li (vimtex-info) n lI (vimtex-info-full)" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="https://kanglcn.github.io/post/vim-latex/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="../../sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Latex using vim" />
+<meta property="og:description" content="Vim is a wonderful editor for latex. latexmk latexmk allows only one command to compile latex files. 1 2 latexmk # compile latexmk -c # clean An example of latexmk config file is provided here: latexmkrc. Vimtex vimtex is a plugin for latex files. I use coc.nvim as my completion plugin so I also need a coc-vimtex. command functions mode run n v toc n li (vimtex-info) n lI (vimtex-info-full)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanglcn.github.io/post/vim-latex/" />
+<meta property="article:published_time" content="2020-12-23T14:21:43+08:00" />
+<meta property="article:modified_time" content="2020-12-23T14:21:43+08:00" />
+<meta itemprop="name" content="Latex using vim">
+<meta itemprop="description" content="Vim is a wonderful editor for latex. latexmk latexmk allows only one command to compile latex files. 1 2 latexmk # compile latexmk -c # clean An example of latexmk config file is provided here: latexmkrc. Vimtex vimtex is a plugin for latex files. I use coc.nvim as my completion plugin so I also need a coc-vimtex. command functions mode run n v toc n li (vimtex-info) n lI (vimtex-info-full)">
+<meta itemprop="datePublished" content="2020-12-23T14:21:43+08:00" />
+<meta itemprop="dateModified" content="2020-12-23T14:21:43+08:00" />
+<meta itemprop="wordCount" content="226">
+
+
+
+<meta itemprop="keywords" content="vim,linux,software,latex," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Latex using vim"/>
+<meta name="twitter:description" content="Vim is a wonderful editor for latex. latexmk latexmk allows only one command to compile latex files. 1 2 latexmk # compile latexmk -c # clean An example of latexmk config file is provided here: latexmkrc. Vimtex vimtex is a plugin for latex files. I use coc.nvim as my completion plugin so I also need a coc-vimtex. command functions mode run n v toc n li (vimtex-info) n lI (vimtex-info-full)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="../../" class="logo">Kang&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="../../">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="../../post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="../../tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="../../categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="../../links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="../../donations/">
+        <li class="mobile-menu-item">捐赠</li>
+      </a><a href="../../about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="../../" class="logo">Kang&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="../../">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../donations/">捐赠</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Latex using vim</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-12-23 </span>
+        <div class="post-category">
+            <a href="../../categories/vim/"> vim </a>
+            </div>
+          <span class="more-meta"> 约 226 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#latexmk">latexmk</a></li>
+    <li><a href="#vimtex">Vimtex</a></li>
+    <li><a href="#coc-snippets">coc-snippets</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>Vim is a wonderful editor for latex.</p>
+<h2 id="latexmk">latexmk</h2>
+<p>latexmk allows only one command to compile latex files.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">latexmk <span class="c1"># compile</span>
+latexmk -c <span class="c1"># clean</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>An example of latexmk config file is provided here: <a href="../../files/latexmkrc">latexmkrc</a>.</p>
+<h2 id="vimtex">Vimtex</h2>
+<p><a href="https://github.com/lervag/vimtex">vimtex</a> is a plugin for latex files.</p>
+<p>I use <a href="">coc.nvim</a> as my completion plugin so I also need a coc-vimtex.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+<th>mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><F5></td>
+<td>run</td>
+<td>n</td>
+</tr>
+<tr>
+<td><leader>v</td>
+<td>toc</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>li</td>
+<td><plug>(vimtex-info)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lI</td>
+<td><plug>(vimtex-info-full)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lt</td>
+<td><plug>(vimtex-toc-open)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lT</td>
+<td><plug>(vimtex-toc-toggle)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>ly</td>
+<td><plug>(vimtex-labels-open)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lY</td>
+<td><plug>(vimtex-labels-toggle)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lv</td>
+<td><plug>(vimtex-view)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lr</td>
+<td><plug>(vimtex-reverse-search)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>ll</td>
+<td><plug>(vimtex-compile)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lk</td>
+<td><plug>(vimtex-stop)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lK</td>
+<td><plug>(vimtex-stop-all)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>le</td>
+<td><plug>(vimtex-errors)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lo</td>
+<td><plug>(vimtex-compile-output)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lg</td>
+<td><plug>(vimtex-status)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lG</td>
+<td><plug>(vimtex-status-all)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lc</td>
+<td><plug>(vimtex-clean)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lC</td>
+<td><plug>(vimtex-clean-full)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lm</td>
+<td><plug>(vimtex-imaps-list)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>lx</td>
+<td><plug>(vimtex-reload)</td>
+<td>n</td>
+</tr>
+<tr>
+<td><localleader>ls</td>
+<td><plug>(vimtex-toggle-main)</td>
+<td>n</td>
+</tr>
+<tr>
+<td>dse</td>
+<td><plug>(vimtex-env-delete)</td>
+<td>n</td>
+</tr>
+<tr>
+<td>dsc</td>
+<td><plug>(vimtex-cmd-delete)</td>
+<td>n</td>
+</tr>
+<tr>
+<td>ds$</td>
+<td><plug>(vimtex-env-delete-math)</td>
+<td>n</td>
+</tr>
+<tr>
+<td>cse</td>
+<td><plug>(vimtex-env-change)</td>
+<td>n</td>
+</tr>
+<tr>
+<td>csc</td>
+<td><plug>(vimtex-cmd-change)</td>
+<td>n</td>
+</tr>
+<tr>
+<td>cs$</td>
+<td><plug>(vimtex-cmd-change-math)</td>
+<td>n</td>
+</tr>
+<tr>
+<td>tse</td>
+<td><plug>(vimtex-env-toggle-star)</td>
+<td>n</td>
+</tr>
+<tr>
+<td>tsd</td>
+<td><plug>(vimtex-delim-toggle-modifier)</td>
+<td>nx</td>
+</tr>
+<tr>
+<td><F7></td>
+<td><plug>(vimtex-cmd-create)</td>
+<td>ni</td>
+</tr>
+<tr>
+<td>]]</td>
+<td><plug>(vimtex-deli-close)</td>
+<td>i</td>
+</tr>
+<tr>
+<td>ac</td>
+<td><plug>(vimtex-ac)</td>
+<td>nxo</td>
+</tr>
+<tr>
+<td>ic</td>
+<td><plug>(vimtex-ic)</td>
+<td>nxo</td>
+</tr>
+<tr>
+<td>ad</td>
+<td><plug>(vimtex-ad)</td>
+<td>nxo</td>
+</tr>
+<tr>
+<td>id</td>
+<td><plug>(vimtex-id)</td>
+<td>nxo</td>
+</tr>
+<tr>
+<td>ae</td>
+<td><plug>(vimtex-ae)</td>
+<td>nxo</td>
+</tr>
+<tr>
+<td>ie</td>
+<td><plug>(vimtex-ie)</td>
+<td>nxo</td>
+</tr>
+<tr>
+<td>a$</td>
+<td><plug>(vimtex-a$)</td>
+<td>nxo</td>
+</tr>
+<tr>
+<td>i$</td>
+<td><plug>(vimtex-i$)</td>
+<td>nxo</td>
+</tr>
+<tr>
+<td>%</td>
+<td><plug>(vimtex-%)</td>
+<td>xo</td>
+</tr>
+<tr>
+<td>[]</td>
+<td><plug>(vimtex-[])</td>
+<td>nxo</td>
+</tr>
+<tr>
+<td>[[</td>
+<td><plug>(vimtex-[[)</td>
+<td>nxo</td>
+</tr>
+<tr>
+<td>]]</td>
+<td><plug>(vimtex-]])</td>
+<td>nxo</td>
+</tr>
+<tr>
+<td>][</td>
+<td><plug>(vimtex-][)</td>
+<td>nxo</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>d</code> text object means surrounding delimiter.
+So <code>tsd</code> will toggles switch between <code>(...)</code> and <code>\left(...\right)</code>.</p>
+<h2 id="coc-snippets">coc-snippets</h2>
+<p><a href="https://github.com/neoclide/coc-snippets">coc-snippets</a> is snippet solution for coc.nvim.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bfa</td>
+<td>\mathbf{a}</td>
+</tr>
+<tr>
+<td>bfalpha</td>
+<td>\bm{alpha}</td>
+</tr>
+<tr>
+<td>bbA</td>
+<td>\mathbb{A}</td>
+</tr>
+<tr>
+<td>ccA</td>
+<td>\mathcal{A}</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">梁康</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-12-23
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank">CC BY-NC-SA 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../../donate/wechatpayimg.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../../donate/alipayimg.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="../../tags/vim/">vim</a>
+          <a href="../../tags/linux/">linux</a>
+          <a href="../../tags/software/">software</a>
+          <a href="../../tags/latex/">latex</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="../../post/ssh-x/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ssh连接服务器图形界面</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="../../post/digital-fourier-transformation/">
+            <span class="next-text nav-default">Digital Fourier Transformation</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'wYYUrMyih6pOkEIq39OTEcNz-gzGzoHsz',
+        appKey: 'vjpKINB2En1ru9BOP0Nyznfi',
+        notify:  false ,
+        verify:  false ,
+        avatar:'mm',
+        placeholder: '说点什么吧...',
+        visitor:  false 
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:kanglcn@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/kanglcn" class="iconfont icon-github" title="github"></a>
+  <a href="https://kanglcn.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>梁康</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-cn".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script>window.sequenceDiagramsOptions = {theme: 'simple'};</script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+
+
+
+<script type="text/javascript" src="../../js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

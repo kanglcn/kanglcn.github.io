@@ -6,10 +6,15 @@
     <description>Recent content in latex on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 Apr 2020 06:05:32 +0800</lastBuildDate>
-    
-	<atom:link href="https://kanglcn.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 23 Dec 2020 14:21:43 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Latex using vim</title>
+      <link>https://kanglcn.github.io/post/vim-latex/</link>
+      <pubDate>Wed, 23 Dec 2020 14:21:43 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/vim-latex/</guid>
+      <description>Vim is a wonderful editor for latex. latexmk latexmk allows only one command to compile latex files. 1 2 latexmk # compile latexmk -c # clean An example of latexmk config file is provided here: latexmkrc. Vimtex vimtex is a plugin for latex files. I use coc.nvim as my completion plugin so I also need a coc-vimtex. command functions mode run n v toc n li (vimtex-info) n lI (vimtex-info-full)</description>
+    </item>
     
     <item>
       <title>Latex 使用笔记(3)</title>

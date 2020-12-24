@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>GBIS 从入门到能用 - Kang&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="梁康" /><meta name="description" content="GBIS[^1] 是一款建模软件，全称为 Geodetic Bayesian Inversion Software。 本文介绍其初步的使用方式。 注意： 本文只做简要概述，详情还请参考其 Manual。 安装 安装很简单" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
+
+
+<link rel="canonical" href="https://kanglcn.github.io/post/introduction-gbis/" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="manifest" href="../../manifest.json">
+<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="../../sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="GBIS 从入门到能用" />
+<meta property="og:description" content="GBIS[^1] 是一款建模软件，全称为 Geodetic Bayesian Inversion Software。 本文介绍其初步的使用方式。 注意： 本文只做简要概述，详情还请参考其 Manual。 安装 安装很简单" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kanglcn.github.io/post/introduction-gbis/" />
+<meta property="article:published_time" content="2020-04-16T00:46:32+08:00" />
+<meta property="article:modified_time" content="2020-04-16T00:46:32+08:00" />
+<meta itemprop="name" content="GBIS 从入门到能用">
+<meta itemprop="description" content="GBIS[^1] 是一款建模软件，全称为 Geodetic Bayesian Inversion Software。 本文介绍其初步的使用方式。 注意： 本文只做简要概述，详情还请参考其 Manual。 安装 安装很简单">
+<meta itemprop="datePublished" content="2020-04-16T00:46:32+08:00" />
+<meta itemprop="dateModified" content="2020-04-16T00:46:32+08:00" />
+<meta itemprop="wordCount" content="692">
+
+
+
+<meta itemprop="keywords" content="model,GBIS,InSAR,matlab,geophysics,," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GBIS 从入门到能用"/>
+<meta name="twitter:description" content="GBIS[^1] 是一款建模软件，全称为 Geodetic Bayesian Inversion Software。 本文介绍其初步的使用方式。 注意： 本文只做简要概述，详情还请参考其 Manual。 安装 安装很简单"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="../../" class="logo">Kang&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="../../">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="../../post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="../../tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="../../categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="../../links/">
+        <li class="mobile-menu-item">链接</li>
+      </a><a href="../../donations/">
+        <li class="mobile-menu-item">捐赠</li>
+      </a><a href="../../about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="../../" class="logo">Kang&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="../../">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../links/">链接</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../donations/">捐赠</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="../../about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GBIS 从入门到能用</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-04-16 </span>
+        <div class="post-category">
+            <a href="../../categories/model/"> model </a>
+            </div>
+          <span class="more-meta"> 约 692 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#数据准备">数据准备</a>
+      <ul>
+        <li><a href="#gps">GPS</a></li>
+        <li><a href="#insar">InSAR</a></li>
+      </ul>
+    </li>
+    <li><a href="#参数文件">参数文件</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-04-16T00:46:32" title="April 16, 2020">April 16, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <p><a href="https://comet.nerc.ac.uk/gbis/">GBIS</a>[^1] 是一款建模软件，全称为 Geodetic Bayesian Inversion Software。
+本文介绍其初步的使用方式。</p>
+<p>注意：</p>
+<ul>
+<li>本文只做简要概述，详情还请参考其 Manual。</li>
+</ul>
+<h2 id="安装">安装</h2>
+<p>安装很简单。</p>
+<ul>
+<li>解压，把 <code>GBIS/</code> 放到你想要放的位置；</li>
+<li>向 matlab 的 path 中添加移动过的 <code>GBIS/</code>，注意要递归地添加路径，即 <code>add with subfolders...</code>。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="n">addpath</span><span class="p">(</span><span class="n">genpath</span><span class="p">(</span><span class="s">&#39;/home/kanglcn/local/GBIS/&#39;</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>注意这样添加路径只是一次性的，如何永久添加路径我现在还不太清楚。</p>
+<h2 id="数据准备">数据准备</h2>
+<h3 id="gps">GPS</h3>
+<p>TBA</p>
+<h3 id="insar">InSAR</h3>
+<p>InSAR 数据要保存在一个 <code>*.mat</code> 文件中，此文件中保存 <code>Lon</code>，<code>Lat</code>，<code>Phase</code>，<code>Inc</code>，<code>Heading</code> 5个 N×1 的向量。
+分别对应经纬度，相位差，incidence angle，satellite heading angle。</p>
+<p>如果使用 stamps 做 ps 处理的话，
+<code>phuw.mat</code> 中 <code>ph_uw</code> 存放解缠后的相位差。
+<code>ph2.mat</code> 中 <code>ph</code> 存放未解缠的相位差。
+使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="n">ps_plot</span><span class="p">(</span><span class="s">&#39;v-do&#39;</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>保存平均速度。</p>
+<p><code>ps2.mat</code> 中 <code>lonlat</code> 存放 longitude 和 latitude。
+<code>la2.mat</code> 中 <code>la</code> 存放 LOS 方向的 incidence angle。
+<code>parms.mat</code> 中 <code>heading</code> 中存放heading。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="c">%% load data</span>
+<span class="n">load</span><span class="p">(</span><span class="s">&#39;ph2.mat&#39;</span><span class="p">,</span><span class="s">&#39;ph&#39;</span><span class="p">);</span>
+<span class="n">Phase</span><span class="p">=</span><span class="n">ph</span><span class="p">;</span>
+<span class="n">n</span><span class="p">=</span><span class="nb">size</span><span class="p">(</span><span class="n">ph</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="n">load</span><span class="p">(</span><span class="s">&#39;ps2.mat&#39;</span><span class="p">,</span> <span class="s">&#39;lonlat&#39;</span><span class="p">);</span>
+<span class="n">Lon</span><span class="p">=</span><span class="n">lonlat</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">Lat</span><span class="p">=</span><span class="n">lonlat</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="n">load</span><span class="p">(</span><span class="s">&#39;parms.mat&#39;</span><span class="p">,</span><span class="s">&#39;heading&#39;</span><span class="p">);</span>
+<span class="n">Heading</span><span class="p">=</span><span class="n">heading</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="n">load</span><span class="p">(</span><span class="s">&#39;la2.mat&#39;</span><span class="p">,</span> <span class="s">&#39;la&#39;</span><span class="p">);</span>
+<span class="n">Inc</span><span class="p">=</span><span class="n">la</span><span class="p">;</span>
+<span class="c">%% save</span>
+<span class="n">save</span><span class="p">(</span><span class="s">&#39;carlsbad.mat&#39;</span><span class="p">,</span><span class="s">&#39;Lon&#39;</span><span class="p">,</span><span class="s">&#39;Lat&#39;</span><span class="p">,</span><span class="s">&#39;Phase&#39;</span><span class="p">,</span><span class="s">&#39;Inc&#39;</span><span class="p">,</span><span class="s">&#39;Heading&#39;</span><span class="p">);</span>
+<span class="c">%% clear</span>
+<span class="n">clear</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>点击<a href="../../codes/2020-04016-stamps-to-gbis.m">stamps2gbis.m</a>下载。</p>
+<p>为提高速度，数据可以先做采样处理。</p>
+<!--
+My command
+
+`addpath(genpath('/home/kanglcn/local/GBIS/'))`
+
+`opengl('save','hardware')`
+
+`fitVariogram('/home/kangliang/CarlsbadModelTest/carlsbad.mat',0.0229)`
+
+`GBISrun('VolcanoExercise.inp', [1], 'n','M',1e06,'n')`
+
+`generateFinalReport('invert_1_M.mat', 1)`
+
+为了更好地画图，我更改了PlotData/plotInsarUnwrapped.m 和 PlotData/plotInsarWrapped.m的代码
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    if edge < 50
+%        edge = 50;
+%    end
+%    This is the origin code, Kang modify it.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    if edge < 5
+        edge = 5;
+    end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+<h2 id="参数文件">参数文件</h2>
+<p>参数保存在 <code>*.inp</code> 中，注意不要乱改变量名。</p>
+<p>GBIS 在运行的时候需要估计噪声。需要先运行 <code>fitVariogram</code>。
+要先选出一块没有形变的区域来估计噪声函数的一些参数。And the area should be larger than the maximum distance at
+which noise may be spatially correlated (e.g., &gt; 20 km). 但我的区域横竖只有 1km。。。</p>
+<p>GBIS 的 manual 相当的友好，很容易能看清楚，这里提几点我刚接触时困惑的地方。</p>
+<p>1.What is referencePoint? Initial point or other?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="n">geo</span><span class="p">.</span><span class="n">referencePoint</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">155.23</span><span class="p">;</span> <span class="mf">19.38</span><span class="p">];</span>    <span class="c">% Longitude and Latitude in degrees for arbitrary reference point of local coordinates system [Lon; Lat;]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The reference point $O$ of local coordinate system! How stupid I am！</p>
+<p>2.How to select proper model parameters? For example possion&rsquo;s ratio $\nu$, volume change DV, step etc&hellip;</p>
+<ul>
+<li>step. It depend on the size of your interested area. My area is small. The range of longitude is $0.008^{\circ}$ and the range of latitude also is $0.008^{\circ}$. So X range is about 744 m, Y range is about 888m. So the step should be</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">梁康</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-04-16
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank">CC BY-NC-SA 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../../donate/wechatpayimg.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="../../donate/alipayimg.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="../../tags/model/">model</a>
+          <a href="../../tags/gbis/">GBIS</a>
+          <a href="../../tags/insar/">InSAR</a>
+          <a href="../../tags/matlab/">matlab</a>
+          <a href="../../tags/geophysics/">geophysics</a>
+          <a href="../../tags//"></a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="../../post/linux-organization-structure/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">linux 目录组织结构及备份的经验</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="../../post/efficient-software/">
+            <span class="next-text nav-default"> linux 下的高效软件</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+  <div id="vcomments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#vcomments' ,
+        appId: 'wYYUrMyih6pOkEIq39OTEcNz-gzGzoHsz',
+        appKey: 'vjpKINB2En1ru9BOP0Nyznfi',
+        notify:  false ,
+        verify:  false ,
+        avatar:'mm',
+        placeholder: '说点什么吧...',
+        visitor:  false 
+    });
+  </script>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:kanglcn@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/kanglcn" class="iconfont icon-github" title="github"></a>
+  <a href="https://kanglcn.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>梁康</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-cn".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script>window.sequenceDiagramsOptions = {theme: 'simple'};</script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+
+
+
+<script type="text/javascript" src="../../js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

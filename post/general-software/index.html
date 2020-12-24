@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.68.3 with theme even" />
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
 
 
 <link rel="canonical" href="https://kanglcn.github.io/post/general-software/" />
@@ -35,7 +35,7 @@
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<link href="https://kanglcn.github.io/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link href="../../sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -47,13 +47,14 @@
 <meta property="article:modified_time" content="2020-04-21T00:00:00+00:00" />
 <meta itemprop="name" content="linux 下安装常用软件">
 <meta itemprop="description" content="本文介绍 linux 下的常用软件的安装。 Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo">
-<meta itemprop="datePublished" content="2020-04-11T07:42:59&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-21T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1223">
+<meta itemprop="datePublished" content="2020-04-11T07:42:59+08:00" />
+<meta itemprop="dateModified" content="2020-04-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1240">
 
 
 
-<meta itemprop="keywords" content="linux,software," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="linux,software," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="linux 下安装常用软件"/>
 <meta name="twitter:description" content="本文介绍 linux 下的常用软件的安装。 Arch系发行版的很大一个好处就是 AUR 中有相当多的软件，可以直接一行命令安装。 常用软件 chrome 1 sudo pacman -S google-chrome 网易云音乐 1 sudo"/>
 
@@ -137,7 +138,7 @@
         <div class="post-category">
             <a href="../../categories/software/"> software </a>
             </div>
-          <span class="more-meta"> 约 1223 字 </span>
+          <span class="more-meta"> 约 1240 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -165,7 +166,7 @@
   </div>
 </div>
   <div class="post-outdated">
-    <div class="hint">
+    <div class="warn">
       <p>【注意】最后更新于 <span class="timeago" datetime="2020-04-21T00:00:00" title="April 21, 2020">April 21, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
     </div>
   </div>
@@ -231,8 +232,17 @@ sudo pacman -S texstudio
 </code></pre></td></tr></table>
 </div>
 </div><p>texstudio 是一款专业的 $\LaTeX$ 编辑器，提供语法高亮。</p>
-<p>设置texstudio的 <code>default compiler</code> 为 <code>xelatex</code>，这是目前最好用的 $\TeX$ 发行版。</p>
-<h4 id="texmacs">texmacs</h4>
+<p>设置texstudio的 <code>default compiler</code> 为 <code>xelatex</code>。</p>
+<p>建议使用nvim作为写latex文档的编辑器。需要安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-vimrc" data-lang="vimrc"><span class="nx">Plug</span> <span class="s1">&#39;lervag/vimtex&#39;</span><span class="err">
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="texmacs">texmacs</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -431,13 +441,10 @@ wine会使默认的浏览器更改，这时要删掉`～/.local/share/applicatio
 
   <span class="copyright-year">
     &copy; 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">梁康</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>梁康</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -459,16 +466,16 @@ wine会使默认的浏览器更改，这时要删掉`～/.local/share/applicatio
 
 
 
-<script type="text/javascript" src="https://kanglcn.github.io/js/main.4d21c1cefdf1cd0b77ef59bab2d1bbe3112fc9d6cc04710bb1f0b1fd7b891f11.js"></script>
+<script type="text/javascript" src="../../js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
   <script type="text/javascript">
     window.MathJax = {
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      TeX: {equationNumbers: {autoNumber: "AMS"}},
-      showProcessingMessages: false,
-      messageStyle: 'none'
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
     };
   </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
 
 
 

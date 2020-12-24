@@ -6,11 +6,7 @@
     <description>Recent content in BIOS on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Apr 2020 06:42:59 +0800</lastBuildDate>
-    
-	<atom:link href="https://kanglcn.github.io/tags/bios/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 12 Apr 2020 06:42:59 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/tags/bios/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>一次开机引导的bug</title>
       <link>https://kanglcn.github.io/post/efi-bug/</link>

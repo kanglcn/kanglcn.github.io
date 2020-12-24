@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>plug on Kang&#39;s blog</title>
+    <link>https://kanglcn.github.io/tags/plug/</link>
+    <description>Recent content in plug on Kang&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 17 Apr 2020 20:48:27 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/tags/plug/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim</title>
+      <link>https://kanglcn.github.io/post/vim/</link>
+      <pubDate>Fri, 17 Apr 2020 20:48:27 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/vim/</guid>
+      <description>tips vim-table-mode key bindings using vim-markdown-toc bullets.vim rnvimr vim-surround vim-expand-region vim-visual-multi vim-rooter any-jump.vim vista.vim fzf.vim undotree vim-gitgutter agit.vim vim-autoformat Note that some of the key bindings is remaped through my own habit. tips vim 插件提供的快捷键一般映射到以开头的快捷键上。 Text object is also applicable for visual mode. viw will select the word. command</description>
+    </item>
+    
+  </channel>
+</rss>

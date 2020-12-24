@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.68.3 with theme even" />
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
 
 
 <link rel="canonical" href="https://kanglcn.github.io/post/linux-init/" />
@@ -35,7 +35,7 @@
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<link href="https://kanglcn.github.io/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link href="../../sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -47,13 +47,14 @@
 <meta property="article:modified_time" content="2020-09-15T00:00:00+00:00" />
 <meta itemprop="name" content="linux 系统的初步配置">
 <meta itemprop="description" content="本文谈谈安装完 linux 系统之后，如何打造合适的中文使用环境。 初次接触 linux 的读者请先阅读安装 linux 的理论基础以及安装 linux 的实践。 首先更新软件 如果是在 Manjaro 官网上">
-<meta itemprop="datePublished" content="2020-04-08T06:42:59&#43;08:00" />
-<meta itemprop="dateModified" content="2020-09-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1853">
+<meta itemprop="datePublished" content="2020-04-08T06:42:59+08:00" />
+<meta itemprop="dateModified" content="2020-09-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1921">
 
 
 
-<meta itemprop="keywords" content="manjaro,linux," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="manjaro,linux," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="linux 系统的初步配置"/>
 <meta name="twitter:description" content="本文谈谈安装完 linux 系统之后，如何打造合适的中文使用环境。 初次接触 linux 的读者请先阅读安装 linux 的理论基础以及安装 linux 的实践。 首先更新软件 如果是在 Manjaro 官网上"/>
 
@@ -137,7 +138,7 @@
         <div class="post-category">
             <a href="../../categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 1853 字 </span>
+          <span class="more-meta"> 约 1921 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -165,6 +166,11 @@
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-09-15T00:00:00" title="September 15, 2020">September 15, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <p>本文谈谈安装完 linux 系统之后，如何打造合适的中文使用环境。
 初次接触 linux 的读者请先阅读<a href="../install-linux-theory/">安装 linux 的理论基础</a>以及<a href="../install-linux-practice/">安装 linux 的实践</a>。</p>
@@ -404,6 +410,19 @@ sudo pacman -S archlinuxcn-keyring
 <p>详细内容请参考 <a href="https://wiki.archlinux.org/index.php/Fcitx5">ArchWiki:Fcitx5</a>。</p>
 <p>如果想了解<code>/etc/profile</code>是什么东西，可以参考 <a href="https://wiki.archlinux.org/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">ArchWiki:Bash</a>。</p>
 <h2 id="一些经验之谈">一些经验之谈</h2>
+<p>可以在<code>.Xresources</code>加入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Xcursor.size: 16
+Xft.dpi: 144
+</code></pre></td></tr></table>
+</div>
+</div><p>设置DPI和鼠标大小。</p>
+<p>可以使用lxappearance软件来调整GTK+程序的主题，字体等。</p>
 <p>linux，尤其是 arch 系发行版，有一种魔力，可以让你浪费很多时间配置桌面以使他更酷炫。请不要入这个坑。有时间还是要干些别的。</p>
 <p>在workspace behavior中设置双击打开文件更符合习惯。</p>
 
@@ -510,13 +529,10 @@ sudo pacman -S archlinuxcn-keyring
 
   <span class="copyright-year">
     &copy; 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">梁康</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>梁康</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -538,16 +554,16 @@ sudo pacman -S archlinuxcn-keyring
 
 
 
-<script type="text/javascript" src="https://kanglcn.github.io/js/main.4d21c1cefdf1cd0b77ef59bab2d1bbe3112fc9d6cc04710bb1f0b1fd7b891f11.js"></script>
+<script type="text/javascript" src="../../js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
   <script type="text/javascript">
     window.MathJax = {
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      TeX: {equationNumbers: {autoNumber: "AMS"}},
-      showProcessingMessages: false,
-      messageStyle: 'none'
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
     };
   </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
 
 
 

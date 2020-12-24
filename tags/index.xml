@@ -6,10 +6,60 @@
     <description>Recent content in Tags on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 15 Sep 2020 23:02:02 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 24 Dec 2020 14:59:29 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://kanglcn.github.io/tags/linux/</link>
+      <pubDate>Thu, 24 Dec 2020 14:59:29 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://kanglcn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>server</title>
+      <link>https://kanglcn.github.io/tags/server/</link>
+      <pubDate>Thu, 24 Dec 2020 14:59:29 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/server/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>ssh</title>
+      <link>https://kanglcn.github.io/tags/ssh/</link>
+      <pubDate>Thu, 24 Dec 2020 14:59:29 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>latex</title>
+      <link>https://kanglcn.github.io/tags/latex/</link>
+      <pubDate>Wed, 23 Dec 2020 14:21:43 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>https://kanglcn.github.io/tags/software/</link>
+      <pubDate>Wed, 23 Dec 2020 14:21:43 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://kanglcn.github.io/tags/vim/</link>
+      <pubDate>Wed, 23 Dec 2020 14:21:43 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/vim/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>DFT</title>
@@ -17,15 +67,6 @@
       <pubDate>Tue, 15 Sep 2020 23:02:02 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/tags/dft/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>latex</title>
-      <link>https://kanglcn.github.io/tags/latex/</link>
-      <pubDate>Mon, 20 Apr 2020 06:05:32 +0800</pubDate>
-      
-      <guid>https://kanglcn.github.io/tags/latex/</guid>
       <description></description>
     </item>
     
@@ -48,6 +89,15 @@
     </item>
     
     <item>
+      <title>plug</title>
+      <link>https://kanglcn.github.io/tags/plug/</link>
+      <pubDate>Fri, 17 Apr 2020 20:48:27 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/plug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>backup</title>
       <link>https://kanglcn.github.io/tags/backup/</link>
       <pubDate>Fri, 17 Apr 2020 06:28:59 +0800</pubDate>
@@ -66,20 +116,56 @@
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://kanglcn.github.io/tags/linux/</link>
-      <pubDate>Fri, 17 Apr 2020 06:28:59 +0800</pubDate>
-      
-      <guid>https://kanglcn.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>timeshift</title>
       <link>https://kanglcn.github.io/tags/timeshift/</link>
       <pubDate>Fri, 17 Apr 2020 06:28:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/tags/timeshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GBIS</title>
+      <link>https://kanglcn.github.io/tags/gbis/</link>
+      <pubDate>Thu, 16 Apr 2020 00:46:32 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/gbis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>geophysics</title>
+      <link>https://kanglcn.github.io/tags/geophysics/</link>
+      <pubDate>Thu, 16 Apr 2020 00:46:32 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/geophysics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>InSAR</title>
+      <link>https://kanglcn.github.io/tags/insar/</link>
+      <pubDate>Thu, 16 Apr 2020 00:46:32 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/insar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matlab</title>
+      <link>https://kanglcn.github.io/tags/matlab/</link>
+      <pubDate>Thu, 16 Apr 2020 00:46:32 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/matlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>model</title>
+      <link>https://kanglcn.github.io/tags/model/</link>
+      <pubDate>Thu, 16 Apr 2020 00:46:32 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/model/</guid>
       <description></description>
     </item>
     
@@ -98,15 +184,6 @@
       <pubDate>Mon, 13 Apr 2020 08:12:26 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>software</title>
-      <link>https://kanglcn.github.io/tags/software/</link>
-      <pubDate>Mon, 13 Apr 2020 08:12:26 +0800</pubDate>
-      
-      <guid>https://kanglcn.github.io/tags/software/</guid>
       <description></description>
     </item>
     
@@ -197,15 +274,6 @@
       <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/tags/vscode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>matlab</title>
-      <link>https://kanglcn.github.io/tags/matlab/</link>
-      <pubDate>Sat, 11 Apr 2020 06:42:59 +0800</pubDate>
-      
-      <guid>https://kanglcn.github.io/tags/matlab/</guid>
       <description></description>
     </item>
     

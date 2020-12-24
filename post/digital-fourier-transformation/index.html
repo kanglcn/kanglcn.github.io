@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.68.3 with theme even" />
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
 
 
 <link rel="canonical" href="https://kanglcn.github.io/post/digital-fourier-transformation/" />
@@ -35,7 +35,7 @@
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<link href="https://kanglcn.github.io/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link href="../../sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -47,13 +47,14 @@
 <meta property="article:modified_time" content="2020-09-15T23:02:02+08:00" />
 <meta itemprop="name" content="Digital Fourier Transformation">
 <meta itemprop="description" content="信号的分类 连续时间信号 $x(t)$。 离散时间信号 $x_n$。 能量信号 即能量有限的信号； 能量有限的信号一定是非周期的信号，因为能量有限信号只能">
-<meta itemprop="datePublished" content="2020-09-15T23:02:02&#43;08:00" />
-<meta itemprop="dateModified" content="2020-09-15T23:02:02&#43;08:00" />
+<meta itemprop="datePublished" content="2020-09-15T23:02:02+08:00" />
+<meta itemprop="dateModified" content="2020-09-15T23:02:02+08:00" />
 <meta itemprop="wordCount" content="1734">
 
 
 
-<meta itemprop="keywords" content="DFT," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="DFT," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Digital Fourier Transformation"/>
 <meta name="twitter:description" content="信号的分类 连续时间信号 $x(t)$。 离散时间信号 $x_n$。 能量信号 即能量有限的信号； 能量有限的信号一定是非周期的信号，因为能量有限信号只能"/>
 
@@ -177,6 +178,11 @@
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2020-09-15T23:02:02" title="September 15, 2020">September 15, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <h2 id="信号的分类">信号的分类</h2>
 <h3 id="连续时间信号">连续时间信号</h3>
@@ -268,9 +274,9 @@ $$\omega=\Omega T$$
 <h2 id="离散傅里叶变换">离散傅里叶变换</h2>
 <p>一个周期信号的傅里叶级数能够利用一个周期内信号的傅里叶变换的等间隔取样来表示。</p>
 <p>对于连续时间信号
-$$a_k=\frac{1}{T}X(j\Omega)\Big|_{\Omega=k\Omega_0}$$
+$$a_k=\frac{1}{T}X(j\Omega)\Big|<em>{\Omega=k\Omega_0}$$
 对于离散时间信号
-$$a_k=\frac{1}{N}X(e^{j\omega})\Big|_{\omega=k\omega_0}$$
+$$a_k=\frac{1}{N}X(e^{j\omega})\Big|</em>{\omega=k\omega_0}$$
 后者是离散傅里叶变换的理论基础。</p>
 <p>离散傅里叶变换是为了方便处理而引入的方法，其特征在于时域和频域均为有限的离散时间信号。</p>
 <p>$$X_k=\sum_{n=0}^{N-1}x_ne^{-j\frac{2\pi}{N}nk}$$
@@ -317,7 +323,11 @@ $$x_n=\frac{1}{N}\sum_{n=0}^{N-1}X_ke^{j\frac{2\pi}{N}nk}$$</p>
           <a href="../../tags/dft/">DFT</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="../../post/vim-latex/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Latex using vim</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="../../post/latex3/">
             <span class="next-text nav-default">Latex 使用笔记(3)</span>
             <span class="next-text nav-mobile">下一篇</span>
@@ -376,13 +386,10 @@ $$x_n=\frac{1}{N}\sum_{n=0}^{N-1}X_ke^{j\frac{2\pi}{N}nk}$$</p>
 
   <span class="copyright-year">
     &copy; 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">梁康</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>梁康</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -404,16 +411,16 @@ $$x_n=\frac{1}{N}\sum_{n=0}^{N-1}X_ke^{j\frac{2\pi}{N}nk}$$</p>
 
 
 
-<script type="text/javascript" src="https://kanglcn.github.io/js/main.4d21c1cefdf1cd0b77ef59bab2d1bbe3112fc9d6cc04710bb1f0b1fd7b891f11.js"></script>
+<script type="text/javascript" src="../../js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
   <script type="text/javascript">
     window.MathJax = {
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      TeX: {equationNumbers: {autoNumber: "AMS"}},
-      showProcessingMessages: false,
-      messageStyle: 'none'
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
     };
   </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
 
 
 

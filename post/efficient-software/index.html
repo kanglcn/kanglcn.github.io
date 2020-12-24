@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.68.3 with theme even" />
+<meta name="generator" content="Hugo 0.79.0 with theme even" />
 
 
 <link rel="canonical" href="https://kanglcn.github.io/post/efficient-software/" />
@@ -35,7 +35,7 @@
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<link href="https://kanglcn.github.io/sass/main.min.8c3cbcb0324c2bb4875ceccba4007cbad4b4ac8377f33af9953c3e7684534a50.css" rel="stylesheet">
+<link href="../../sass/main.min.c7bc1becf36bcf6a9ebd25d2947e43a2eb745ddb0c9a32b43126fd7fa460c351.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -47,13 +47,14 @@
 <meta property="article:modified_time" content="2020-04-13T08:12:26+08:00" />
 <meta itemprop="name" content=" linux 下的高效软件">
 <meta itemprop="description" content="和linux 下的常用软件不同，本文讲述 linux 下的那些可以不用，但使用后让我们工作效率更高的软件。 注意：这些东西只是工具，不要在这些花里胡哨的东西">
-<meta itemprop="datePublished" content="2020-04-13T08:12:26&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-13T08:12:26&#43;08:00" />
-<meta itemprop="wordCount" content="647">
+<meta itemprop="datePublished" content="2020-04-13T08:12:26+08:00" />
+<meta itemprop="dateModified" content="2020-04-13T08:12:26+08:00" />
+<meta itemprop="wordCount" content="898">
 
 
 
-<meta itemprop="keywords" content="software,linux,shell,fish," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="software,linux,shell,fish," />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=" linux 下的高效软件"/>
 <meta name="twitter:description" content="和linux 下的常用软件不同，本文讲述 linux 下的那些可以不用，但使用后让我们工作效率更高的软件。 注意：这些东西只是工具，不要在这些花里胡哨的东西"/>
 
@@ -137,7 +138,7 @@
         <div class="post-category">
             <a href="../../categories/software/"> software </a>
             </div>
-          <span class="more-meta"> 约 647 字 </span>
+          <span class="more-meta"> 约 898 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -156,13 +157,13 @@
       </ul>
     </li>
     <li><a href="#ranger">ranger</a></li>
-    <li><a href="#konsole">konsole</a></li>
+    <li><a href="#fzf">fzf</a></li>
   </ul>
 </nav>
   </div>
 </div>
   <div class="post-outdated">
-    <div class="hint">
+    <div class="warn">
       <p>【注意】最后更新于 <span class="timeago" datetime="2020-04-13T08:12:26" title="April 13, 2020">April 13, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
     </div>
   </div>
@@ -262,8 +263,113 @@ kanglcn@kanglcn-pc ~/m/b/c/post <span class="o">(</span>master<span class="o">)&
 <li>我只在交互式终端下使用 fish 所以学习成本并不高。</li>
 </ul>
 <h2 id="ranger">ranger</h2>
-<p>ranger 是一款在终端下使用的文件管理器</p>
-<h2 id="konsole">konsole</h2>
+<p><a href="https://github.com/ranger/ranger">ranger</a> 是一款在终端下使用的文件管理器。</p>
+<p>ranger 的操作逻辑和快捷键和 vim 很相似，使用h，j，k，l来移动光标，同时也支持gg，G这种快捷键。
+ranger have four configuration files.
+For <code>rc.conf</code> and <code>commands.py</code>, ranger read both the global and user&rsquo;s config.
+For <code>scope.sh</code> and <code>rifle.conf</code> ranger read either the users and global config.</p>
+<p>File Operations</p>
+<table>
+<thead>
+<tr>
+<th>key binds</th>
+<th>operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>yy</td>
+<td>copy</td>
+</tr>
+<tr>
+<td>pp</td>
+<td>paste</td>
+</tr>
+<tr>
+<td>yd</td>
+<td>copy directory</td>
+</tr>
+<tr>
+<td>yn</td>
+<td>copy name</td>
+</tr>
+<tr>
+<td>yp</td>
+<td>copy path</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>cut</td>
+</tr>
+<tr>
+<td>ya/da</td>
+<td>copy append</td>
+</tr>
+<tr>
+<td>&lt;SPACE&gt;</td>
+<td>select file for multi file operations</td>
+</tr>
+<tr>
+<td>gn</td>
+<td>add a new tab</td>
+</tr>
+<tr>
+<td>gt/gT</td>
+<td>switch to tab</td>
+</tr>
+<tr>
+<td>&lt;Alt&gt;+N</td>
+<td>switch to tab</td>
+</tr>
+<tr>
+<td>t</td>
+<td>tag a file</td>
+</tr>
+<tr>
+<td>cw</td>
+<td>rename</td>
+</tr>
+<tr>
+<td>:bulkname</td>
+<td>rename multi files</td>
+</tr>
+</tbody>
+</table>
+<p><code>alias</code>, <code>echo</code>, <code>mkdir</code>, <code>chmod</code> can be used by command <code>:command</code>.
+<code>:shell cmd</code> will run the <code>cmd</code>.
+Note that the output will be displayed in the terminal where ranger is run.
+<code>:shell nvim ...</code> is a good command to open a new file and edit.</p>
+<h2 id="fzf">fzf</h2>
+<p>fuzzy finder</p>
+<p>Using <code>CTRL</code>+<code>hjkl</code> to navigate.
+<code>Enter</code> key to select item.
+On multi-select mode <code>-m</code>, <code>TAB</code> to mark multiple files.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">fzf &gt; selected
+</code></pre></td></tr></table>
+</div>
+</div><p>It will write the selected item to <code>selected</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">vim <span class="k">$(</span>fzf<span class="k">)</span>
+<span class="c1"># or in fish</span>
+vim <span class="o">(</span>fzf<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>It will open the selected items through <code>vim</code>. But a better operation is using fzf completion.
+The configuration is in <code>mybashrc</code> file.</p>
+<p>Here are some my configuration:</p>
+<p><code>\&lt;tab&gt;</code>: trigger completion
+<code>f</code>: trigger fzf in ranger</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -318,9 +424,9 @@ kanglcn@kanglcn-pc ~/m/b/c/post <span class="o">(</span>master<span class="o">)&
           <a href="../../tags/fish/">fish</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="../../post/linux-organization-structure/">
+        <a class="prev" href="../../post/introduction-gbis/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">linux 目录组织结构及备份的经验</span>
+            <span class="prev-text nav-default">GBIS 从入门到能用</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         <a class="next" href="../../post/git/">
@@ -381,13 +487,10 @@ kanglcn@kanglcn-pc ~/m/b/c/post <span class="o">(</span>master<span class="o">)&
 
   <span class="copyright-year">
     &copy; 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">梁康</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>梁康</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -409,16 +512,16 @@ kanglcn@kanglcn-pc ~/m/b/c/post <span class="o">(</span>master<span class="o">)&
 
 
 
-<script type="text/javascript" src="https://kanglcn.github.io/js/main.4d21c1cefdf1cd0b77ef59bab2d1bbe3112fc9d6cc04710bb1f0b1fd7b891f11.js"></script>
+<script type="text/javascript" src="../../js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
   <script type="text/javascript">
     window.MathJax = {
-      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      TeX: {equationNumbers: {autoNumber: "AMS"}},
-      showProcessingMessages: false,
-      messageStyle: 'none'
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        tags: 'ams',
+        }
     };
   </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
 
 
 
