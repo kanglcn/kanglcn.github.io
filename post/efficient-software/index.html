@@ -49,7 +49,7 @@
 <meta itemprop="description" content="和linux 下的常用软件不同，本文讲述 linux 下的那些可以不用，但使用后让我们工作效率更高的软件。 注意：这些东西只是工具，不要在这些花里胡哨的东西">
 <meta itemprop="datePublished" content="2020-04-13T08:12:26+08:00" />
 <meta itemprop="dateModified" content="2020-04-13T08:12:26+08:00" />
-<meta itemprop="wordCount" content="898">
+<meta itemprop="wordCount" content="364">
 
 
 
@@ -138,8 +138,8 @@
         <div class="post-category">
             <a href="../../categories/software/"> software </a>
             </div>
-          <span class="more-meta"> 约 898 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 364 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -149,13 +149,7 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#fish">fish</a>
-      <ul>
-        <li><a href="#安装-fish">安装 fish</a></li>
-        <li><a href="#使用-fish">使用 fish</a></li>
-        <li><a href="#我的-fish-使用方法">我的 fish 使用方法</a></li>
-      </ul>
-    </li>
+    <li><a href="#zsh">zsh</a></li>
     <li><a href="#ranger">ranger</a></li>
     <li><a href="#fzf">fzf</a></li>
   </ul>
@@ -170,98 +164,9 @@
     <div class="post-content">
       <p>和<a href="../general-software/">linux 下的常用软件</a>不同，本文讲述 linux 下的那些可以不用，但使用后让我们工作效率更高的软件。</p>
 <p>注意：这些东西只是工具，不要在这些花里胡哨的东西上浪费太多时间。</p>
-<h2 id="fish">fish</h2>
-<p>linux 下有很多种 shell，一般预装的都是 bash。
-<a href="https://fishshell.com/">fish</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 是一款很强大的 shell，和 bash 相比，有很多很好的特性。</p>
-<h3 id="安装-fish">安装 fish</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -S fish
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="使用-fish">使用 fish</h3>
-<p>fish 的优点有很多</p>
-<ul>
-<li>彩色提示；</li>
-<li>自动建议；</li>
-<li>语法简单；</li>
-<li>自动补全等。</li>
-</ul>
-<p>fish 的简单教程可以参考<a href="http://www.ruanyifeng.com/blog/2017/05/fish_shell.html">阮一峰的网络日志：Fish shell 入门教程</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
-<p>注意 fish 的语法和 bash 不兼容，不能成为 bash 的替代品。</p>
-<h4 id="vi-模式">vi 模式</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fish" data-lang="fish">fish_vi_mode
-</code></pre></td></tr></table>
-</div>
-</div><p>可以在终端下使用 vi 的编辑方法编辑命令。</p>
-<h4 id="快速跳转">快速跳转</h4>
-<p><code>dirh</code> 列出目录历史，<code>prevd</code> 向过去跳转，<code>nextd</code> 向后跳转。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fish" data-lang="fish">kanglcn@kanglcn-pc ~/m/b/content <span class="o">(</span>master<span class="o">)&gt;</span> <span class="nb">dirh
-</span><span class="nb"> </span>3<span class="o">)</span> /home/kanglcn/mysite
- 2<span class="o">)</span> /home/kanglcn/mysite/blog
- 1<span class="o">)</span> /home/kanglcn/mysite/blog/content/post
-    /home/kanglcn/mysite/blog/content
-
-kanglcn@kanglcn-pc ~/m/b/content <span class="o">(</span>master<span class="o">)&gt;</span> <span class="nb">prevd </span>2
-kanglcn@kanglcn-pc ~/m/blog <span class="o">(</span>master<span class="o">)&gt;</span> <span class="nb">dirh
-</span><span class="nb"> </span>1<span class="o">)</span> /home/kanglcn/mysite
-    /home/kanglcn/mysite/blog
- 1<span class="o">)</span> /home/kanglcn/mysite/blog/content/post
- 2<span class="o">)</span> /home/kanglcn/mysite/blog/content
-
-kanglcn@kanglcn-pc ~/m/blog <span class="o">(</span>master<span class="o">)&gt;</span> <span class="nb">nextd </span>1
-kanglcn@kanglcn-pc ~/m/b/c/post <span class="o">(</span>master<span class="o">)&gt;</span> <span class="nb">dirh
-</span><span class="nb"> </span>2<span class="o">)</span> /home/kanglcn/mysite
- 1<span class="o">)</span> /home/kanglcn/mysite/blog
-    /home/kanglcn/mysite/blog/content/post
- 1<span class="o">)</span> /home/kanglcn/mysite/blog/content
-
-kanglcn@kanglcn-pc ~/m/b/c/post <span class="o">(</span>master<span class="o">)&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="我的-fish-使用方法">我的 fish 使用方法</h3>
-<p>我只在交互模式下 使用 fish，这样可以利用 fish 的提示等优点，在写脚本时还是用 bash，因为要考虑兼容性。</p>
-<p>有人觉得 zsh + oh-my-zsh 是更好的选择，我倒不这么认为。</p>
-<ul>
-<li>fish 开箱即用，zsh 需要很多配置，比较麻烦，熟悉我的人都知道我是个相当懒的人；</li>
-<li>在终端下 zsh 和 fish 表现类似，zsh 并不比 fish 好用多少；</li>
-<li>使用 oh-my-zsh 会拖慢反应速度；</li>
-<li>因为脚本肯定会使用 bash，所以 zsh 对 bash 较好的兼容性只是鸡肋；</li>
-<li>我只在交互式终端下使用 fish 所以学习成本并不高。</li>
-</ul>
+<h2 id="zsh">zsh</h2>
+<p>zsh provides autosuggestions and syntax highlighting.</p>
+<p>I don&rsquo;t recommend oh-my-zsh because it slow down your shell.</p>
 <h2 id="ranger">ranger</h2>
 <p><a href="https://github.com/ranger/ranger">ranger</a> 是一款在终端下使用的文件管理器。</p>
 <p>ranger 的操作逻辑和快捷键和 vim 很相似，使用h，j，k，l来移动光标，同时也支持gg，G这种快捷键。
@@ -370,17 +275,6 @@ The configuration is in <code>mybashrc</code> file.</p>
 <p>Here are some my configuration:</p>
 <p><code>\&lt;tab&gt;</code>: trigger completion
 <code>f</code>: trigger fzf in ranger</p>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>fish homepage. <a href="https://fishshell.com/">https://fishshell.com/</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>阮一峰的网络日志：Fish shell 入门教程。<a href="http://www.ruanyifeng.com/blog/2017/05/fish_shell.html">http://www.ruanyifeng.com/blog/2017/05/fish_shell.html</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
 
     </div>
 

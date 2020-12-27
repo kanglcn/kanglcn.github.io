@@ -13,7 +13,7 @@
       <pubDate>Fri, 17 Apr 2020 20:48:27 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/post/vim/</guid>
-      <description>tips vim-table-mode key bindings using vim-markdown-toc bullets.vim rnvimr vim-surround vim-expand-region vim-visual-multi vim-rooter any-jump.vim vista.vim fzf.vim undotree vim-gitgutter agit.vim vim-autoformat Note that some of the key bindings is remaped through my own habit. tips vim 插件提供的快捷键一般映射到以开头的快捷键上。 Text object is also applicable for visual mode. viw will select the word. command</description>
+      <description>tips vim-table-mode key bindings using vim-markdown-toc bullets.vim rnvimr vim-surround vim-expand-region vim-visual-multi vim-rooter any-jump.vim vista.vim fzf.vim undotree vim-gitgutter agit.vim vim-autoformat semshi braceless.vim tcomment_vim antovim vim-easy-align NrrwRgn splitjoin.vim vim-peekaboo coc Note that some of the key bindings is remaped through my own habit. tips vim &amp;lsquo;&amp;gt;&amp;rsquo; 符号提供了缩进功能，值得学习。 vim 插件提供的快捷键一般</description>
     </item>
     
   </channel>
