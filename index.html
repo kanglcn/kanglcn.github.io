@@ -45,7 +45,7 @@
 <meta property="og:description" content="InSAR 学术博客" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kanglcn.github.io/" />
-<meta property="og:updated_time" content="2020-12-24T14:59:29+08:00" />
+<meta property="og:updated_time" content="2020-12-28T00:00:00+00:00" />
 <meta itemprop="name" content="Kang&#39;s blog">
 <meta itemprop="description" content="InSAR 学术博客">
 <meta name="twitter:card" content="summary"/>
@@ -131,14 +131,14 @@
       <div class="post-category">
           <a href="./categories/linux/"> linux </a>
           </div>
-        <span class="more-meta"> 约 61 字 </span>
+        <span class="more-meta"> 约 71 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 sudo nvim /etc/ssh/ssh_config Find and edit 1 2 3 ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost + username@servername Finally, you can login the server with GUI: 1 ssh -X username@servername
+      You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 vim ~/.ssh/config Find and edit 1 2 3 4 5 Host * ## this * represent the host name ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost + username@servername Finally, you can login the server with GUI: 1 ssh -X
     </div>
     <div class="read-more">
       <a href="./post/ssh-x/" class="read-more-link">阅读更多</a>

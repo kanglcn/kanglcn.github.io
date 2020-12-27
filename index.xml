@@ -13,7 +13,7 @@
       <pubDate>Thu, 24 Dec 2020 14:59:29 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/post/ssh-x/</guid>
-      <description>You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 sudo nvim /etc/ssh/ssh_config Find and edit 1 2 3 ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost + username@servername Finally, you can login the server with GUI: 1 ssh -X username@servername</description>
+      <description>You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 vim ~/.ssh/config Find and edit 1 2 3 4 5 Host * ## this * represent the host name ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost + username@servername Finally, you can login the server with GUI: 1 ssh -X</description>
     </item>
     
     <item>

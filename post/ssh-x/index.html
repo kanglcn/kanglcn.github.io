@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="梁康" /><meta name="description" content="You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 sudo nvim /etc/ssh/ssh_config Find and edit 1 2 3 ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost &#43; username@servername Finally, you can login the server with GUI: 1 ssh -X username@servername" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+<meta name="author" content="梁康" /><meta name="description" content="You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 vim ~/.ssh/config Find and edit 1 2 3 4 5 Host * ## this * represent the host name ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost &#43; username@servername Finally, you can login the server with GUI: 1 ssh -X" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
 
 
 
@@ -40,23 +40,23 @@
 
 
 <meta property="og:title" content="ssh连接服务器图形界面" />
-<meta property="og:description" content="You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 sudo nvim /etc/ssh/ssh_config Find and edit 1 2 3 ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost &#43; username@servername Finally, you can login the server with GUI: 1 ssh -X username@servername" />
+<meta property="og:description" content="You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 vim ~/.ssh/config Find and edit 1 2 3 4 5 Host * ## this * represent the host name ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost &#43; username@servername Finally, you can login the server with GUI: 1 ssh -X" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanglcn.github.io/post/ssh-x/" />
 <meta property="article:published_time" content="2020-12-24T14:59:29+08:00" />
-<meta property="article:modified_time" content="2020-12-24T14:59:29+08:00" />
+<meta property="article:modified_time" content="2020-12-28T00:00:00+00:00" />
 <meta itemprop="name" content="ssh连接服务器图形界面">
-<meta itemprop="description" content="You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 sudo nvim /etc/ssh/ssh_config Find and edit 1 2 3 ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost &#43; username@servername Finally, you can login the server with GUI: 1 ssh -X username@servername">
+<meta itemprop="description" content="You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 vim ~/.ssh/config Find and edit 1 2 3 4 5 Host * ## this * represent the host name ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost &#43; username@servername Finally, you can login the server with GUI: 1 ssh -X">
 <meta itemprop="datePublished" content="2020-12-24T14:59:29+08:00" />
-<meta itemprop="dateModified" content="2020-12-24T14:59:29+08:00" />
-<meta itemprop="wordCount" content="61">
+<meta itemprop="dateModified" content="2020-12-28T00:00:00+00:00" />
+<meta itemprop="wordCount" content="71">
 
 
 
 <meta itemprop="keywords" content="linux,server,ssh," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ssh连接服务器图形界面"/>
-<meta name="twitter:description" content="You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 sudo nvim /etc/ssh/ssh_config Find and edit 1 2 3 ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost &#43; username@servername Finally, you can login the server with GUI: 1 ssh -X username@servername"/>
+<meta name="twitter:description" content="You have to confirm X is already installed in your server and can be reached. Then in your personal computer: 1 vim ~/.ssh/config Find and edit 1 2 3 4 5 Host * ## this * represent the host name ForwardAgent yes ForwardX11 yes ForwardX11Trusted yes Then enable GUI from server displayed in your computer: 1 xhost &#43; username@servername Finally, you can login the server with GUI: 1 ssh -X"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -138,7 +138,7 @@
         <div class="post-category">
             <a href="../../categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 61 字 </span>
+          <span class="more-meta"> 约 71 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -158,7 +158,7 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo nvim /etc/ssh/ssh_config
+<pre class="chroma"><code class="language-bash" data-lang="bash">vim ~/.ssh/config
 </code></pre></td></tr></table>
 </div>
 </div><p>Find and edit</p>
@@ -167,9 +167,13 @@
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">ForwardAgent yes
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Host *
+## this * represent the host name
+ForwardAgent yes
 ForwardX11 yes
 ForwardX11Trusted yes
 </code></pre></td></tr></table>
@@ -203,7 +207,7 @@ ForwardX11Trusted yes
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-12-24
+        2020-12-28
         
     </span>
   </p>
