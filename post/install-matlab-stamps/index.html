@@ -49,7 +49,7 @@
 <meta itemprop="description" content="安装 matlab 登录 mathworks1 帐号，下载在线安装包并解压，不是 .iso 文件，那是离线的。 切换到 root 用户 1 sudo su 运行 install 1 bash install matlab 默认安装在 /usr/local/MATLAB/R2019b 中，并在 /usr/local/bin 中定义两个 link 链接到 matlab 和">
 <meta itemprop="datePublished" content="2020-04-11T06:42:59+08:00" />
 <meta itemprop="dateModified" content="2020-04-16T00:00:00+00:00" />
-<meta itemprop="wordCount" content="881">
+<meta itemprop="wordCount" content="938">
 
 
 
@@ -138,7 +138,7 @@
         <div class="post-category">
             <a href="../../categories/software/"> software </a>
             </div>
-          <span class="more-meta"> 约 881 字 </span>
+          <span class="more-meta"> 约 938 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -225,6 +225,18 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>这是个很常见的问题，可能是 <code>MATLAB</code> 使用 <code>canberra-gtk2</code> 而系统中安装的是 <code>canberra-gtk3</code> 的原因，一般我们用不到这个包，不用管它。</p>
+<p>Linux 高分屏下的matlab有字体过小的问题。可以通过在 matlab 命令行中设置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">s = settings;
+s.matlab.desktop.DisplayScaleFactor.PersonalValue = 1.5
+</code></pre></td></tr></table>
+</div>
+</div><p>这个参数需要结合屏幕分辨率来定。</p>
 <h2 id="安装-stamps">安装 stamps</h2>
 <p><code>stamps</code> 是一款开源的用来做PS处理的软件，详情请参考<a href="http://homepages.see.leeds.ac.uk/~earahoo/stamps/">stamps homepages</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>，<a href="https://github.com/dbekaert/StaMPS">Github:stamps</a><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>。
 根据 stamps 的手册，需要安装 <code>snaphu</code> 和 <code>triangle</code>。<code>train</code> 是一款没什么人用的大气产品，我们这里就不安装了。</p>
