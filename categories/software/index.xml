@@ -26,12 +26,12 @@
     </item>
     
     <item>
-      <title>python配置</title>
-      <link>https://kanglcn.github.io/post/python-config/</link>
+      <title>Python Maintenance</title>
+      <link>https://kanglcn.github.io/post/python-maintain/</link>
       <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
       
-      <guid>https://kanglcn.github.io/post/python-config/</guid>
-      <description>sudo pacman -S fish # 一个用户友好的shell，注意不兼容bash 更换python国内源 1 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 安装常用python包 1 pip install numpy matplotlib jupyter notebook ... 注意这些包是安</description>
+      <guid>https://kanglcn.github.io/post/python-maintain/</guid>
+      <description>The best way to maintain python packages is try your best to use your system package manager, not using pip or conda. If the package can be found in your system&amp;rsquo;s official repository, install from it. For example, if your linux distribution is Manjaro or Arch, download numpy by pacman: 1 sudo pacman -S python-numpy The system package manager can automatically check the dependency and update your packages if Python</description>
     </item>
     
     <item>

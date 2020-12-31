@@ -206,15 +206,6 @@
     </item>
     
     <item>
-      <title>config</title>
-      <link>https://kanglcn.github.io/tags/config/</link>
-      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
-      
-      <guid>https://kanglcn.github.io/tags/config/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>efi</title>
       <link>https://kanglcn.github.io/tags/efi/</link>
       <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
@@ -238,6 +229,15 @@
       <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maintain</title>
+      <link>https://kanglcn.github.io/tags/maintain/</link>
+      <pubDate>Sun, 12 Apr 2020 06:42:59 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/maintain/</guid>
       <description></description>
     </item>
     

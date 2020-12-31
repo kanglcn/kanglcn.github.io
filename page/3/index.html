@@ -45,7 +45,7 @@
 <meta property="og:description" content="InSAR 学术博客" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://kanglcn.github.io/" />
-<meta property="og:updated_time" content="2020-12-28T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-12-29T00:00:00+00:00" />
 <meta itemprop="name" content="Kang&#39;s blog">
 <meta itemprop="description" content="InSAR 学术博客">
 <meta name="twitter:card" content="summary"/>
@@ -148,23 +148,23 @@
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="../../post/python-config/">python配置</a></h1>
+    <h1 class="post-title"><a class="post-link" href="../../post/python-maintain/">Python Maintenance</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2020-04-12 </span>
       <div class="post-category">
           <a href="../../categories/software/"> software </a>
           </div>
-        <span class="more-meta"> 约 90 字 </span>
+        <span class="more-meta"> 约 254 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      sudo pacman -S fish # 一个用户友好的shell，注意不兼容bash 更换python国内源 1 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 安装常用python包 1 pip install numpy matplotlib jupyter notebook ... 注意这些包是安
+      The best way to maintain python packages is try your best to use your system package manager, not using pip or conda. If the package can be found in your system&rsquo;s official repository, install from it. For example, if your linux distribution is Manjaro or Arch, download numpy by pacman: 1 sudo pacman -S python-numpy The system package manager can automatically check the dependency and update your packages if Python
     </div>
     <div class="read-more">
-      <a href="../../post/python-config/" class="read-more-link">阅读更多</a>
+      <a href="../../post/python-maintain/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

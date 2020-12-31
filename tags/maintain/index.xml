@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on Kang&#39;s blog</title>
-    <link>https://kanglcn.github.io/tags/python/</link>
-    <description>Recent content in python on Kang&#39;s blog</description>
+    <title>maintain on Kang&#39;s blog</title>
+    <link>https://kanglcn.github.io/tags/maintain/</link>
+    <description>Recent content in maintain on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Apr 2020 06:42:59 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Apr 2020 06:42:59 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/tags/maintain/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Maintenance</title>
       <link>https://kanglcn.github.io/post/python-maintain/</link>

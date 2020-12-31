@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>shell 以及环境变量 - Kang&#39;s blog</title>
+  <title>Python Maintenance - Kang&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="梁康" /><meta name="description" content="注意: 本文以 bash 为例，但其他种 shell 类似。 四种不同的shell interactive 和 noninteractive，login 和 nonlogin 共形成了四种 shell 的打开方式。 我们在 GUI 界" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+<meta name="author" content="梁康" /><meta name="description" content="The best way to maintain python packages is try your best to use your system package manager, not using pip or conda. If the package can be found in your system&amp;rsquo;s official repository, install from it. For example, if your linux distribution is Manjaro or Arch, download numpy by pacman: 1 sudo pacman -S python-numpy The system package manager can automatically check the dependency and update your packages if Python" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.79.0 with theme even" />
 
 
-<link rel="canonical" href="https://kanglcn.github.io/post/shell-environment-variables/" />
+<link rel="canonical" href="https://kanglcn.github.io/post/python-maintain/" />
 <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
@@ -39,24 +39,24 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="shell 以及环境变量" />
-<meta property="og:description" content="注意: 本文以 bash 为例，但其他种 shell 类似。 四种不同的shell interactive 和 noninteractive，login 和 nonlogin 共形成了四种 shell 的打开方式。 我们在 GUI 界" />
+<meta property="og:title" content="Python Maintenance" />
+<meta property="og:description" content="The best way to maintain python packages is try your best to use your system package manager, not using pip or conda. If the package can be found in your system&rsquo;s official repository, install from it. For example, if your linux distribution is Manjaro or Arch, download numpy by pacman: 1 sudo pacman -S python-numpy The system package manager can automatically check the dependency and update your packages if Python" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kanglcn.github.io/post/shell-environment-variables/" />
+<meta property="og:url" content="https://kanglcn.github.io/post/python-maintain/" />
 <meta property="article:published_time" content="2020-04-12T06:42:59+08:00" />
-<meta property="article:modified_time" content="2020-04-12T00:00:00+00:00" />
-<meta itemprop="name" content="shell 以及环境变量">
-<meta itemprop="description" content="注意: 本文以 bash 为例，但其他种 shell 类似。 四种不同的shell interactive 和 noninteractive，login 和 nonlogin 共形成了四种 shell 的打开方式。 我们在 GUI 界">
+<meta property="article:modified_time" content="2020-12-21T00:00:00+00:00" />
+<meta itemprop="name" content="Python Maintenance">
+<meta itemprop="description" content="The best way to maintain python packages is try your best to use your system package manager, not using pip or conda. If the package can be found in your system&rsquo;s official repository, install from it. For example, if your linux distribution is Manjaro or Arch, download numpy by pacman: 1 sudo pacman -S python-numpy The system package manager can automatically check the dependency and update your packages if Python">
 <meta itemprop="datePublished" content="2020-04-12T06:42:59+08:00" />
-<meta itemprop="dateModified" content="2020-04-12T00:00:00+00:00" />
-<meta itemprop="wordCount" content="840">
+<meta itemprop="dateModified" content="2020-12-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="254">
 
 
 
-<meta itemprop="keywords" content="linux,shell,bash,environment variables," />
+<meta itemprop="keywords" content="python,maintain," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="shell 以及环境变量"/>
-<meta name="twitter:description" content="注意: 本文以 bash 为例，但其他种 shell 类似。 四种不同的shell interactive 和 noninteractive，login 和 nonlogin 共形成了四种 shell 的打开方式。 我们在 GUI 界"/>
+<meta name="twitter:title" content="Python Maintenance"/>
+<meta name="twitter:description" content="The best way to maintain python packages is try your best to use your system package manager, not using pip or conda. If the package can be found in your system&rsquo;s official repository, install from it. For example, if your linux distribution is Manjaro or Arch, download numpy by pacman: 1 sudo pacman -S python-numpy The system package manager can automatically check the dependency and update your packages if Python"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -131,15 +131,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">shell 以及环境变量</h1>
+      <h1 class="post-title">Python Maintenance</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-04-12 </span>
         <div class="post-category">
-            <a href="../../categories/shell/"> shell </a>
+            <a href="../../categories/software/"> software </a>
             </div>
-          <span class="more-meta"> 约 840 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 254 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -149,82 +149,106 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#四种不同的shell">四种不同的shell</a></li>
-    <li><a href="#shell-变量以及环境变量">shell 变量以及环境变量</a></li>
-    <li><a href="#shell-加载配置文件">shell 加载配置文件</a>
-      <ul>
-        <li><a href="#两种执行方式">两种执行方式</a></li>
-        <li><a href="#加载方式">加载方式</a></li>
-      </ul>
-    </li>
+    <li><a href="#pip更换python国内源">pip更换python国内源</a></li>
+    <li><a href="#pip-list-packages">pip list packages</a></li>
+    <li><a href="#pip-list-package-details">pip list package details</a></li>
+    <li><a href="#list-python-package-directory">list python package directory</a></li>
+    <li><a href="#安装只在pypi中的软件包">安装只在PyPI中的软件包</a></li>
   </ul>
 </nav>
   </div>
 </div>
-  <div class="post-outdated">
-    <div class="warn">
-      <p>【注意】最后更新于 <span class="timeago" datetime="2020-04-12T00:00:00" title="April 12, 2020">April 12, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
-    </div>
-  </div>
     <div class="post-content">
-      <p>注意:</p>
-<ul>
-<li>本文以 bash 为例，但其他种 shell 类似。</li>
-</ul>
-<h2 id="四种不同的shell">四种不同的shell</h2>
-<p>interactive 和 noninteractive，login 和 nonlogin 共形成了四种 shell 的打开方式。</p>
-<p>我们在 GUI 界面打开终端登录的 shell 执行一个输入命令，就返回一个结果到屏幕上，这样的 shell 是交互式的，另外我们在打开这样的 shell 并没有输入帐号和密码，所以这样打开的 shell 是交互式的非登录 shell；</p>
-<p>在 tty 下输入密码登录的 shell 是交互式的登录 shell；</p>
-<p>运行</p>
+      <p>The best way to maintain python packages is try your best to use your system package manager, not using pip or conda.
+If the package can be found in your system&rsquo;s official repository, install from it.
+For example, if your linux distribution is Manjaro or Arch, download <code>numpy</code> by <code>pacman</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">bash xxxxx
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -S python-numpy
 </code></pre></td></tr></table>
 </div>
-</div><p>时使用非交互式的非登录 shell。</p>
-<h2 id="shell-变量以及环境变量">shell 变量以及环境变量</h2>
-<p>shell 中可以定义变量，一般的变量只在当前 shell 中有效，在别的 shell 中无效，环境变量在当前 shell 和子 shell 中均有效。
-子 shell 里改变环境变量会导致 <code>export</code> 这个环境变量的 shell 及其所有的子 shell 中该变量改变。</p>
-<p>关于环境变量的问题，可以参考<a href="https://wiki.archlinux.org/index.php/Environment_variables">ArchWiki:Environment variables</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
-<h2 id="shell-加载配置文件">shell 加载配置文件</h2>
-<p>所谓加载配置文件，就是执行配置文件，其语法为 shell 的语法。</p>
-<h3 id="两种执行方式">两种执行方式</h3>
-<ul>
-<li>source</li>
-<li>bash</li>
-</ul>
-<p><code>source xxxxx</code>会将脚本中的命令一行一行地在当前shell中执行，<code>bash xxxxx</code>会重建一个新的子进程来执行这一脚本。</p>
-<h3 id="加载方式">加载方式</h3>
-<p>shell 的不同打开方式决定了不同的配置文件加载方式。
-从结果来看，交互式 shell <code>source /etc/bash.bashrc</code> 和 <code>~/.bashrc</code>；交互式登录 shell 还会 <code>source /etc/profile</code> 和 <code>~/.bash_profile</code>。</p>
-<p>当 linux 开机时，会启动一个非交互的 login shell，会 <code>source /etc/profile</code>，之后运行的任何程序都可以认为是这个 shell 的子进程。</p>
-<p>进一步了解shell的详细内容可以参考<a href="https://wiki.archlinux.org/index.php/Bash#Invocation">ArchWiki:Bash</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</p>
-<p>当我们用终端模拟器打开终端时，会建立一个交互式非登录 shell。
-由于子 shell 会继承父 shell 的环境变量，所以直接执行</p>
+</div><p>The system package manager can automatically check the dependency and update your packages if Python is updated.
+If the package can only be found in PyPI, install it by pip.
+Note that you need to install it in the user&rsquo;s directory to prevent confilict with system packages.</p>
+<p>pip can read the packages download by pacman.
+When using <code>pip list</code>, packages managered by <code>pacman</code> will also be listed.</p>
+<p>Generally, <code>python</code> is managered by <code>pacman</code>, so using <code>pip</code> managered by <code>pacman</code> too.</p>
+<h2 id="pip更换python国内源">pip更换python国内源</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">bash xxxxx
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip config <span class="nb">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 </code></pre></td></tr></table>
 </div>
-</div><p>时，新建的子进程会继承父进程的环境变量。注意这个父进程是交互式的，所以 <code>.bashrc</code> 中设置的环境变量可以用。这种情况下，我们只需修改 <code>.bashrc</code> 即可。但注意 <code>.bashrc</code> 里的更改不会被直接从 GUI 启动的软件继承，因为此进程不是从终端启动的，不会继承终端的环境变量。</p>
-<p>在 <code>/etc/profile</code> 中增加我们想要的内容时只要开机就一定会被读取，其中定义的环境变量会被所有进程继承，这是我为什么喜欢用它的原因。</p>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>ArchWiki:Environment variables. <a href="https://wiki.archlinux.org/index.php/Environment_variables">https://wiki.archlinux.org/index.php/Environment_variables</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>ArchWiki:Bash. <a href="https://wiki.archlinux.org/index.php/Bash#Invocation">https://wiki.archlinux.org/index.php/Bash#Invocation</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
+</div><h2 id="pip-list-packages">pip list packages</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip list
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="pip-list-package-details">pip list package details</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip show xxx
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="list-python-package-directory">list python package directory</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">python -m site
+</code></pre></td></tr></table>
+</div>
+</div><p>The output is something like</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sys.path <span class="o">=</span> <span class="o">[</span>
+    <span class="s1">&#39;/usr/lib/python3.9&#39;</span>,
+    <span class="s1">&#39;/usr/lib/python39.zip&#39;</span>,
+    <span class="s1">&#39;/usr/lib/python3.9/lib-dynload&#39;</span>,
+    <span class="s1">&#39;/home/kanglcn/.local/lib/python3.9/site-packages&#39;</span>,
+    <span class="s1">&#39;/usr/lib/python3.9/site-packages&#39;</span>,
+<span class="o">]</span>
+USER_BASE: <span class="s1">&#39;/home/user/.local&#39;</span> <span class="o">(</span>exists<span class="o">)</span>
+USER_SITE: <span class="s1">&#39;/home/user/.local/lib/python3.9/site-packages&#39;</span> <span class="o">(</span>exists<span class="o">)</span>
+ENABLE_USER_SITE: True
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装只在pypi中的软件包">安装只在PyPI中的软件包</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip install xxx ...
+</code></pre></td></tr></table>
+</div>
+</div><p>注意这些包是安装在当前用户目录下的，只归当前用户所有。</p>
 
     </div>
 
@@ -236,7 +260,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-04-12
+        2020-12-21
         
     </span>
   </p>
@@ -262,19 +286,17 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="../../tags/linux/">linux</a>
-          <a href="../../tags/shell/">shell</a>
-          <a href="../../tags/bash/">bash</a>
-          <a href="../../tags/environment-variables/">environment variables</a>
+          <a href="../../tags/python/">python</a>
+          <a href="../../tags/maintain/">maintain</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="../../post/python-maintain/">
+        <a class="prev" href="../../post/git/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Python Maintenance</span>
+            <span class="prev-text nav-default">git 使用笔记</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="../../post/vscode/">
-            <span class="next-text nav-default">VScode 配置与使用</span>
+        <a class="next" href="../../post/shell-environment-variables/">
+            <span class="next-text nav-default">shell 以及环境变量</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
