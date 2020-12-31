@@ -44,16 +44,16 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanglcn.github.io/post/efficient-software/" />
 <meta property="article:published_time" content="2020-04-13T08:12:26+08:00" />
-<meta property="article:modified_time" content="2020-04-13T08:12:26+08:00" />
+<meta property="article:modified_time" content="2020-12-31T00:00:00+00:00" />
 <meta itemprop="name" content=" linux 下的高效软件">
 <meta itemprop="description" content="和linux 下的常用软件不同，本文讲述 linux 下的那些可以不用，但使用后让我们工作效率更高的软件。 注意：这些东西只是工具，不要在这些花里胡哨的东西">
 <meta itemprop="datePublished" content="2020-04-13T08:12:26+08:00" />
-<meta itemprop="dateModified" content="2020-04-13T08:12:26+08:00" />
-<meta itemprop="wordCount" content="364">
+<meta itemprop="dateModified" content="2020-12-31T00:00:00+00:00" />
+<meta itemprop="wordCount" content="430">
 
 
 
-<meta itemprop="keywords" content="software,linux,shell,fish," />
+<meta itemprop="keywords" content="software,linux,shell,zsh," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=" linux 下的高效软件"/>
 <meta name="twitter:description" content="和linux 下的常用软件不同，本文讲述 linux 下的那些可以不用，但使用后让我们工作效率更高的软件。 注意：这些东西只是工具，不要在这些花里胡哨的东西"/>
@@ -138,7 +138,7 @@
         <div class="post-category">
             <a href="../../categories/software/"> software </a>
             </div>
-          <span class="more-meta"> 约 364 字 </span>
+          <span class="more-meta"> 约 430 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -149,6 +149,7 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#i3">i3</a></li>
     <li><a href="#zsh">zsh</a></li>
     <li><a href="#ranger">ranger</a></li>
     <li><a href="#fzf">fzf</a></li>
@@ -156,17 +157,35 @@
 </nav>
   </div>
 </div>
-  <div class="post-outdated">
-    <div class="warn">
-      <p>【注意】最后更新于 <span class="timeago" datetime="2020-04-13T08:12:26" title="April 13, 2020">April 13, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
-    </div>
-  </div>
     <div class="post-content">
       <p>和<a href="../general-software/">linux 下的常用软件</a>不同，本文讲述 linux 下的那些可以不用，但使用后让我们工作效率更高的软件。</p>
 <p>注意：这些东西只是工具，不要在这些花里胡哨的东西上浪费太多时间。</p>
-<h2 id="zsh">zsh</h2>
+<h2 id="i3">i3</h2>
+<p><a href="https://i3wm.org/">i3</a> is a very efficient tiling windows manager.</p>
+<p><a href="https://github.com/heckelson/i3-and-kde-plasma">Here</a> provides a method enable cooperation between i3 and KDE Plasma.</p>
+<p>Modification of i3 configuration needs to be done and a new file <code>plasma-i3.desktop</code> needs to be added in <code>/usr/share/xsessions/</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[Desktop Entry]
+Type=XSession
+Exec=env KDEWM=/usr/bin/i3 /usr/bin/startplasma-x11
+DesktopNames=KDE
+Name=Plasma with i3
+Comment=Plasma with i3
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="zsh">zsh</h2>
 <p>zsh provides autosuggestions and syntax highlighting.</p>
 <p>I don&rsquo;t recommend oh-my-zsh because it slow down your shell.</p>
+<p>I don&rsquo;t recommend fish because of the incompatibility.</p>
 <h2 id="ranger">ranger</h2>
 <p><a href="https://github.com/ranger/ranger">ranger</a> 是一款在终端下使用的文件管理器。</p>
 <p>ranger 的操作逻辑和快捷键和 vim 很相似，使用h，j，k，l来移动光标，同时也支持gg，G这种快捷键。
@@ -286,7 +305,7 @@ The configuration is in <code>mybashrc</code> file.</p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-04-13
+        2020-12-31
         
     </span>
   </p>
@@ -315,7 +334,7 @@ The configuration is in <code>mybashrc</code> file.</p>
           <a href="../../tags/software/">software</a>
           <a href="../../tags/linux/">linux</a>
           <a href="../../tags/shell/">shell</a>
-          <a href="../../tags/fish/">fish</a>
+          <a href="../../tags/zsh/">zsh</a>
           </div>
       <nav class="post-nav">
         <a class="prev" href="../../post/introduction-gbis/">

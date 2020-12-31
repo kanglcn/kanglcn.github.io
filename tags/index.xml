@@ -170,20 +170,20 @@
     </item>
     
     <item>
-      <title>fish</title>
-      <link>https://kanglcn.github.io/tags/fish/</link>
-      <pubDate>Mon, 13 Apr 2020 08:12:26 +0800</pubDate>
-      
-      <guid>https://kanglcn.github.io/tags/fish/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>shell</title>
       <link>https://kanglcn.github.io/tags/shell/</link>
       <pubDate>Mon, 13 Apr 2020 08:12:26 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zsh</title>
+      <link>https://kanglcn.github.io/tags/zsh/</link>
+      <pubDate>Mon, 13 Apr 2020 08:12:26 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/tags/zsh/</guid>
       <description></description>
     </item>
     
