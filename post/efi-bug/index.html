@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.79.0 with theme even" />
+<meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
 <link rel="canonical" href="https://kanglcn.github.io/post/efi-bug/" />
@@ -44,11 +44,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanglcn.github.io/post/efi-bug/" />
 <meta property="article:published_time" content="2020-04-12T06:42:59+08:00" />
-<meta property="article:modified_time" content="2020-04-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-24T00:00:00+00:00" />
 <meta itemprop="name" content="一次开机引导的bug">
 <meta itemprop="description" content="UEFIboot 是个非常深的坑，其内容相当地复杂，在使用双系统时常容易出错。这里记录一个我出错的问题。 一次我在 BIOS 界面里把启动方式由 UFEI 改为 legancy，开">
 <meta itemprop="datePublished" content="2020-04-12T06:42:59+08:00" />
-<meta itemprop="dateModified" content="2020-04-12T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-01-24T00:00:00+00:00" />
 <meta itemprop="wordCount" content="662">
 
 
@@ -150,11 +150,6 @@
     <nav id="TableOfContents"></nav>
   </div>
 </div>
-  <div class="post-outdated">
-    <div class="warn">
-      <p>【注意】最后更新于 <span class="timeago" datetime="2020-04-12T00:00:00" title="April 12, 2020">April 12, 2020</span>，文中内容可能已过时，请谨慎使用。</p>
-    </div>
-  </div>
     <div class="post-content">
       <p>UEFIboot 是个非常深的坑，其内容相当地复杂，在使用双系统时常容易出错。这里记录一个我出错的问题。</p>
 <p>一次我在 BIOS 界面里把启动方式由 UFEI 改为 legancy，开机直接进入 windows，没有进入 grub 选项，后来我改为 UEFI 之后，同样没有进入 grub 选项，但实际上我的 efi 分区完好。</p>
@@ -279,7 +274,7 @@ Boot2003* EFI Network   RC
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2020-04-12
+        2021-01-24
         
     </span>
   </p>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Digital Fourier Transformation - Kang&#39;s blog</title>
+  <title>Pytorch - Kang&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="梁康" /><meta name="description" content="信号的分类 连续时间信号 $x(t)$。 离散时间信号 $x_n$。 能量信号 即能量有限的信号； 能量有限的信号一定是非周期的信号，因为能量有限信号只能" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+<meta name="author" content="梁康" /><meta name="description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&amp;rsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.80.0 with theme even" />
 
 
-<link rel="canonical" href="https://kanglcn.github.io/post/digital-fourier-transformation/" />
+<link rel="canonical" href="https://kanglcn.github.io/post/pytorch/" />
 <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
@@ -39,24 +39,24 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Digital Fourier Transformation" />
-<meta property="og:description" content="信号的分类 连续时间信号 $x(t)$。 离散时间信号 $x_n$。 能量信号 即能量有限的信号； 能量有限的信号一定是非周期的信号，因为能量有限信号只能" />
+<meta property="og:title" content="Pytorch" />
+<meta property="og:description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&rsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://kanglcn.github.io/post/digital-fourier-transformation/" />
-<meta property="article:published_time" content="2020-09-15T23:02:02+08:00" />
+<meta property="og:url" content="https://kanglcn.github.io/post/pytorch/" />
+<meta property="article:published_time" content="2021-01-14T11:14:39+08:00" />
 <meta property="article:modified_time" content="2021-01-24T00:00:00+00:00" />
-<meta itemprop="name" content="Digital Fourier Transformation">
-<meta itemprop="description" content="信号的分类 连续时间信号 $x(t)$。 离散时间信号 $x_n$。 能量信号 即能量有限的信号； 能量有限的信号一定是非周期的信号，因为能量有限信号只能">
-<meta itemprop="datePublished" content="2020-09-15T23:02:02+08:00" />
+<meta itemprop="name" content="Pytorch">
+<meta itemprop="description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&rsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静">
+<meta itemprop="datePublished" content="2021-01-14T11:14:39+08:00" />
 <meta itemprop="dateModified" content="2021-01-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1734">
+<meta itemprop="wordCount" content="185">
 
 
 
-<meta itemprop="keywords" content="DFT," />
+<meta itemprop="keywords" content="," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Digital Fourier Transformation"/>
-<meta name="twitter:description" content="信号的分类 连续时间信号 $x(t)$。 离散时间信号 $x_n$。 能量信号 即能量有限的信号； 能量有限的信号一定是非周期的信号，因为能量有限信号只能"/>
+<meta name="twitter:title" content="Pytorch"/>
+<meta name="twitter:description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&rsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -131,15 +131,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Digital Fourier Transformation</h1>
+      <h1 class="post-title">Pytorch</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-09-15 </span>
+        <span class="post-time"> 2021-01-14 </span>
         <div class="post-category">
-            <a href="../../categories/dft/"> DFT </a>
+            <a href="../../categories//">  </a>
             </div>
-          <span class="more-meta"> 约 1734 字 </span>
-          <span class="more-meta"> 预计阅读 4 分钟 </span>
+          <span class="more-meta"> 约 185 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="../../img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -149,136 +149,64 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#信号的分类">信号的分类</a>
-      <ul>
-        <li><a href="#连续时间信号">连续时间信号</a></li>
-        <li><a href="#离散时间信号">离散时间信号</a></li>
-        <li><a href="#能量信号">能量信号</a></li>
-        <li><a href="#功率信号">功率信号</a></li>
-      </ul>
-    </li>
-    <li><a href="#傅里叶变换">傅里叶变换</a>
-      <ul>
-        <li><a href="#为什么要用傅里叶变换">为什么要用傅里叶变换</a></li>
-        <li><a href="#连续时间信号傅里叶变换">连续时间信号傅里叶变换</a></li>
-        <li><a href="#离散时间信号傅里叶变换">离散时间信号傅里叶变换</a></li>
-        <li><a href="#连续时间周期信号傅里叶级数">连续时间周期信号傅里叶级数</a></li>
-        <li><a href="#离散时间周期信号傅里叶级数">离散时间周期信号傅里叶级数</a></li>
-      </ul>
-    </li>
-    <li><a href="#四种傅里叶变换包含级数的统一">四种傅里叶变换（包含级数）的统一</a>
-      <ul>
-        <li><a href="#离散非周期信号">离散非周期信号</a></li>
-        <li><a href="#连续周期信号">连续周期信号</a></li>
-        <li><a href="#离散周期信号">离散周期信号</a></li>
-      </ul>
-    </li>
-    <li><a href="#离散傅里叶变换">离散傅里叶变换</a></li>
+    <li><a href="#install">Install</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <h2 id="信号的分类">信号的分类</h2>
-<h3 id="连续时间信号">连续时间信号</h3>
-<ul>
-<li>$x(t)$。</li>
-</ul>
-<h3 id="离散时间信号">离散时间信号</h3>
-<ul>
-<li>$x_n$。</li>
-</ul>
-<h3 id="能量信号">能量信号</h3>
-<ul>
-<li>即能量有限的信号；</li>
-<li>能量有限的信号一定是非周期的信号，因为能量有限信号只能再一段时间内有非零值；</li>
-<li>能量信号一定存在傅里叶变换。</li>
-</ul>
-<h3 id="功率信号">功率信号</h3>
-<ul>
-<li>即功率有限的信号；</li>
-<li>功率信号可以是周期信号比如$sin(t)$，也可以是非周期信号，比如$sin(t^2)$；</li>
-<li>功率信号没有严格意义上的傅里叶变换，对于周期功率信号，存在傅里叶级数，可以认为周期功率信号的傅里叶变换由一系列以这些傅里叶级数为系数的冲击函数（$\delta$函数）组成。对于非周期的功率信号，肯定也有类似的表达方式，不过没见过谁用（这里挖个坑，以后再填）。</li>
-</ul>
-<p>能量和功率都无限的信号也是存在的，如$x(t)=t$，但这种信号没有什么研究价值。</p>
-<h2 id="傅里叶变换">傅里叶变换</h2>
-<p>傅里叶变换揭示了信号是由一系列不同频率的单色波组成的。</p>
-<h3 id="为什么要用傅里叶变换">为什么要用傅里叶变换</h3>
-<p>线性时不变系统对于复指数信号(单色波)的相应足够的简单。</p>
-<p>一个线性时不变系统对复指数信号的响应也是同样一个复指数信号，不同的只是幅度上变换，幅度因子称为系统的特征值，相应的复指数信号为特征函数。
-线性时不变系统的作用就是通过乘相应频率点上的频率响应值来逐个改变输入信号的每一个傅里叶级数。</p>
-<h3 id="连续时间信号傅里叶变换">连续时间信号傅里叶变换</h3>
-<p>这里指的是能量信号，非能量信号不在此范围。</p>
-<p>$$x(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}X(j\Omega)e^{j\Omega t}d\Omega$$
-$$X(j\Omega)=\int_{-\infty}^{+\infty}x(t)e^{-j\Omega t}dt$$
-当$|\Omega|$的值越大时，称频率越高。</p>
-<h3 id="离散时间信号傅里叶变换">离散时间信号傅里叶变换</h3>
-<p>这里也是指能量有限信号。</p>
-<p>$$x_n=\frac{1}{2\pi}\int_{2\pi}X(e^{j\omega})e^{j\omega n}d\omega$$
-$$X(e^{j\omega})=\sum_{n=-\infty}^{+\infty}x_ne^{-j\omega n}$$
-注意到$$\omega\in(-\infty,+\infty]$$
-但由于其周期性，且反演公式只用到一个周期，常常取
-$$\omega\in(-\pi,\pi]$$
-或
-$$\omega\in(0,2\pi]$$
-当$\omega$的值越接近$(2m+1)\pi,m\in Z$时，称频率越高。</p>
-<h3 id="连续时间周期信号傅里叶级数">连续时间周期信号傅里叶级数</h3>
-<p>注意周期信号是功率信号。</p>
-<p>$$x(t)=\sum_{k=-\infty}^{k=+\infty}a_ke^{jk\Omega_0t}=\sum_{k=-\infty}^{k=+\infty}a_ke^{jk(2\pi/T)t}$$
-$$X(k\Omega_0)=a_k=\frac{1}{T}\int_Tx(t)e^{-jk\Omega_0t}dt=\frac{1}{T}\int_Tx(t)e^{-jk(2\pi/T)t}dt$$
-注意到$$k\in Z$$
-当$|k|$越大时，称频率越高。</p>
-<h3 id="离散时间周期信号傅里叶级数">离散时间周期信号傅里叶级数</h3>
-<p>这里也是功率信号。</p>
-<p>一般表述为
-$$x_n=\frac{1}{N}\sum_{k=0}^{N-1}a_ke^{jk\omega_0n}=\frac{1}{N}\sum_{k=0}^{N-1}a_ke^{jk(2\pi/N)n}$$</p>
-<p>$$a_k=\sum_{n=0}^{N-1}x_ne^{-jk\omega_0n}=\sum_{n=0}^{N-1}x_ne^{-jk(2\pi/N)n}$$</p>
-<p>有些书上表述为</p>
-<p>$$x_n=\sum_{k=0}^{N-1}a_ke^{jk\omega_0n}=\sum_{k=0}^{N-1}a_ke^{jk(2\pi/N)n}$$</p>
-<p>$$a_k=\frac{1}{N}\sum_{n=0}^{N-1}x_ne^{-jk\omega_0n}=\frac{1}{N}\sum_{n=0}^{N-1}x_ne^{-jk(2\pi/N)n}$$</p>
-<p>本质上是一样的。
-注意到
-$$k\in Z$$
-同样由于周期性，一般只考虑
-$k\in [0,N]$，当$k$的值越接近$\frac{N}{2}$时，称频率越高。</p>
-<h2 id="四种傅里叶变换包含级数的统一">四种傅里叶变换（包含级数）的统一</h2>
-<p>通过引入$\delta$函数，四种傅里叶变换的形式可以统一成连续非周期信号傅里叶变换的形式。</p>
-<h3 id="离散非周期信号">离散非周期信号</h3>
-<p>一个离散时间信号序列可以表述为冲击串
-$$x(t)=\sum_{n=-\infty}^{+\infty}x[n]\delta(t-nT)$$
-傅里叶变换的关系为
-$$X(j\Omega)=X(e^{j\Omega T})=X(e^{j\omega})$$
-注意到$$\omega\in(-\pi,\pi]$$
-则
-$$\Omega\in(-\frac{\pi}{T},\frac{\pi}{T}]$$
-由于离散，有最大模拟域频率，最大的频率为$\frac{\pi}{T}$，等价表述为频率周期为$\frac{2\pi}{T}$。这直观上很容易理解。</p>
-<h3 id="连续周期信号">连续周期信号</h3>
-<p>一个傅里叶级数系数为$a_k$的连续时间周期信号的傅里叶变换，可以看成出现在成谐波关系的频率上的一串冲激函数，发生于第$k$次谐波频率$k\Omega_0$上的冲激函数的面积是第$k$个傅里叶级数系数$a_k$的$2\pi$倍。
-$$x(t)=\sum_{k=-\infty}^{k=+\infty}a_ke^{jk\Omega_0t}=\sum_{k=-\infty}^{k=+\infty}a_ke^{jk(2\pi/T)t}$$
-$$X(j\Omega)=\sum_{k=-\infty}^{+\infty}2\pi a_k\delta(\Omega-k\Omega_0)$$
-由于周期性，频域离散化，导致有最小的模拟域频率，最小的模拟域频率为$\Omega_0$(0除外，下同)。无最大的模拟域频率。</p>
-<h3 id="离散周期信号">离散周期信号</h3>
-<p>一个傅里叶级数系数为$a_k$的离散时间周期信号的傅里叶变换，可以看成出现在成谐波关系的频率上的一串冲激函数，发生于第$k$次谐波频率$k\omega_0$上的冲激函数的面积是第$k$个傅里叶级数系数$a_k$的$2\pi$倍。
-$$x[n]=\sum_{k=0}^{N-1}a_ke^{jk\omega_0n}=\sum_{k=0}^{N-1}a_ke^{jk(2\pi/N)n}$$
-$$X(e^{j\omega})=\sum_{n=-\infty}^{+\infty}2\pi a_k\delta(\omega-k\omega_0)$$
-这样就换成了离散非周期信号的形式。
-进一步，若利用上述离散非周期信号的处理方法，利用数字域频率和模拟域频率的关系
-$$\omega=\Omega T$$
-可以和时域连续非周期信号统一。
-由于既有离散性，又有周期性，模拟域频率既有最小值又有最大值。由于周期性，频域离散化导致的最小值为$\frac{2\pi}{NT}$,由于离散性导致的最大频率为$\frac{\pi}{T}$，等价表述为频率周期是$\frac{\pi}{T}$.</p>
-<h2 id="离散傅里叶变换">离散傅里叶变换</h2>
-<p>一个周期信号的傅里叶级数能够利用一个周期内信号的傅里叶变换的等间隔取样来表示。</p>
-<p>对于连续时间信号</p>
-<p>$$a_k=\frac{1}{T}X(j\Omega)\Big|_{\Omega=k\Omega_0}$$</p>
-<p>对于离散时间信号</p>
-<p>$$a_k=\frac{1}{N}X(e^{j\omega})\Big|_{\omega=k\omega_0}$$</p>
-<p>后者是离散傅里叶变换的理论基础。</p>
-<p>离散傅里叶变换是为了方便处理而引入的方法，其特征在于时域和频域均为有限的离散时间信号。</p>
-<p>$$X_k=\sum_{n=0}^{N-1}x_ne^{-j\frac{2\pi}{N}nk}$$
-$$x_n=\frac{1}{N}\sum_{n=0}^{N-1}X_ke^{j\frac{2\pi}{N}nk}$$</p>
-<p>DFT的代价在于，时域采样导致频域延拓，时域截断导致频谱泄露，二者结合可能会对频域产生严重的影响。
-这往往是我们不想看到的。</p>
-
+      <h2 id="install">Install</h2>
+<p>As already said in <a href="../python-maintain">Python Maintain</a>, you should not follow the installation guide provided at <a href="https://pytorch.org/">PyTorch</a>&rsquo;s site.</p>
+<p>Just install with <code>pacman</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo pacman -S python-pytorch-opt-cuda
+</code></pre></td></tr></table>
+</div>
+</div><p><code>python-pytorch-opt-cuda</code> is the edition with CUDA and AVX2 CPU optimizations.</p>
+<p>And</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">yay -S python-torchvision-cuda
+</code></pre></td></tr></table>
+</div>
+</div><p>to install <code>torchvision</code> from archlinuxcn.</p>
+<p>To test if they are installed properly, run in python:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">torch</span>    <span class="c1"># 如正常则静默</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mf">1.</span><span class="p">])</span>    <span class="c1"># 如正常则静默</span>
+<span class="n">a</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>    <span class="c1"># 如正常则返回&#34;tensor([ 1.], device=&#39;cuda:0&#39;)&#34;</span>
+<span class="kn">from</span> <span class="nn">torch.backends</span> <span class="kn">import</span> <span class="n">cudnn</span> <span class="c1"># 如正常则静默</span>
+<span class="n">cudnn</span><span class="o">.</span><span class="n">is_acceptable</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">cuda</span><span class="p">())</span>    <span class="c1"># 如正常则返回 &#34;True&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Sometimes <code>a.cuda()</code> may report an error <code>RuntimeError: CUDA error: no kernel image is available for execution on the device</code> if the GPU is too old to support the lastest release of pytorch.</p>
+<p>Some useful command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">nvidia-smi # show the detail of the nvidia driver and cuda and ...
+python -c &#34;import torch; print(torch.cuda.get_arch_list())&#34; # print out the supported gpu 
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
@@ -315,16 +243,12 @@ $$x_n=\frac{1}{N}\sum_{n=0}^{N-1}X_ke^{j\frac{2\pi}{N}nk}$$</p>
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="../../tags/dft/">DFT</a>
+          <a href="../../tags//"></a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="../../post/vim-latex/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Latex using vim</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="../../post/latex3/">
-            <span class="next-text nav-default">Latex 使用笔记(3)</span>
+        
+        <a class="next" href="../../post/ssh-x/">
+            <span class="next-text nav-default">ssh连接服务器图形界面</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
