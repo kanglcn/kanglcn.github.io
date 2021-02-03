@@ -6,7 +6,16 @@
     <description>Recent content in python on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 12 Apr 2020 06:42:59 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Nov 2020 14:36:30 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python</title>
+      <link>https://kanglcn.github.io/post/python/</link>
+      <pubDate>Sun, 08 Nov 2020 14:36:30 +0800</pubDate>
+      
+      <guid>https://kanglcn.github.io/post/python/</guid>
+      <description>python library argparse argparse 是python的标准库，为程序提供命令行接口(CLI: Command Line Interface). 这里是官方的教程。 This is a well-known blog for argparse library. 这里 是中文版。 1 2 3 parser.add_argument(&amp;#34;arg&amp;#34;, help=&amp;#34;help&amp;#34;) parser.add_argument(&amp;#34;SLC_par&amp;#34;, type=argparse.FileType help=&amp;#34;help&amp;#34;) parser.add_argument(&amp;#39;-m&amp;#39;,&amp;#39;--method&amp;#39;,action=&amp;#39;action&amp;#39;,help=&amp;#39;help&amp;#39;) arg is positional</description>
+    </item>
+    
     <item>
       <title>Python Maintenance</title>
       <link>https://kanglcn.github.io/post/python-maintain/</link>
