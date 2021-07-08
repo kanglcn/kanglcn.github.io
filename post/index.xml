@@ -6,14 +6,18 @@
     <description>Recent content in Posts on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 14 Jan 2021 11:14:39 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Jan 2021 11:14:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://kanglcn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Pytorch</title>
       <link>https://kanglcn.github.io/post/pytorch/</link>
       <pubDate>Thu, 14 Jan 2021 11:14:39 +0800</pubDate>
       
       <guid>https://kanglcn.github.io/post/pytorch/</guid>
-      <description>Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&amp;rsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静</description>
+      <description>Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&amp;lsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静</description>
     </item>
     
     <item>

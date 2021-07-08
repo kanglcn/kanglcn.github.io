@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="梁康" /><meta name="description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&amp;rsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
+<meta name="author" content="梁康" /><meta name="description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&amp;lsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静" /><meta name="keywords" content="InSAR, SAR, 合成孔径雷达, 地球物理, 地球动力学, 机器学习" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.80.0 with theme even" />
+<meta name="generator" content="Hugo 0.68.3 with theme even" />
 
 
 <link rel="canonical" href="https://kanglcn.github.io/post/pytorch/" />
@@ -40,23 +40,22 @@
 
 
 <meta property="og:title" content="Pytorch" />
-<meta property="og:description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&rsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静" />
+<meta property="og:description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&lsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kanglcn.github.io/post/pytorch/" />
 <meta property="article:published_time" content="2021-01-14T11:14:39+08:00" />
 <meta property="article:modified_time" content="2021-01-24T00:00:00+00:00" />
 <meta itemprop="name" content="Pytorch">
-<meta itemprop="description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&rsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静">
-<meta itemprop="datePublished" content="2021-01-14T11:14:39+08:00" />
-<meta itemprop="dateModified" content="2021-01-24T00:00:00+00:00" />
+<meta itemprop="description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&lsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静">
+<meta itemprop="datePublished" content="2021-01-14T11:14:39&#43;08:00" />
+<meta itemprop="dateModified" content="2021-01-24T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="185">
 
 
 
-<meta itemprop="keywords" content="," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pytorch"/>
-<meta name="twitter:description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&rsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静"/>
+<meta name="twitter:description" content="Install As already said in Python Maintain, you should not follow the installation guide provided at PyTorch&lsquo;s site. Just install with pacman: 1 sudo pacman -S python-pytorch-opt-cuda python-pytorch-opt-cuda is the edition with CUDA and AVX2 CPU optimizations. And 1 yay -S python-torchvision-cuda to install torchvision from archlinuxcn. To test if they are installed properly, run in python: 1 2 3 4 5 import torch # 如正常则静"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -154,9 +153,14 @@
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2021-01-24T00:00:00" title="January 24, 2021">January 24, 2021</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <h2 id="install">Install</h2>
-<p>As already said in <a href="../python-maintain">Python Maintain</a>, you should not follow the installation guide provided at <a href="https://pytorch.org/">PyTorch</a>&rsquo;s site.</p>
+<p>As already said in <a href="../python-maintain">Python Maintain</a>, you should not follow the installation guide provided at <a href="https://pytorch.org/">PyTorch</a>&lsquo;s site.</p>
 <p>Just install with <code>pacman</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

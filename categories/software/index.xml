@@ -6,7 +6,11 @@
     <description>Recent content in software on Kang&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Apr 2020 08:12:26 +0800</lastBuildDate><atom:link href="https://kanglcn.github.io/categories/software/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Apr 2020 08:12:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://kanglcn.github.io/categories/software/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title> linux 下的高效软件</title>
       <link>https://kanglcn.github.io/post/efficient-software/</link>
