@@ -1,0 +1,44 @@
+/*-- scss:defaults --*/
+$code-color: #212529;
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
+
+/*-- scss:rules --*/
+// add some spacing between references in biblio list
+div.csl-entry {
+    clear: both;
+    margin-bottom: 10px;
+}
+
+// fix footer.center height
+.nav-footer-center {
+    min-height: 0em !important;
+}
+
+// icons
+.bi-heart-fill {
+    color: darkred;
+}
+
+// sidebar
+.sidebar-navigation li a {
+    line-height: 1.75;
+    color: var(--bs-body-color);
+    font-size: 14px;
+}
+
+.aa-Autocomplete .aa-Form,
+.aa-DetachedFormContainer .aa-Form {
+    background-color: rgba(233, 236, 239, 0.65) !important;
+}
+
+// color chapter author names
+#title-block-header.quarto-title-block.default .quarto-title-meta-contents a {
+    color: #03638e !important;
+}
+
+.navbar > .container-xxl, .navbar > .container-xl, .navbar > .container-lg, .navbar > .container-md, .navbar > .container-sm, .navbar > .container, .navbar > .container-fluid {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+

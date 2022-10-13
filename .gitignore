@@ -1,0 +1,14 @@
+# Documentation
+_site
+_freeze
+# tmp file
+.quarto
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+
+/.quarto/

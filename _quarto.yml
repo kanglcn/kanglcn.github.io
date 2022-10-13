@@ -1,0 +1,37 @@
+project:
+  type: website
+  resources:
+    - cv.pdf
+
+website:
+  title: "Kang Liang"
+  navbar:
+    background: light
+    title: "Kang Liang"
+    left:
+      - href: index.qmd
+        text: Home
+      - news.qmd
+      - project.qmd
+      - talk.qmd
+      - publication.qmd
+      - award.qmd
+      - contact.qmd
+  page-footer:
+    border: true
+    center: "Copyright 2022, Kang Liang. All rights reserved."
+    background: light
+
+format:
+  html:
+    theme: [cosmo,theme.scss]
+    css: styles.css
+    toc: true
+    fontsize: "16px"
+    linestretch: 1.6
+    mainfont: "Roboto"
+    smooth-scroll: true
+    code-link: true
+    code-fold: false
+    highlight-style: printing
+    code-block-bg: true
