@@ -13,7 +13,7 @@ about:
       href: https://github.com/kanglcn
     - icon: file-person-fill
       text: CV
-      href: cv.pdf
+      href: https://github.com/kanglcn/cv/raw/master/en/cv.pdf
 ---
 
 ::: {#hero-heading}
