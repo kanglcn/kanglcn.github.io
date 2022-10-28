@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "award.html",
-    "href": "award.html",
-    "title": "Award",
-    "section": "",
-    "text": "2019: Geoscience Climbing Scholarship, USTC.\n2018: National Encouragement Scholarship, USTC.\n2018: Physics Innovation Research Experimental Paper Competition Special Award, USTC.\n2018: Alumni Awards Scholarship, USTC.\n2017: National Encouragement Scholarship, USTC."
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Kang Liang",
@@ -26,5 +12,19 @@
     "title": "Kang Liang",
     "section": "Education",
     "text": "Education\nSouthern Methodist University | Dallas, US\nPhD in Geophysics | Aug 2020 - now\nUniversity of Science and Technology of China | Hefei, China\nBSc in Geophysics | Sep 2016 - Jun 2020"
+  },
+  {
+    "objectID": "award.html",
+    "href": "award.html",
+    "title": "Award",
+    "section": "",
+    "text": "2019: Geoscience Climbing Scholarship, USTC.\n2018: National Encouragement Scholarship, USTC.\n2018: Physics Innovation Research Experimental Paper Competition Special Award, USTC.\n2018: Alumni Awards Scholarship, USTC.\n2017: National Encouragement Scholarship, USTC."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "About this site"
   }
 ]
