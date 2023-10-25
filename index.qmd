@@ -17,15 +17,20 @@ about:
 ---
 
 ::: {#hero-heading}
-Kang Liang is currently a PhD student in [Southern Methodist University][smu] advised by [Prof. Zhong Lu][zhonglu] from fall 2020.
+I am currently a PhD student in [Southern Methodist University][smu] advised by [Prof. Zhong Lu][zhonglu] from fall 2020.
 
-He has a passion for developing InSAR technique, applying it to further understanding and characterizing geodynamic phenomena(e.g. Landslide). He is alse interested in machine learning and try to combine it with his work.
+In the SAR big data era, the efficiency of mining valuable information from massive SAR data is limited by 
+traditional InSAR processing techniques which require too much manual intervention and checking and computing time.
+One topic of my research is to incorporate state-of-the-art high performance computing concepts, techniques 
+and practice, deep learning models and advanced InSAR processing algorithms for faster and more robust InSAR processing.
+The reserach results are summarized and opened in an InSAR post processing package [decorrelation][decorrelation_website]
+which is under rapid development.
 
-He is a hardcore fan of Rock & Roll. His favorite musician is [Cui Jian][cuijian] and Bon Jovi.
+I am also interesed in applying InSAR for understanding and characterizing geodynamic phenomena (e.g. landslides).
 
 [smu]:<https://www.smu.edu/>
 [zhonglu]:<https://www.smu.edu/Dedman/Academics/Departments/Earth-Sciences/People/Faculty/Lu>
-[cuijian]:<http://www.cuijian.com/>
+[decorrelation_website]:<https://kanglcn.github.io/decorrelation/>
 :::
 
 ## Education
