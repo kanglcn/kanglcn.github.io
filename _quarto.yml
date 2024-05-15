@@ -7,17 +7,19 @@ website:
     background: light
     title: "Kang Liang"
     left:
-      - href: index.qmd
-        text: Home
-      - news.qmd
-      - project.qmd
-      - talk.qmd
-      - publication.qmd
-      - award.qmd
-      - contact.qmd
+      # - href: index.qmd
+      #   text: Home
+      # - news.qmd
+      # - project.qmd
+      - href: talk.qmd
+        text: Talk
+      - href: publication.qmd
+        text: Publication
+      # - award.qmd
+      # - contact.qmd
   page-footer:
     border: true
-    center: "Copyright 2022, Kang Liang. All rights reserved."
+    center: "Copyright 2022-2024, Kang Liang. All rights reserved."
     background: light
 
 format:
