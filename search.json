@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "award.html",
     "href": "award.html",
     "title": "Award",
@@ -18,7 +11,14 @@
     "href": "index.html",
     "title": "Kang Liang",
     "section": "",
-    "text": "I am currently a PhD student in Southern Methodist University advised by Prof. Zhong Lu from fall 2020.\nIn the SAR big data era, the efficiency of mining valuable information from massive SAR data is limited by traditional InSAR processing techniques which require too much manual intervention and checking and computing time. One topic of my research is to incorporate state-of-the-art high performance computing concepts, techniques and practice, deep learning models and advanced InSAR processing algorithms for faster and more robust InSAR processing. The reserach results are summarized and opened in an InSAR post processing package decorrelation which is under rapid development.\nI am also interesed in applying InSAR for understanding and characterizing geodynamic phenomena (e.g. landslides).\n \n  \n   \n  \n    \n     E-mail\n  \n  \n    \n     Github\n  \n  \n    \n     CV"
+    "text": "I am currently a PhD student in Southern Methodist University advised by Prof. Zhong Lu from fall 2020.\nIn the SAR big data era, the efficiency of mining valuable information from massive SAR data is limited by traditional InSAR processing techniques which require too much manual intervention and checking and computing time. One topic of my research is to incorporate state-of-the-art high performance computing concepts, techniques and practice, deep learning models and advanced InSAR processing algorithms for faster and more robust InSAR processing. The reserach results are summarized and opened in an InSAR post processing package moraine which is under rapid development.\nI am also interesed in applying InSAR for understanding and characterizing geodynamic phenomena (e.g. landslides).\n\n \n  \n   \n  \n    \n     E-mail\n  \n  \n    \n     Github\n  \n  \n    \n     CV"
+  },
+  {
+    "objectID": "index.html#bio",
+    "href": "index.html#bio",
+    "title": "Kang Liang",
+    "section": "",
+    "text": "I am currently a PhD student in Southern Methodist University advised by Prof. Zhong Lu from fall 2020.\nIn the SAR big data era, the efficiency of mining valuable information from massive SAR data is limited by traditional InSAR processing techniques which require too much manual intervention and checking and computing time. One topic of my research is to incorporate state-of-the-art high performance computing concepts, techniques and practice, deep learning models and advanced InSAR processing algorithms for faster and more robust InSAR processing. The reserach results are summarized and opened in an InSAR post processing package moraine which is under rapid development.\nI am also interesed in applying InSAR for understanding and characterizing geodynamic phenomena (e.g. landslides)."
   },
   {
     "objectID": "index.html#education",
@@ -26,5 +26,26 @@
     "title": "Kang Liang",
     "section": "Education",
     "text": "Education\nSouthern Methodist University | Dallas, US\nPhD in Geophysics | Aug 2020 - now\nUniversity of Science and Technology of China | Hefei, China\nBSc in Geophysics | Sep 2016 - Jun 2020"
+  },
+  {
+    "objectID": "index.html#packages",
+    "href": "index.html#packages",
+    "title": "Kang Liang",
+    "section": "Packages",
+    "text": "Packages\nMoraine - MOdern RAdar INteferometry Environment; A simple, stupid InSAR postprocessing tool in big data era"
+  },
+  {
+    "objectID": "talk.html",
+    "href": "talk.html",
+    "title": "Kang Liang",
+    "section": "",
+    "text": "Offset tracking with geocoded SLC, NASA OPERA Project Science Team – May 15th, 2024"
+  },
+  {
+    "objectID": "talk.html#section",
+    "href": "talk.html#section",
+    "title": "Kang Liang",
+    "section": "",
+    "text": "Offset tracking with geocoded SLC, NASA OPERA Project Science Team – May 15th, 2024"
   }
 ]
