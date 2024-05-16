@@ -6,7 +6,7 @@ website:
   navbar:
     background: light
     title: "Kang Liang"
-    left:
+    right:
       # - href: index.qmd
       #   text: Home
       # - news.qmd
