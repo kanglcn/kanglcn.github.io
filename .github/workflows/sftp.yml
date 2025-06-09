@@ -19,5 +19,5 @@ jobs:
           sftp_only: true
           password: ${{ secrets.SMU_HOST_PASSWORD }}
           local_path: './*'
-          remote_path: '/users/pubhtml/other/kangl/public_html'
+          remote_path: '/users/kangl/public_html'
           sftpArgs: '-o ConnectTimeout=5'
