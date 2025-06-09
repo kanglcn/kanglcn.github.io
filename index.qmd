@@ -18,7 +18,7 @@ about:
 
 ::: {#hero-heading}
 ## Bio
-I am currently a PhD student in [Southern Methodist University][smu] advised by [Prof. Zhong Lu][zhonglu] from fall 2020.
+I am currently a PhD student in [Southern Methodist University][smu] advised by [Prof. Zhong Lu][zhonglu]. Before that, I receive my BS degree in Geophysics at [University of Science and Technology and China][ustc_website] in 2020.
 
 In the SAR big data era, the efficiency of mining valuable information from massive SAR data is limited by 
 traditional InSAR processing techniques which require too much manual intervention and checking and computing time.
@@ -32,6 +32,7 @@ I am also interesed in applying InSAR for understanding and characterizing geody
 [smu]:<https://www.smu.edu/>
 [zhonglu]:<https://www.smu.edu/Dedman/Academics/Departments/Earth-Sciences/People/Faculty/Lu>
 [moraine_website]:<https://kanglcn.github.io/moraine/>
+[ustc_website]:<https://ustc.edu.cn>
 :::
 
 ## Education
@@ -48,3 +49,4 @@ BSc in Geophysics | Sep 2016 - Jun 2020
 [**Moraine**](https://kanglcn.github.io/moraine/)
 - MOdern RAdar INteferometry Environment;
 A simple, stupid InSAR postprocessing tool in big data era
+

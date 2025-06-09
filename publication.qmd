@@ -1,0 +1,6 @@
+## Selected Publications
+
+- **Kang Liang***, Jinwoo Kim, Zhong Lu, Heresh Fattahi, Mary Grace Bato, Virginia Barancato, Seongsu Jeong, and Vamshi Karanam, 2025, **Offset Tracking With Geocoded SLC**, IEEE Transactions on Geoscience and Remote Sensing, vol. 63, pp. 1-13, 2025, Art no. 5212313, doi: 10.1109/TGRS.2025.3570627.
+
+
+
