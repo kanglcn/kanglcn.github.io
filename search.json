@@ -1,17 +1,59 @@
 [
   {
+    "objectID": "publication.html",
+    "href": "publication.html",
+    "title": "Kang Liang",
+    "section": "",
+    "text": "– Kang Liang, Zhong Lu, and Jinwoo Kim, Deep Learning for InSAR Point Cloud Analysis: Phase Denoising and Measurement Point Refinement, in preparation.\n– Kang Liang, Zhong Lu, and Jinwoo Kim, Moraine: MOdern RAdar Interferometry Environment in the Big Data Era, in preparation."
+  },
+  {
+    "objectID": "publication.html#under-preparation",
+    "href": "publication.html#under-preparation",
+    "title": "Kang Liang",
+    "section": "",
+    "text": "– Kang Liang, Zhong Lu, and Jinwoo Kim, Deep Learning for InSAR Point Cloud Analysis: Phase Denoising and Measurement Point Refinement, in preparation.\n– Kang Liang, Zhong Lu, and Jinwoo Kim, Moraine: MOdern RAdar Interferometry Environment in the Big Data Era, in preparation."
+  },
+  {
+    "objectID": "publication.html#submitted",
+    "href": "publication.html#submitted",
+    "title": "Kang Liang",
+    "section": "Submitted",
+    "text": "Submitted\n– Kang Liang, Zhong Lu, and Jinwoo Kim, Are Deep Learning Models Trained on Synthetic Data Actually Reliable in InSAR? A Self-Supervised Learning Approach for InSAR Phase Denoising, submited to IEEE TGRS and preprinted at https://doi.org/10.36227/techrxiv.176523361.13124817/v1.\n– Qingyu Sui, Zhong Lu, Tyler M. Meng, Jinwoo Kim, Bretwood Higman, Chunli Dai, Emmanuel Junior Budukumah, Sam McColl, Ian Howat, Chad Hults, Vamshi Karanam, Kang Liang, Hydrometeorological and Topographic Controls Govern Spatiotemporal Heterogeneity in Rock Glacier Kinematics: Insights from Satellite Interferometry in Southeastern Alaska, submited to JGR Earth Surface."
+  },
+  {
+    "objectID": "publication.html#published",
+    "href": "publication.html#published",
+    "title": "Kang Liang",
+    "section": "Published",
+    "text": "Published\n\nKang Liang*, Jinwoo Kim, Zhong Lu, Heresh Fattahi, Mary Grace Bato, Virginia Barancato, Seongsu Jeong, and Vamshi Karanam, 2025, Offset Tracking With Geocoded SLC, IEEE Transactions on Geoscience and Remote Sensing, vol. 63, pp. 1-13, 2025, Art no. 5212313, doi: 10.1109/TGRS.2025.3570627."
+  },
+  {
+    "objectID": "talk.html",
+    "href": "talk.html",
+    "title": "Kang Liang",
+    "section": "",
+    "text": "Offset tracking with geocoded SLC, NASA OPERA Project Science Team – May 15th, 2024\n\nThis is an embedded &lt;a target=\"_blank\" href=\"https://office.com\"&gt;Microsoft Office&lt;/a&gt; presentation, powered by &lt;a target=\"_blank\" href=\"https://office.com/webapps\"&gt;Office&lt;/a&gt;."
+  },
+  {
+    "objectID": "talk.html#invited-talk",
+    "href": "talk.html#invited-talk",
+    "title": "Kang Liang",
+    "section": "",
+    "text": "Offset tracking with geocoded SLC, NASA OPERA Project Science Team – May 15th, 2024\n\nThis is an embedded &lt;a target=\"_blank\" href=\"https://office.com\"&gt;Microsoft Office&lt;/a&gt; presentation, powered by &lt;a target=\"_blank\" href=\"https://office.com/webapps\"&gt;Office&lt;/a&gt;."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Kang Liang",
     "section": "",
-    "text": "I am currently a PhD student in Southern Methodist University advised by Prof. Zhong Lu. Before that, I receive my BS degree in Geophysics at University of Science and Technology and China in 2020.\nIn the SAR big data era, the efficiency of mining valuable information from massive SAR data is limited by traditional InSAR processing techniques which require too much manual intervention and checking and computing time. One topic of my research is to incorporate state-of-the-art high performance computing concepts, techniques and practice, deep learning models and advanced InSAR processing algorithms for faster and more robust InSAR processing. The reserach results are summarized and opened in an InSAR post processing package moraine which is under rapid development.\nI am also interesed in applying InSAR for understanding and characterizing geodynamic phenomena (e.g. landslides).\n\n \n  \n   \n  \n    \n     E-mail\n  \n  \n    \n     Github\n  \n  \n    \n     CV"
+    "text": "I am currently a PhD student in Southern Methodist University advised by Prof. Zhong Lu. Before that, I receive my BS degree in Geophysics at University of Science and Technology and China in 2020.\nIn the SAR big data era, the efficiency of mining valuable information from massive SAR data is limited by traditional InSAR processing techniques which require too much manual intervention and checking and computing time. One topic of my research is to incorporate state-of-the-art high performance computing concepts, techniques and practice, deep learning models and advanced InSAR processing algorithms for more efficient, accurate and robust InSAR processing. The reserach results are summarized and opened in an InSAR post processing package moraine.\nI am also interesed in applying InSAR for understanding and characterizing geodynamic phenomena (e.g. landslides).\n\n \n  \n   \n  \n    \n     E-mail\n  \n  \n    \n     Github\n  \n  \n    \n     CV"
   },
   {
     "objectID": "index.html#bio",
     "href": "index.html#bio",
     "title": "Kang Liang",
     "section": "",
-    "text": "I am currently a PhD student in Southern Methodist University advised by Prof. Zhong Lu. Before that, I receive my BS degree in Geophysics at University of Science and Technology and China in 2020.\nIn the SAR big data era, the efficiency of mining valuable information from massive SAR data is limited by traditional InSAR processing techniques which require too much manual intervention and checking and computing time. One topic of my research is to incorporate state-of-the-art high performance computing concepts, techniques and practice, deep learning models and advanced InSAR processing algorithms for faster and more robust InSAR processing. The reserach results are summarized and opened in an InSAR post processing package moraine which is under rapid development.\nI am also interesed in applying InSAR for understanding and characterizing geodynamic phenomena (e.g. landslides)."
+    "text": "I am currently a PhD student in Southern Methodist University advised by Prof. Zhong Lu. Before that, I receive my BS degree in Geophysics at University of Science and Technology and China in 2020.\nIn the SAR big data era, the efficiency of mining valuable information from massive SAR data is limited by traditional InSAR processing techniques which require too much manual intervention and checking and computing time. One topic of my research is to incorporate state-of-the-art high performance computing concepts, techniques and practice, deep learning models and advanced InSAR processing algorithms for more efficient, accurate and robust InSAR processing. The reserach results are summarized and opened in an InSAR post processing package moraine.\nI am also interesed in applying InSAR for understanding and characterizing geodynamic phenomena (e.g. landslides)."
   },
   {
     "objectID": "index.html#education",
@@ -28,38 +70,10 @@
     "text": "Packages\nMoraine - MOdern RAdar INteferometry Environment; A simple, stupid InSAR postprocessing tool in big data era"
   },
   {
-    "objectID": "talk.html",
-    "href": "talk.html",
-    "title": "Kang Liang",
-    "section": "",
-    "text": "Offset tracking with geocoded SLC, NASA OPERA Project Science Team – May 15th, 2024"
-  },
-  {
-    "objectID": "talk.html#section",
-    "href": "talk.html#section",
-    "title": "Kang Liang",
-    "section": "",
-    "text": "Offset tracking with geocoded SLC, NASA OPERA Project Science Team – May 15th, 2024"
-  },
-  {
     "objectID": "award.html",
     "href": "award.html",
     "title": "Award",
     "section": "",
     "text": "2019: Geoscience Climbing Scholarship, USTC.\n2018: National Encouragement Scholarship, USTC.\n2018: Physics Innovation Research Experimental Paper Competition Special Award, USTC.\n2018: Alumni Awards Scholarship, USTC.\n2017: National Encouragement Scholarship, USTC."
-  },
-  {
-    "objectID": "publication.html",
-    "href": "publication.html",
-    "title": "Kang Liang",
-    "section": "",
-    "text": "Kang Liang*, Jinwoo Kim, Zhong Lu, Heresh Fattahi, Mary Grace Bato, Virginia Barancato, Seongsu Jeong, and Vamshi Karanam, 2025, Offset Tracking With Geocoded SLC, IEEE Transactions on Geoscience and Remote Sensing, vol. 63, pp. 1-13, 2025, Art no. 5212313, doi: 10.1109/TGRS.2025.3570627."
-  },
-  {
-    "objectID": "publication.html#selected-publications",
-    "href": "publication.html#selected-publications",
-    "title": "Kang Liang",
-    "section": "",
-    "text": "Kang Liang*, Jinwoo Kim, Zhong Lu, Heresh Fattahi, Mary Grace Bato, Virginia Barancato, Seongsu Jeong, and Vamshi Karanam, 2025, Offset Tracking With Geocoded SLC, IEEE Transactions on Geoscience and Remote Sensing, vol. 63, pp. 1-13, 2025, Art no. 5212313, doi: 10.1109/TGRS.2025.3570627."
   }
 ]

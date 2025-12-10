@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kanglcn.github.io/news.html</loc>
-    <lastmod>2025-06-09T04:14:54.457Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kanglcn.github.io/index.html</loc>
-    <lastmod>2025-06-09T04:14:54.457Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kanglcn.github.io/talk.html</loc>
-    <lastmod>2025-06-09T04:14:54.457Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kanglcn.github.io/award.html</loc>
-    <lastmod>2025-06-09T04:14:54.457Z</lastmod>
-  </url>
-  <url>
     <loc>https://kanglcn.github.io/publication.html</loc>
-    <lastmod>2025-06-09T04:14:54.457Z</lastmod>
+    <lastmod>2025-12-10T23:27:20.930Z</lastmod>
   </url>
   <url>
     <loc>https://kanglcn.github.io/project.html</loc>
-    <lastmod>2025-06-09T04:14:54.457Z</lastmod>
+    <lastmod>2025-12-10T23:27:20.930Z</lastmod>
   </url>
   <url>
     <loc>https://kanglcn.github.io/contact.html</loc>
-    <lastmod>2025-06-09T04:14:54.457Z</lastmod>
+    <lastmod>2025-12-10T23:27:20.930Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kanglcn.github.io/talk.html</loc>
+    <lastmod>2025-12-10T23:27:20.931Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kanglcn.github.io/index.html</loc>
+    <lastmod>2025-12-10T23:27:20.930Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kanglcn.github.io/award.html</loc>
+    <lastmod>2025-12-10T23:27:20.930Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kanglcn.github.io/news.html</loc>
+    <lastmod>2025-12-10T23:27:20.930Z</lastmod>
   </url>
 </urlset>
