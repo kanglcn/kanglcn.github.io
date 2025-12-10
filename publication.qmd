@@ -1,4 +1,15 @@
-## Selected Publications
+## Under preparation
+
+-- **Kang Liang**, Zhong Lu, and Jinwoo Kim, Deep Learning for InSAR Point Cloud Analysis: Phase Denoising and Measurement Point Refinement, *in preparation*.
+
+-- **Kang Liang**, Zhong Lu, and Jinwoo Kim, Moraine: MOdern RAdar Interferometry Environment in the Big Data Era, *in preparation*.
+
+## Submitted
+-- **Kang Liang**, Zhong Lu, and Jinwoo Kim, Are Deep Learning Models Trained on Synthetic Data Actually Reliable in InSAR? A Self-Supervised Learning Approach for InSAR Phase Denoising, *submited to IEEE TGRS and preprinted at https://doi.org/10.36227/techrxiv.176523361.13124817/v1*.
+
+-- Qingyu Sui, Zhong Lu, Tyler M. Meng, Jinwoo Kim, Bretwood Higman, Chunli Dai, Emmanuel Junior Budukumah, Sam McColl, Ian Howat, Chad Hults, Vamshi Karanam, **Kang Liang**, Hydrometeorological and Topographic Controls Govern Spatiotemporal Heterogeneity in Rock Glacier Kinematics: Insights from Satellite Interferometry in Southeastern Alaska, *submited to JGR Earth Surface*.
+
+## Published
 
 - **Kang Liang***, Jinwoo Kim, Zhong Lu, Heresh Fattahi, Mary Grace Bato, Virginia Barancato, Seongsu Jeong, and Vamshi Karanam, 2025, **Offset Tracking With Geocoded SLC**, IEEE Transactions on Geoscience and Remote Sensing, vol. 63, pp. 1-13, 2025, Art no. 5212313, doi: 10.1109/TGRS.2025.3570627.
 

@@ -1,7 +1,7 @@
-## 2024
+## Invited Talk
 
 - **Offset tracking with geocoded SLC**,
 NASA OPERA Project Science Team -- May 15th, 2024
-<!-- ```{=html}
+```{=html}
 <iframe src="https://smu365-my.sharepoint.com/personal/kangl_smu_edu/_layouts/15/Doc.aspx?sourcedoc={414f85e3-307d-474c-afae-9994918eafca}&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;Embed=1" width="442px" height="288px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
-``` -->
+```
